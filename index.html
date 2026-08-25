@@ -26,29 +26,35 @@
 
         nav {
 
-            background: #0f172a;
+            background: #111a33;
 
             padding: 15px;
 
             text-align: center;
 
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
         }
 
         nav a {
 
-            color: white;
+            color: #60a5fa;
 
             text-decoration: none;
 
-            margin: 0 15px;
-
             font-weight: bold;
+
+            margin: 0 15px;
 
         }
 
         nav a:hover {
 
-            color: #60a5fa;
+            color: white;
 
         }
 
@@ -62,7 +68,7 @@
 
         }
 
-        h1 {
+        header h1 {
 
             font-size: 50px;
 
@@ -72,55 +78,77 @@
 
         header p {
 
-            font-size: 20px;
+            font-size: 18px;
 
-            color: #b8c2d9;
-
-        }
-
-        .button {
-
-            display: inline-block;
-
-            margin-top: 25px;
-
-            padding: 14px 25px;
-
-            background: #2563eb;
-
-            color: white;
-
-            text-decoration: none;
-
-            border-radius: 8px;
+            color: #cbd5e1;
 
         }
 
         section {
 
-            max-width: 900px;
+            max-width: 1100px;
 
             margin: auto;
 
-            padding: 50px 20px;
+            padding: 60px 20px;
 
         }
 
         h2 {
 
+            text-align: center;
+
             font-size: 32px;
+
+            margin-bottom: 40px;
+
+            color: #60a5fa;
+
+        }
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
 
         }
 
         .card {
 
-            background: #151f3b;
+            background: #111827;
 
             padding: 25px;
 
-            margin: 15px 0;
+            border-radius: 12px;
 
-            border-radius: 10px;
+            border: 1px solid #1f2937;
+
+        }
+
+        .card:hover {
+
+            border-color: #2563eb;
+
+        }
+
+        .card h3 {
+
+            margin-top: 0;
+
+            font-size: 20px;
+
+            color: #93c5fd;
+
+        }
+
+        .card p {
+
+            color: #d1d5db;
+
+            line-height: 1.6;
 
         }
 
@@ -128,12 +156,26 @@
 
             text-align: center;
 
-            padding: 30px;
+            padding: 30px 20px;
 
-            color: #8d98b3;   
-</style> 
-</head> <a href="#learn">Learn</a>
-</body>
+            background: #05070f;
+
+            border-top: 1px solid #1f2937;
+
+            color: #94a3b8;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="#learn">Learn</a>
+
         <a href="#threats">Threats</a>
 
         <a href="#safety">Stay Safe</a>
@@ -142,149 +184,167 @@
 
     <header>
 
-        <h1>CyberStart 🔐</h1>
+        <h1>CyberStart</h1>
 
-        <p>Cybersecurity explained simply.</p>
+        <p>
 
-        <a class="button" href="#learn">Start Learning</a>
+            Learn the basics of cybersecurity and stay safer online.
+
+        </p>
 
     </header>
 
     <section id="learn">
 
-        <h2>Start Learning Cybersecurity</h2>
+        <h2>Learn Cybersecurity</h2>
 
-        <div class="card">
+        <div class="cards">
 
-            <h3>What Is Cybersecurity?</h3>
+            <div class="card">
 
-            <p>
+                <h3>What Is Cybersecurity?</h3>
 
-                Cybersecurity is the practice of protecting computers,
+                <p>
 
-                phones, networks, accounts, and information from digital threats.
+                    Cybersecurity is the practice of protecting computers,
 
-            </p>
+                    networks, accounts, and information from digital threats.
 
-        </div>
+                </p>
 
-        <div class="card">
+            </div>
 
-            <h3>Why Is Cybersecurity Important?</h3>
+            <div class="card">
 
-            <p>
+                <h3>What Is Phishing?</h3>
 
-                Cybersecurity helps protect people and organizations from threats
+                <p>
 
-                such as stolen information, hacked accounts, scams, and malicious software.
+                    Phishing is a type of scam where someone tries to trick
 
-            </p>
+                    you into giving away information or clicking something dangerous.
 
-        </div>
+                </p>
 
-        <div class="card" id="threats">
+            </div>
 
-            <h3>Common Cybersecurity Threats</h3>
+            <div class="card">
 
-            <p>
+                <h3>Strong Passwords</h3>
 
-                <strong>Phishing:</strong>
+                <p>
 
-                Attempts to trick people into revealing information
+                    Strong passwords help protect your accounts from
 
-                or clicking dangerous links.
+                    unauthorized access. Use long and unique passwords.
 
-            </p>
+                </p>
 
-            <p>
-
-                <strong>Malware:</strong>
-
-                Harmful software that can damage systems,
-
-                steal information, or perform unwanted actions.
-
-            </p>
-
-            <p>
-
-                <strong>Password attacks:</strong>
-
-                Attempts to gain access to accounts
-
-                by guessing or obtaining passwords.
-
-            </p>
-
-            <p>
-
-                <strong>Scams:</strong>
-
-                Deceptive messages or websites designed to trick people.
-
-            </p>
+            </div>
 
         </div>
 
-        <div class="card" id="safety">
+    </section>
 
-            <h3>How Can You Stay Safer Online?</h3>
+    <section id="threats">
 
-            <p>
+        <h2>Common Cyber Threats</h2>
 
-                <strong>Use strong, unique passwords:</strong>
+        <div class="cards">
 
-                Avoid using the same password for every account.
+            <div class="card">
 
-            </p>
+                <h3>Malware</h3>
 
-            <p>
+                <p>
 
-                <strong>Turn on multi-factor authentication:</strong>
+                    Malware is software designed to damage systems,
 
-                MFA adds another verification step when signing in.
+                    steal information, or perform unwanted actions.
 
-            </p>
+                </p>
 
-            <p>
+            </div>
 
-                <strong>Keep your software updated:</strong>
+            <div class="card">
 
-                Updates often include important security fixes.
+                <h3>Phishing</h3>
 
-            </p>
+                <p>
 
-            <p>
+                    Attackers may use fake emails, messages, or websites
 
-                <strong>Learn to recognize phishing:</strong>
+                    to trick people into giving away information.
 
-                Be careful with unexpected messages asking you to click links,
+                </p>
 
-                download files, or provide personal information.
+            </div>
 
-            </p>
+            <div class="card">
 
-            <p>
+                <h3>Social Engineering</h3>
 
-                <strong>Be careful with downloads:</strong>
+                <p>
 
-                Only download software and files from sources you trust.
+                    Social engineering uses manipulation and deception
 
-            </p>
+                    to convince people to reveal information or take an action.
+
+                </p>
+
+            </div>
 
         </div>
 
-        <div class="card">
+    </section>
 
-            <h3>Cybersecurity Is Everyone's Responsibility</h3>
+    <section id="safety">
 
-            <p>
+        <h2>Stay Safe Online</h2>
 
-                You don't have to be a cybersecurity expert to practice good security.
+        <div class="cards">
 
-                Small habits can make a big difference when staying safe online.
+            <div class="card">
 
-            </p>
+                <h3>Use Strong Passwords</h3>
+
+                <p>
+
+                    Create long, unique passwords and avoid reusing
+
+                    the same password across multiple accounts.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Watch for Scams</h3>
+
+                <p>
+
+                    Be careful with unexpected links, attachments,
+
+                    messages, and requests for personal information.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Keep Software Updated</h3>
+
+                <p>
+
+                    Software updates often include security fixes
+
+                    that help protect your devices.
+
+                </p>
+
+            </div>
 
         </div>
 
@@ -292,7 +352,9 @@
 
     <footer>
 
-        © 2026 CyberStart — Cybersecurity explained simply.
+        <p>CyberStart © 2026</p>
+
+        <p>Learn. Protect. Stay Safe.</p>
 
     </footer>
 
