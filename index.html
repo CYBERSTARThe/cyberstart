@@ -167,34 +167,120 @@
         }
 
     </style>
+ .cards {
 
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+
+            margin-top: 30px;
+
+        }
+
+        .card {
+
+            background: #151f3b;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            border: 1px solid #263557;
+
+            transition: transform 0.2s, border-color 0.2s;
+
+        }
+
+        .card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #3b82f6;
+
+        }
+
+        .card h3 {
+
+            color: #60a5fa;
+
+            margin-top: 0;
+
+        }
+
+        .card p {
+
+            color: #cbd5e1;
+
+            line-height: 1.6;
 </head>
 
 <body>
 
-    <nav>
+<section id="learn">
 
-        <a href="#learn">Learn</a>
+    <h2>Start Learning</h2>
 
-        <a href="#threats">Threats</a>
+    <div class="cards">
 
-        <a href="#safety">Stay Safe</a>
+        <div class="card">
 
-    </nav>
+            <h3>🔐 Cybersecurity</h3>
 
-    <header>
+            <p>
 
-        <h1>CyberStart</h1>
+                Learn how computers, networks, and information
 
-        <p>
+                are protected from digital threats.
 
-            Learn the basics of cybersecurity and stay safer online.
+            </p>
 
-        </p>
+        </div>
 
-    </header>
+        <div class="card">
 
-    <section id="learn">
+            <h3>🎣 Phishing</h3>
+
+            <p>
+
+                Learn how phishing scams work and how to recognize
+
+                suspicious messages and websites.
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🔑 Password Security</h3>
+ <div class="card">
+
+            <h3>🛡️ Firewalls</h3>
+
+            <p>
+
+                Learn how firewalls help control network traffic
+
+                and protect computers and networks.
+
+            </p>
+
+        </div>
+            <p>
+
+                Learn how strong, unique passwords help protect
+
+                your online accounts.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
         <h2>Learn Cybersecurity</h2>
 
