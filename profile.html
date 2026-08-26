@@ -8,7 +8,7 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>CyberStart - Progress Dashboard</title>
+<title>CyberStart - Dashboard</title>
 
 <style>
 
@@ -18,9 +18,6 @@ body {
     background: #0b1020;
     color: white;
 }
-
-
-/* NAVIGATION */
 
 nav {
     background: #111a33;
@@ -39,9 +36,6 @@ nav a:hover {
     color: #4da6ff;
 }
 
-
-/* MAIN */
-
 .container {
     max-width: 1000px;
     margin: auto;
@@ -56,207 +50,124 @@ h1 {
 
 .subtitle {
     text-align: center;
-    color: #aaaaaa;
-    margin-bottom: 35px;
+    color: #aaa;
+    margin-bottom: 30px;
 }
 
 
-/* PROFILE HEADER */
+/* PROFILE */
 
-.profile-header {
+.profile {
     background: #111a33;
     border: 1px solid #26345c;
     border-radius: 15px;
-
     padding: 30px;
-
-    display: flex;
-    align-items: center;
-    gap: 25px;
-
+    text-align: center;
     margin-bottom: 25px;
 }
 
 .avatar {
-    font-size: 75px;
+    font-size: 70px;
 }
 
-.profile-info h2 {
-    margin: 0 0 8px;
+.profile h2 {
     color: #78bbff;
+    margin-bottom: 5px;
 }
 
-.profile-info p {
-    margin: 5px 0;
-    color: #bbbbbb;
+.profile p {
+    color: #bbb;
 }
 
 
-/* XP CARD */
+/* XP */
 
 .xp-card {
     background: #111a33;
     border: 1px solid #26345c;
     border-radius: 15px;
-
     padding: 25px;
-
     margin-bottom: 25px;
 }
 
-.xp-top {
+.xp-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.xp-top h2 {
+.xp-header h2 {
     color: #4da6ff;
 }
 
 .xp-number {
-    font-size: 22px;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .xp-background {
     width: 100%;
     height: 25px;
-
     background: #202c4a;
-
     border-radius: 15px;
-
     overflow: hidden;
 }
 
 .xp-bar {
-    width: 0%;
     height: 100%;
-
+    width: 0%;
     background: #4da6ff;
-
     transition: width 0.5s;
 }
 
-.xp-next {
+.xp-message {
     text-align: center;
-    color: #aaaaaa;
-    margin-top: 10px;
+    color: #aaa;
 }
 
 
-/* STAT CARDS */
+/* STATS */
 
-.stats-grid {
+.stats {
     display: grid;
-
     grid-template-columns:
-    repeat(auto-fit, minmax(200px, 1fr));
+    repeat(auto-fit, minmax(180px, 1fr));
 
-    gap: 20px;
+    gap: 15px;
 
     margin-bottom: 25px;
 }
 
-.stat-card {
+.stat {
     background: #111a33;
-
     border: 1px solid #26345c;
-
-    border-radius: 15px;
-
-    padding: 25px;
-
+    border-radius: 12px;
+    padding: 20px;
     text-align: center;
 }
 
 .stat-icon {
-    font-size: 35px;
+    font-size: 32px;
 }
 
 .stat-number {
-    font-size: 27px;
-
-    font-weight: bold;
-
+    font-size: 25px;
     color: #78bbff;
-
+    font-weight: bold;
     margin: 8px;
-}
-
-.stat-label {
-    color: #aaaaaa;
-}
-
-
-/* PROGRESS */
-
-.progress-card {
-    background: #111a33;
-
-    border: 1px solid #26345c;
-
-    border-radius: 15px;
-
-    padding: 25px;
-
-    margin-bottom: 25px;
-}
-
-.progress-card h2 {
-    color: #4da6ff;
-}
-
-.progress-item {
-    margin: 20px 0;
-}
-
-.progress-title {
-    display: flex;
-    justify-content: space-between;
-
-    margin-bottom: 7px;
-
-    color: #dddddd;
-}
-
-.small-background {
-    width: 100%;
-    height: 14px;
-
-    background: #202c4a;
-
-    border-radius: 10px;
-
-    overflow: hidden;
-}
-
-.small-bar {
-    height: 100%;
-    width: 0%;
-
-    background: #4da6ff;
-
-    transition: width 0.5s;
 }
 
 
 /* ACHIEVEMENTS */
 
-.achievements {
+.achievement-section {
     background: #111a33;
-
     border: 1px solid #26345c;
-
     border-radius: 15px;
-
     padding: 25px;
-
-    margin-bottom: 25px;
 }
 
-.achievements h2 {
+.achievement-section h2 {
     color: #4da6ff;
 }
 
@@ -264,40 +175,38 @@ h1 {
     display: grid;
 
     grid-template-columns:
-    repeat(auto-fit, minmax(180px, 1fr));
+    repeat(auto-fit, minmax(190px, 1fr));
 
     gap: 15px;
 }
 
 .achievement {
     background: #182544;
-
-    border-radius: 10px;
-
-    padding: 18px;
-
+    border-radius: 12px;
+    padding: 20px;
     text-align: center;
 
-    opacity: 0.35;
+    opacity: 0.3;
+
+    transition: 0.3s;
 }
 
 .achievement.unlocked {
     opacity: 1;
-
     border: 1px solid #4da6ff;
 }
 
 .achievement-icon {
-    font-size: 35px;
+    font-size: 40px;
 }
 
 .achievement h3 {
-    margin: 8px 0;
     color: #78bbff;
+    margin: 8px 0;
 }
 
 .achievement p {
-    color: #aaaaaa;
+    color: #aaa;
     font-size: 14px;
 }
 
@@ -306,24 +215,22 @@ h1 {
 
 .buttons {
     text-align: center;
-
     margin: 30px 0;
 }
 
 .button {
     display: inline-block;
 
+    background: #4da6ff;
+    color: #07101f;
+
     padding: 12px 22px;
 
     margin: 6px;
 
-    background: #4da6ff;
-
-    color: #07101f;
+    border-radius: 8px;
 
     text-decoration: none;
-
-    border-radius: 8px;
 
     font-weight: bold;
 }
@@ -333,31 +240,18 @@ h1 {
 }
 
 
-/* FOOTER */
-
 footer {
     text-align: center;
-
     padding: 25px;
-
     margin-top: 30px;
-
     background: #111a33;
-
-    color: #999999;
+    color: #999;
 }
 
 
-/* MOBILE */
-
 @media (max-width: 600px) {
 
-    .profile-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .xp-top {
+    .xp-header {
         flex-direction: column;
         gap: 5px;
     }
@@ -372,8 +266,6 @@ footer {
 <body>
 
 
-<!-- NAVIGATION -->
-
 <nav>
 
 <a href="index.html">Home</a>
@@ -383,6 +275,8 @@ footer {
 <a href="labs.html">Labs</a>
 
 <a href="quiz.html">Quiz</a>
+
+<a href="games.html">Games</a>
 
 <a href="glossary.html">Glossary</a>
 
@@ -397,18 +291,17 @@ footer {
 
 
 <h1>
-📊 Progress Dashboard
+📊 CyberStart Dashboard
 </h1>
 
 <p class="subtitle">
-Track your CyberStart journey.
+Track your progress and unlock achievements.
 </p>
 
 
 <!-- PROFILE -->
 
-<div class="profile-header">
-
+<div class="profile">
 
 <div
 id="avatar"
@@ -418,25 +311,17 @@ class="avatar">
 
 </div>
 
-
-<div class="profile-info">
-
 <h2 id="nickname">
 CyberStudent
 </h2>
 
 <p>
-🎯 Level:
-<strong id="level">1</strong>
+Level <strong id="level">1</strong>
 </p>
 
 <p>
-⭐ Total XP:
-<strong id="totalXP">0</strong>
+⭐ <span id="totalXP">0</span> Total XP
 </p>
-
-</div>
-
 
 </div>
 
@@ -445,11 +330,10 @@ CyberStudent
 
 <div class="xp-card">
 
-
-<div class="xp-top">
+<div class="xp-header">
 
 <h2>
-⭐ XP Progress
+⭐ Level Progress
 </h2>
 
 <div
@@ -474,196 +358,101 @@ class="xp-bar">
 
 
 <p
-id="nextLevel"
-class="xp-next">
+id="xpMessage"
+class="xp-message">
 
 100 XP until Level 2
 
 </p>
-
 
 </div>
 
 
 <!-- STATS -->
 
-<div class="stats-grid">
+<div class="stats">
 
 
-<div class="stat-card">
+<div class="stat">
 
 <div class="stat-icon">
 🧠
 </div>
 
 <div
-id="bestQuiz"
+id="quizScore"
 class="stat-number">
 
 0 / 10
 
 </div>
 
-<div class="stat-label">
+<p>
 Best Quiz Score
-</div>
+</p>
 
 </div>
 
 
-<div class="stat-card">
+<div class="stat">
 
 <div class="stat-icon">
 🧪
 </div>
 
 <div
-id="labsCompleted"
+id="labs"
 class="stat-number">
 
 0 / 3
 
 </div>
 
-<div class="stat-label">
+<p>
 Labs Completed
-</div>
+</p>
 
 </div>
 
 
-<div class="stat-card">
+<div class="stat">
+
+<div class="stat-icon">
+🎮
+</div>
+
+<div
+id="games"
+class="stat-number">
+
+0 / 4
+
+</div>
+
+<p>
+Games Completed
+</p>
+
+</div>
+
+
+<div class="stat">
 
 <div class="stat-icon">
 🏆
 </div>
 
 <div
-id="achievementsCount"
+id="achievementCount"
 class="stat-number">
 
 0
 
 </div>
 
-<div class="stat-label">
+<p>
 Achievements
-</div>
-
-</div>
-
-
-<div class="stat-card">
-
-<div class="stat-icon">
-🔥
-</div>
-
-<div
-id="xpEarned"
-class="stat-number">
-
-0
-
-</div>
-
-<div class="stat-label">
-Total XP
-</div>
-
-</div>
-
-
-</div>
-
-
-<!-- ACTIVITY PROGRESS -->
-
-<div class="progress-card">
-
-
-<h2>
-📈 Course Progress
-</h2>
-
-
-<div class="progress-item">
-
-<div class="progress-title">
-
-<span>
-🧠 Quiz
-</span>
-
-<span id="quizProgressText">
-0%
-</span>
-
-</div>
-
-
-<div class="small-background">
-
-<div
-id="quizProgress"
-class="small-bar">
-</div>
-
-</div>
-
-</div>
-
-
-<div class="progress-item">
-
-<div class="progress-title">
-
-<span>
-🧪 Labs
-</span>
-
-<span id="labProgressText">
-0%
-</span>
-
-</div>
-
-
-<div class="small-background">
-
-<div
-id="labProgress"
-class="small-bar">
-</div>
-
-</div>
-
-</div>
-
-
-<div class="progress-item">
-
-<div class="progress-title">
-
-<span>
-🎯 Overall
-</span>
-
-<span id="overallProgressText">
-0%
-</span>
-
-</div>
-
-
-<div class="small-background">
-
-<div
-id="overallProgress"
-class="small-bar">
-</div>
-
-</div>
+</p>
 
 </div>
 
@@ -673,8 +462,7 @@ class="small-bar">
 
 <!-- ACHIEVEMENTS -->
 
-<div class="achievements">
-
+<div class="achievement-section">
 
 <h2>
 🏆 Achievements
@@ -684,8 +472,10 @@ class="small-bar">
 <div class="achievement-grid">
 
 
+<!-- FIRST QUIZ -->
+
 <div
-id="achievementQuiz"
+id="firstQuiz"
 class="achievement">
 
 <div class="achievement-icon">
@@ -697,14 +487,16 @@ Quiz Starter
 </h3>
 
 <p>
-Complete the quiz.
+Complete your first quiz.
 </p>
 
 </div>
 
 
+<!-- FIRST LAB -->
+
 <div
-id="achievementLab"
+id="firstLab"
 class="achievement">
 
 <div class="achievement-icon">
@@ -722,8 +514,31 @@ Complete your first lab.
 </div>
 
 
+<!-- FIRST GAME -->
+
 <div
-id="achievementXP"
+id="firstGame"
+class="achievement">
+
+<div class="achievement-icon">
+🎮
+</div>
+
+<h3>
+Game On
+</h3>
+
+<p>
+Complete your first game.
+</p>
+
+</div>
+
+
+<!-- 100 XP -->
+
+<div
+id="xp100"
 class="achievement">
 
 <div class="achievement-icon">
@@ -741,8 +556,31 @@ Earn 100 XP.
 </div>
 
 
+<!-- 250 XP -->
+
 <div
-id="achievementLevel"
+id="xp250"
+class="achievement">
+
+<div class="achievement-icon">
+💎
+</div>
+
+<h3>
+250 XP
+</h3>
+
+<p>
+Earn 250 XP.
+</p>
+
+</div>
+
+
+<!-- LEVEL 2 -->
+
+<div
+id="level2"
 class="achievement">
 
 <div class="achievement-icon">
@@ -755,6 +593,69 @@ Level 2
 
 <p>
 Reach Level 2.
+</p>
+
+</div>
+
+
+<!-- LEVEL 5 -->
+
+<div
+id="level5"
+class="achievement">
+
+<div class="achievement-icon">
+🔥
+</div>
+
+<h3>
+Level 5
+</h3>
+
+<p>
+Reach Level 5.
+</p>
+
+</div>
+
+
+<!-- ALL LABS -->
+
+<div
+id="allLabs"
+class="achievement">
+
+<div class="achievement-icon">
+🔬
+</div>
+
+<h3>
+Lab Master
+</h3>
+
+<p>
+Complete all 3 labs.
+</p>
+
+</div>
+
+
+<!-- ALL GAMES -->
+
+<div
+id="allGames"
+class="achievement">
+
+<div class="achievement-icon">
+🎯
+</div>
+
+<h3>
+Game Master
+</h3>
+
+<p>
+Complete all 4 games.
 </p>
 
 </div>
@@ -773,19 +674,25 @@ Reach Level 2.
 class="button"
 href="quiz.html">
 
-🧠 Take Quiz
+🧠 Quiz
 
 </a>
-
 
 <a
 class="button"
 href="labs.html">
 
-🧪 Explore Labs
+🧪 Labs
 
 </a>
 
+<a
+class="button"
+href="games.html">
+
+🎮 Games
+
+</a>
 
 <a
 class="button"
@@ -813,46 +720,45 @@ href="index.html">
 <script>
 
 
-/* LOAD PROFILE */
+/* PROFILE */
 
 function loadProfile() {
 
 
-const savedNickname =
+const nickname =
 localStorage.getItem(
 "cyberstartNickname"
 );
 
-
-const savedAvatar =
+const avatar =
 localStorage.getItem(
 "cyberstartAvatar"
 );
 
 
-if (savedNickname) {
+if (nickname) {
 
 document
 .getElementById("nickname")
 .textContent =
-savedNickname;
+nickname;
 
 }
 
 
-if (savedAvatar) {
+if (avatar) {
 
 document
 .getElementById("avatar")
 .textContent =
-savedAvatar;
+avatar;
 
 }
 
 }
 
 
-/* LOAD DASHBOARD */
+/* DASHBOARD */
 
 function loadDashboard() {
 
@@ -865,7 +771,7 @@ localStorage.getItem(
 ) || 0;
 
 
-let bestQuiz =
+let quiz =
 Number(
 localStorage.getItem(
 "cyberstartBestScore"
@@ -879,12 +785,8 @@ let level =
 Math.floor(xp / 100) + 1;
 
 
-let currentLevelXP =
+let currentXP =
 xp % 100;
-
-
-let xpPercent =
-currentLevelXP;
 
 
 document
@@ -900,45 +802,33 @@ xp;
 
 
 document
-.getElementById("xpEarned")
-.textContent =
-xp;
-
-
-document
 .getElementById("xpNumber")
 .textContent =
-currentLevelXP +
-" / 100 XP";
+currentXP + " / 100 XP";
 
 
 document
 .getElementById("xpBar")
 .style.width =
-xpPercent + "%";
+currentXP + "%";
 
 
-/* NEXT LEVEL */
-
-let xpNeeded =
-100 - currentLevelXP;
-
-
-if (xpNeeded === 100) {
+if (currentXP === 0) {
 
 document
-.getElementById("nextLevel")
+.getElementById("xpMessage")
 .textContent =
-"100 XP until Level 2";
+"100 XP until Level " +
+(level + 1);
 
 }
 
 else {
 
 document
-.getElementById("nextLevel")
+.getElementById("xpMessage")
 .textContent =
-xpNeeded +
+(100 - currentXP) +
 " XP until Level " +
 (level + 1);
 
@@ -948,32 +838,9 @@ xpNeeded +
 /* QUIZ */
 
 document
-.getElementById("bestQuiz")
+.getElementById("quizScore")
 .textContent =
-bestQuiz + " / 10";
-
-
-let quizPercent = 0;
-
-
-if (bestQuiz > 0) {
-
-quizPercent =
-bestQuiz * 10;
-
-}
-
-
-document
-.getElementById("quizProgress")
-.style.width =
-quizPercent + "%";
-
-
-document
-.getElementById("quizProgressText")
-.textContent =
-quizPercent + "%";
+quiz + " / 10";
 
 
 /* LABS */
@@ -986,7 +853,6 @@ let i = 1;
 i <= 3;
 i++
 ) {
-
 
 if (
 localStorage.getItem(
@@ -1003,48 +869,46 @@ labs++;
 }
 
 
-let labPercent =
-Math.round(
-(labs / 3) * 100
-);
-
-
 document
-.getElementById("labsCompleted")
+.getElementById("labs")
 .textContent =
 labs + " / 3";
 
 
-document
-.getElementById("labProgress")
-.style.width =
-labPercent + "%";
+/* GAMES */
+
+const gameNames = [
+"phishing",
+"password",
+"mfa",
+"cia"
+];
+
+
+let games = 0;
+
+
+gameNames.forEach(
+function(game) {
+
+if (
+localStorage.getItem(
+"cyberstartGame_" +
+game
+) === "true"
+) {
+
+games++;
+
+}
+
+});
 
 
 document
-.getElementById("labProgressText")
+.getElementById("games")
 .textContent =
-labPercent + "%";
-
-
-/* OVERALL */
-
-let overall =
-Math.round(
-(quizPercent + labPercent) / 2
-);
-
-
-document
-.getElementById("overallProgress")
-.style.width =
-overall + "%";
-
-
-document
-.getElementById("overallProgressText")
-.textContent =
-overall + "%";
+games + " / 4";
 
 
 /* ACHIEVEMENTS */
@@ -1052,26 +916,33 @@ overall + "%";
 let achievements = 0;
 
 
-/* QUIZ ACHIEVEMENT */
+/* FIRST QUIZ */
 
-if (bestQuiz > 0) {
+if (quiz > 0) {
 
-unlockAchievement(
-"achievementQuiz"
-);
+unlock("firstQuiz");
 
 achievements++;
 
 }
 
 
-/* LAB ACHIEVEMENT */
+/* FIRST LAB */
 
 if (labs >= 1) {
 
-unlockAchievement(
-"achievementLab"
-);
+unlock("firstLab");
+
+achievements++;
+
+}
+
+
+/* FIRST GAME */
+
+if (games >= 1) {
+
+unlock("firstGame");
 
 achievements++;
 
@@ -1082,9 +953,18 @@ achievements++;
 
 if (xp >= 100) {
 
-unlockAchievement(
-"achievementXP"
-);
+unlock("xp100");
+
+achievements++;
+
+}
+
+
+/* 250 XP */
+
+if (xp >= 250) {
+
+unlock("xp250");
 
 achievements++;
 
@@ -1095,26 +975,59 @@ achievements++;
 
 if (level >= 2) {
 
-unlockAchievement(
-"achievementLevel"
-);
+unlock("level2");
 
 achievements++;
 
 }
 
 
+/* LEVEL 5 */
+
+if (level >= 5) {
+
+unlock("level5");
+
+achievements++;
+
+}
+
+
+/* ALL LABS */
+
+if (labs === 3) {
+
+unlock("allLabs");
+
+achievements++;
+
+}
+
+
+/* ALL GAMES */
+
+if (games === 4) {
+
+unlock("allGames");
+
+achievements++;
+
+}
+
+
+/* TOTAL */
+
 document
-.getElementById("achievementsCount")
+.getElementById("achievementCount")
 .textContent =
 achievements;
 
 }
 
 
-/* UNLOCK ACHIEVEMENT */
+/* UNLOCK */
 
-function unlockAchievement(id) {
+function unlock(id) {
 
 document
 .getElementById(id)
@@ -1128,7 +1041,6 @@ document
 loadProfile();
 
 loadDashboard();
-
 
 </script>
 
