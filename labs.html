@@ -2,765 +2,1644 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>CyberStart</title>
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <style>
 
-<title>CyberStart - Labs</title>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-<style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+        }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b1020;
-    color: white;
-}
+        /* =========================
+           NAVIGATION
+        ========================= */
 
-nav {
-    background: #111a33;
-    padding: 18px;
-    text-align: center;
-}
+        nav {
+            background: #111a33;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
-    font-weight: bold;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
 
-nav a:hover {
-    color: #4da6ff;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 35px 20px;
-}
+        nav a:hover {
+            color: #38bdf8;
+        }
 
-h1 {
-    text-align: center;
-    color: #4da6ff;
-    font-size: 38px;
-}
+        /* =========================
+           HERO
+        ========================= */
 
-.intro {
-    text-align: center;
-    color: #cccccc;
-    font-size: 18px;
-    margin-bottom: 35px;
-}
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #0b1020, #111a33);
+        }
 
-.lab {
-    background: #111a33;
-    border: 1px solid #26345c;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 25px;
-}
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
 
-.lab-number {
-    color: #78bbff;
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
 
-.lab h2 {
-    color: #4da6ff;
-}
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 25px;
+            background: #38bdf8;
+            color: #07111f;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
 
-.lab p {
-    color: #dddddd;
-    line-height: 1.6;
-}
+        .hero-button:hover {
+            transform: scale(1.05);
+        }
 
-input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 13px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+        /* =========================
+           SECTIONS
+        ========================= */
 
-    background: #0b1020;
-    color: white;
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-    border: 1px solid #354878;
-    border-radius: 8px;
+        section h2 {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 35px;
+            color: #38bdf8;
+        }
 
-    font-size: 16px;
-}
+        /* =========================
+           CARDS
+        ========================= */
 
-button {
-    padding: 12px 20px;
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-    background: #4da6ff;
-    color: #07101f;
+        .card {
+            background: #111a33;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 200, 255, 0.08);
+        }
 
-    border: none;
-    border-radius: 8px;
+        .card h3 {
+            color: #7dd3fc;
+        }
 
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 5px;
-}
+        .card p {
+            line-height: 1.6;
+        }
 
-button:hover {
-    background: #78bbff;
-}
+        /* =========================
+           GLOSSARY
+        ========================= */
 
-.choice {
-    display: block;
-    width: 100%;
-    text-align: left;
+        .glossary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-    background: #182544;
-    color: white;
+        .term {
+            background: #111a33;
+            padding: 20px;
+            border-radius: 12px;
+        }
 
-    border: 1px solid #354878;
+        .term strong {
+            color: #38bdf8;
+            font-size: 20px;
+        }
 
-    margin: 8px 0;
-}
+        /* =========================
+           LABS
+        ========================= */
 
-.choice:hover {
-    background: #263b6b;
-}
+        .lab {
+            background: #111a33;
+            border: 1px solid #26345c;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
 
-.result {
-    display: none;
+        .lab-number {
+            color: #78bbff;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
-    margin-top: 15px;
-    padding: 15px;
+        .lab h3 {
+            color: #4da6ff;
+            font-size: 26px;
+        }
 
-    background: #0d162d;
+        .lab p {
+            color: #dddddd;
+            line-height: 1.6;
+        }
 
-    border-radius: 8px;
+        .lab input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background: #0b1020;
+            color: white;
+            border: 1px solid #354878;
+            border-radius: 8px;
+            font-size: 16px;
+        }
 
-    line-height: 1.6;
-}
+        .lab-button {
+            padding: 12px 20px;
+            background: #4da6ff;
+            color: #07101f;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+        }
 
-.xp {
-    color: #78bbff;
-    font-weight: bold;
-}
+        .lab-button:hover {
+            background: #78bbff;
+        }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 30px;
+        .choice {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: #182544;
+            color: white;
+            border: 1px solid #354878;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
 
-    background: #111a33;
-    color: #999999;
-}
+        .choice:hover {
+            background: #263b6b;
+        }
 
-</style>
+        .result {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #0d162d;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
 
+        .xp {
+            color: #78bbff;
+            font-weight: bold;
+        }
+
+        .lab-note {
+            font-size: 14px;
+            color: #94a3b8 !important;
+        }
+
+        /* =========================
+           CHALLENGE
+        ========================= */
+
+        .challenge-section {
+            text-align: center;
+        }
+
+        .challenge-card {
+            max-width: 700px;
+            margin: auto;
+            background: #111a33;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.15);
+        }
+
+        .challenge-card h2 {
+            margin-bottom: 10px;
+        }
+
+        .challenge-card h3 {
+            font-size: 22px;
+            margin: 25px 0;
+            line-height: 1.4;
+        }
+
+        #questionNumber {
+            color: #7dd3fc;
+            font-weight: bold;
+        }
+
+        .answers {
+            display: grid;
+            gap: 12px;
+        }
+
+        .answers button,
+        #nextButton {
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #1e2a4a;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .answers button:hover,
+        #nextButton:hover {
+            transform: scale(1.03);
+            background: #26375f;
+        }
+
+        .answers button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        #feedback {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        #score {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px;
+        }
+
+        #nextButton {
+            background: #38bdf8;
+            color: #07111f;
+            font-weight: bold;
+        }
+
+        /* =========================
+           XP DISPLAY
+        ========================= */
+
+        .xp-display {
+            max-width: 1100px;
+            margin: 30px auto 0;
+            padding: 20px;
+            background: #111a33;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .xp-display h3 {
+            color: #38bdf8;
+            margin: 0 0 8px;
+        }
+
+        #totalXP {
+            font-size: 28px;
+            font-weight: bold;
+            color: #78bbff;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            background: #111a33;
+            padding: 30px;
+            margin-top: 40px;
+            color: #94a3b8;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+        }
+
+    </style>
 </head>
 
 
 <body>
 
 
-<nav>
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
-<a href="index.html">Home</a>
+    <nav>
 
-<a href="lessons.html">Lessons</a>
+        <div class="logo">
+            🛡️ CyberStart
+        </div>
 
-<a href="labs.html">Labs</a>
+        <div>
 
-<a href="quiz.html">Quiz</a>
+            <a href="#home">Home</a>
 
-<a href="glossary.html">Glossary</a>
+            <a href="#lessons">Lessons</a>
 
-<a href="profile.html">Profile</a>
+            <a href="#labs">Labs</a>
 
-</nav>
+            <a href="#glossary">Glossary</a>
 
+            <a href="#challenge">Challenge</a>
 
-<div class="container">
+        </div>
 
+    </nav>
 
-<h1>Cybersecurity Labs</h1>
 
+    <!-- =========================
+         HERO
+    ========================= -->
 
-<p class="intro">
+    <header class="hero" id="home">
 
-Learn cybersecurity by experimenting with
-safe, interactive simulations.
+        <h1>CyberStart</h1>
 
-</p>
+        <p>
+            Learn cybersecurity, understand digital threats,
+            experiment with safe labs, and test your skills.
+        </p>
 
+        <a class="hero-button" href="#challenge">
+            🚀 Start the Challenge
+        </a>
 
-<!-- LAB 1 -->
+    </header>
 
-<div class="lab">
 
-<div class="lab-number">
-LAB 1
-</div>
+    <!-- =========================
+         XP DISPLAY
+    ========================= -->
 
+    <div class="xp-display">
 
-<h2>
-Password Strength Experiment
-</h2>
+        <h3>🏆 CyberStart XP</h3>
 
+        <div id="totalXP">
+            0 XP
+        </div>
 
-<p>
-Enter an example password and see what
-characteristics make it stronger or weaker.
-</p>
+    </div>
 
 
-<input
-type="text"
-id="passwordInput"
-placeholder="Enter an example password"
->
+    <!-- =========================
+         LESSONS
+    ========================= -->
 
+    <section id="lessons">
 
-<button onclick="checkPassword()">
-Analyze Password
-</button>
+        <h2>📚 Cybersecurity Lessons</h2>
 
+        <div class="cards">
 
-<div
-class="result"
-id="passwordResult">
-</div>
 
-</div>
+            <div class="card">
 
+                <h3>🛡️ What Is Cybersecurity?</h3>
 
-<!-- LAB 2 -->
+                <p>
+                    Cybersecurity is the practice of protecting
+                    computers, networks, accounts, and information
+                    from digital threats.
+                </p>
 
-<div class="lab">
+            </div>
 
-<div class="lab-number">
-LAB 2
-</div>
 
+            <div class="card">
 
-<h2>
-Phishing Detective
-</h2>
+                <h3>🎣 What Is Phishing?</h3>
 
+                <p>
+                    Phishing is a scam where someone tries to trick
+                    you into giving away information or clicking
+                    something dangerous.
+                </p>
 
-<p>
-You receive this fictional message:
-</p>
+            </div>
 
 
-<p>
+            <div class="card">
 
-<strong>
-"URGENT! Your account will be locked today.
-Click the link immediately to verify your account."
-</strong>
+                <h3>🔑 Strong Passwords</h3>
 
-</p>
+                <p>
+                    Strong passwords are harder for attackers to
+                    guess. Using unique passwords and additional
+                    security such as MFA can help protect accounts.
+                </p>
 
+            </div>
 
-<p>
-What is the safest response?
-</p>
 
+            <div class="card">
 
-<button
-class="choice"
-onclick="phishingAnswer(false)">
-A. Click the link immediately
-</button>
+                <h3>📱 Multi-Factor Authentication</h3>
 
+                <p>
+                    MFA adds another verification step when signing
+                    into an account, making it harder for someone
+                    else to access it.
+                </p>
 
-<button
-class="choice"
-onclick="phishingAnswer(true)">
-B. Verify the message using a trusted source
-</button>
+            </div>
 
 
-<button
-class="choice"
-onclick="phishingAnswer(false)">
-C. Reply with your password
-</button>
+            <div class="card">
 
+                <h3>🦠 Malware</h3>
 
-<button
-class="choice"
-onclick="phishingAnswer(false)">
-D. Forward it to everyone
-</button>
+                <p>
+                    Malware is malicious software designed to
+                    disrupt systems, steal information, or perform
+                    other unwanted actions.
+                </p>
 
+            </div>
 
-<div
-class="result"
-id="phishingResult">
-</div>
 
-</div>
+            <div class="card">
 
+                <h3>🌐 Network Security</h3>
 
-<!-- LAB 3 -->
+                <p>
+                    Network security involves protecting systems
+                    and information as they communicate across
+                    networks.
+                </p>
 
-<div class="lab">
+            </div>
 
-<div class="lab-number">
-LAB 3
-</div>
 
+        </div>
 
-<h2>
-Hashing Experiment
-</h2>
+    </section>
 
 
-<p>
-Hash functions turn input data into a fixed-length
-value. Even a small change to the input can produce
-a different hash.
-</p>
+    <!-- =========================
+         LABS
+    ========================= -->
 
+    <section id="labs">
 
-<input
-type="text"
-id="hashInput"
-placeholder="Enter sample text"
->
+        <h2>🧪 Cybersecurity Labs</h2>
 
+        <p style="text-align:center; color:#cccccc; font-size:18px;">
+            Learn cybersecurity by experimenting with
+            safe, interactive simulations.
+        </p>
 
-<button onclick="generateHash()">
-Generate Demo Hash
-</button>
 
+        <!-- LAB 1 -->
 
-<div
-class="result"
-id="hashResult">
-</div>
+        <div class="lab">
 
+            <div class="lab-number">
+                LAB 1
+            </div>
 
-<p>
+            <h3>
+                🔑 Password Strength Experiment
+            </h3>
 
-<strong>Note:</strong>
-This is an educational demonstration.
-Do not enter real passwords or sensitive information.
+            <p>
+                Enter an example password and see what
+                characteristics make it stronger or weaker.
+            </p>
 
-</p>
+            <p class="lab-note">
+                ⚠️ Use an example password only. Never enter a real password.
+            </p>
 
-</div>
+            <input
+                type="text"
+                id="passwordInput"
+                placeholder="Enter an example password"
+            >
 
+            <button
+                class="lab-button"
+                onclick="checkPassword()">
+                Analyze Password
+            </button>
 
-</div>
+            <div
+                class="result"
+                id="passwordResult">
+            </div>
 
+        </div>
 
-<footer>
 
-<p>
-© 2026 CyberStart | Learn. Explore. Stay Secure.
-</p>
+        <!-- LAB 2 -->
 
-</footer>
+        <div class="lab">
 
+            <div class="lab-number">
+                LAB 2
+            </div>
 
-<script>
+            <h3>
+                🎣 Phishing Detective
+            </h3>
 
+            <p>
+                You receive this fictional message:
+            </p>
 
-/*
-LAB 1
-PASSWORD STRENGTH
-*/
+            <p>
+                <strong>
+                    "URGENT! Your account will be locked today.
+                    Click the link immediately to verify your account."
+                </strong>
+            </p>
 
-function checkPassword() {
+            <p>
+                What is the safest response?
+            </p>
 
 
-const password =
-document
-.getElementById("passwordInput")
-.value;
+            <button
+                class="choice"
+                onclick="phishingAnswer(false)">
+                A. Click the link immediately
+            </button>
 
 
-const result =
-document
-.getElementById("passwordResult");
+            <button
+                class="choice"
+                onclick="phishingAnswer(true)">
+                B. Verify the message using a trusted source
+            </button>
 
 
-if (password.length === 0) {
+            <button
+                class="choice"
+                onclick="phishingAnswer(false)">
+                C. Reply with your password
+            </button>
 
-result.style.display = "block";
 
-result.innerHTML =
-"Enter an example password to analyze it.";
+            <button
+                class="choice"
+                onclick="phishingAnswer(false)">
+                D. Forward it to everyone
+            </button>
 
-return;
 
-}
+            <div
+                class="result"
+                id="phishingResult">
+            </div>
 
+        </div>
 
-let score = 0;
 
-let feedback = [];
+        <!-- LAB 3 -->
 
+        <div class="lab">
 
-if (password.length >= 12) {
+            <div class="lab-number">
+                LAB 3
+            </div>
 
-score++;
+            <h3>
+                #️⃣ Hashing Experiment
+            </h3>
 
-}
+            <p>
+                Hash functions turn input data into a fixed-length
+                value. Even a small change to the input can produce
+                a different hash.
+            </p>
 
-else {
+            <input
+                type="text"
+                id="hashInput"
+                placeholder="Enter sample text"
+            >
 
-feedback.push(
-"Try using at least 12 characters."
-);
+            <button
+                class="lab-button"
+                onclick="generateHash()">
+                Generate Demo Hash
+            </button>
 
-}
+            <div
+                class="result"
+                id="hashResult">
+            </div>
 
+            <p class="lab-note">
 
-if (/[A-Z]/.test(password)) {
+                <strong>Note:</strong>
+                This is an educational demonstration.
+                Do not enter real passwords or sensitive information.
 
-score++;
+            </p>
 
-}
+        </div>
 
-else {
+    </section>
 
-feedback.push(
-"Consider including uppercase letters."
-);
 
-}
+    <!-- =========================
+         GLOSSARY
+    ========================= -->
 
+    <section id="glossary">
 
-if (/[a-z]/.test(password)) {
+        <h2>📖 Cybersecurity Glossary</h2>
 
-score++;
+        <div class="glossary">
 
-}
 
-else {
+            <div class="term">
 
-feedback.push(
-"Consider including lowercase letters."
-);
+                <strong>Phishing</strong>
 
-}
+                <p>
+                    A scam designed to trick people into revealing
+                    information or taking an unsafe action.
+                </p>
 
+            </div>
 
-if (/[0-9]/.test(password)) {
 
-score++;
+            <div class="term">
 
-}
+                <strong>Malware</strong>
 
-else {
+                <p>
+                    Malicious software that can harm systems or
+                    perform unwanted actions.
+                </p>
 
-feedback.push(
-"Consider including numbers."
-);
+            </div>
 
-}
 
+            <div class="term">
 
-if (/[^A-Za-z0-9]/.test(password)) {
+                <strong>Firewall</strong>
 
-score++;
+                <p>
+                    A security system that helps control network
+                    traffic based on security rules.
+                </p>
 
-}
+            </div>
 
-else {
 
-feedback.push(
-"Consider including symbols."
-);
+            <div class="term">
 
-}
+                <strong>MFA</strong>
 
+                <p>
+                    Multi-Factor Authentication. It requires more
+                    than one verification factor to access an account.
+                </p>
 
-result.style.display = "block";
+            </div>
 
 
-if (score >= 5) {
+            <div class="term">
 
+                <strong>Encryption</strong>
 
-result.innerHTML =
+                <p>
+                    A process that transforms information so it can
+                    only be properly understood by someone with the
+                    required key or method.
+                </p>
 
-"<strong>Good characteristics!</strong><br>" +
+            </div>
 
-"This example contains several characteristics " +
 
-"commonly associated with stronger passwords." +
+            <div class="term">
 
-"<br><br>" +
+                <strong>VPN</strong>
 
-"<span class='xp'>+25 XP — Lab 1 Complete!</span>";
+                <p>
+                    A Virtual Private Network can create an
+                    encrypted connection between a device and a
+                    VPN server.
+                </p>
 
+            </div>
 
-awardLabXP(1);
 
+            <div class="term">
 
-}
+                <strong>Vulnerability</strong>
 
-else {
+                <p>
+                    A weakness that could potentially be exploited
+                    to compromise a system.
+                </p>
 
+            </div>
 
-result.innerHTML =
 
-"<strong>Room for improvement.</strong><br>" +
+            <div class="term">
 
-feedback.join("<br>");
+                <strong>Authentication</strong>
 
-}
+                <p>
+                    The process of verifying someone's identity
+                    before allowing access.
+                </p>
 
-}
+            </div>
 
 
-/*
-LAB 2
-PHISHING DETECTIVE
-*/
+            <div class="term">
 
-function phishingAnswer(correct) {
+                <strong>Cyber Attack</strong>
 
+                <p>
+                    An attempt to gain unauthorized access,
+                    disrupt systems, or steal information.
+                </p>
 
-const result =
-document
-.getElementById("phishingResult");
+            </div>
 
 
-result.style.display = "block";
+        </div>
 
+    </section>
 
-if (correct) {
 
+    <!-- =========================
+         CYBERSTART CHALLENGE
+    ========================= -->
 
-result.innerHTML =
+    <section id="challenge" class="challenge-section">
 
-"<strong>Correct! 🎯</strong><br>" +
+        <div class="challenge-card">
 
-"Urgent language and unexpected requests " +
+            <h2>🛡️ CyberStart Challenge</h2>
 
-"are common warning signs. Verify the message " +
+            <p>
+                Think you can spot a cyber threat?
+                Test your cybersecurity skills!
+            </p>
 
-"using a trusted source instead of using a " +
+            <div id="questionNumber">
+                Question 1 of 5
+            </div>
 
-"suspicious link." +
+            <h3 id="question">
+                Which password is the strongest?
+            </h3>
 
-"<br><br>" +
+            <div class="answers">
 
-"<span class='xp'>+25 XP — Lab 2 Complete!</span>";
+                <button onclick="checkAnswer(0)">
+                    password123
+                </button>
 
+                <button onclick="checkAnswer(1)">
+                    CyberStart2026
+                </button>
 
-awardLabXP(2);
+                <button onclick="checkAnswer(2)">
+                    T!9q#L2@vX7$k
+                </button>
 
+                <button onclick="checkAnswer(3)">
+                    123456789
+                </button>
 
-}
+            </div>
 
-else {
+            <p id="feedback"></p>
 
+            <div id="score">
+                Score: 0
+            </div>
 
-result.innerHTML =
+            <button
+                id="nextButton"
+                onclick="nextQuestion()"
+                style="display:none;">
+                Next Question →
+            </button>
 
-"<strong>Not the safest choice.</strong><br>" +
+        </div>
 
-"Do not provide sensitive information or click " +
+    </section>
 
-"unexpected links. Verify the message through " +
 
-"a trusted method.";
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-}
+    <footer>
 
-}
+        <p>
+            🛡️ CyberStart
+        </p>
 
+        <p>
+            Learn. Practice. Stay Secure.
+        </p>
 
-/*
-LAB 3
-HASHING
-*/
+        <p>
+            © 2026 CyberStart
+        </p>
 
-async function generateHash() {
+    </footer>
 
 
-const text =
-document
-.getElementById("hashInput")
-.value;
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
+    <script>
 
-const result =
-document
-.getElementById("hashResult");
 
+        /* =========================
+           XP SYSTEM
+        ========================= */
 
-if (text.length === 0) {
+        function awardLabXP(labNumber) {
 
-result.style.display = "block";
+            const labKey =
+                "cyberstartLab" +
+                labNumber +
+                "Completed";
 
-result.innerHTML =
-"Enter some sample text first.";
+            const alreadyCompleted =
+                localStorage.getItem(labKey);
 
-return;
 
-}
+            if (alreadyCompleted === "true") {
+                return;
+            }
 
 
-const encoder =
-new TextEncoder();
+            let currentXP =
+                Number(
+                    localStorage.getItem("cyberstartXP")
+                ) || 0;
 
 
-const data =
-encoder.encode(text);
+            currentXP += 25;
 
 
-const hashBuffer =
-await crypto.subtle.digest(
-"SHA-256",
-data
-);
+            localStorage.setItem(
+                "cyberstartXP",
+                currentXP
+            );
 
 
-const hashArray =
-Array.from(
-new Uint8Array(hashBuffer)
-);
+            localStorage.setItem(
+                labKey,
+                "true"
+            );
 
 
-const hashHex =
-hashArray
-.map(
-byte =>
-byte
-.toString(16)
-.padStart(2, "0")
-)
-.join("");
+            updateXPDisplay();
 
+        }
 
-result.style.display = "block";
 
+        function updateXPDisplay() {
 
-result.innerHTML =
+            const xp =
+                Number(
+                    localStorage.getItem("cyberstartXP")
+                ) || 0;
 
-"<strong>SHA-256 Demo Hash:</strong><br>" +
 
-"<span style='word-break:break-all;'>" +
+            document.getElementById("totalXP").textContent =
+                xp + " XP";
 
-hashHex +
+        }
 
-"</span>" +
 
-"<br><br>" +
+        /* =========================
+           LAB 1
+           PASSWORD STRENGTH
+        ========================= */
 
-"Change even one character and generate " +
+        function checkPassword() {
 
-"the hash again to see how the output changes." +
+            const password =
+                document
+                .getElementById("passwordInput")
+                .value;
 
-"<br><br>" +
 
-"<span class='xp'>+25 XP — Lab 3 Complete!</span>";
+            const result =
+                document
+                .getElementById("passwordResult");
 
 
-awardLabXP(3);
+            if (password.length === 0) {
 
-}
+                result.style.display = "block";
 
+                result.innerHTML =
+                    "Enter an example password to analyze it.";
 
-/*
-XP SYSTEM
-*/
+                return;
 
-function awardLabXP(labNumber) {
+            }
 
 
-const labKey =
-"cyberstartLab" +
-labNumber +
-"Completed";
+            let score = 0;
 
+            let feedback = [];
 
-const alreadyCompleted =
-localStorage.getItem(labKey);
 
+            if (password.length >= 12) {
 
-if (alreadyCompleted === "true") {
+                score++;
 
-return;
+            }
 
-}
+            else {
 
+                feedback.push(
+                    "Try using at least 12 characters."
+                );
 
-let currentXP =
-Number(
-localStorage.getItem("cyberstartXP")
-) || 0;
+            }
 
 
-currentXP += 25;
+            if (/[A-Z]/.test(password)) {
 
+                score++;
 
-localStorage.setItem(
-"cyberstartXP",
-currentXP
-);
+            }
 
+            else {
 
-localStorage.setItem(
-labKey,
-"true"
-);
+                feedback.push(
+                    "Consider including uppercase letters."
+                );
 
+            }
 
-}
 
+            if (/[a-z]/.test(password)) {
 
-/*
-SHOW EXISTING COMPLETION
-*/
+                score++;
 
-function checkCompletedLabs() {
+            }
 
+            else {
 
-for (
-let i = 1;
-i <= 3;
-i++
-) {
+                feedback.push(
+                    "Consider including lowercase letters."
+                );
 
+            }
 
-const completed =
-localStorage.getItem(
-"cyberstartLab" +
-i +
-"Completed"
-);
 
+            if (/[0-9]/.test(password)) {
 
-if (completed === "true") {
+                score++;
 
-console.log(
-"Lab " +
-i +
-" already completed."
-);
+            }
 
-}
+            else {
 
-}
+                feedback.push(
+                    "Consider including numbers."
+                );
 
-}
+            }
 
 
-checkCompletedLabs();
+            if (/[^A-Za-z0-9]/.test(password)) {
 
+                score++;
 
-</script>
+            }
 
+            else {
+
+                feedback.push(
+                    "Consider including symbols."
+                );
+
+            }
+
+
+            result.style.display = "block";
+
+
+            if (score >= 5) {
+
+                result.innerHTML =
+
+                    "<strong>Good characteristics!</strong><br>" +
+
+                    "This example contains several characteristics " +
+
+                    "commonly associated with stronger passwords." +
+
+                    "<br><br>" +
+
+                    "<span class='xp'>+25 XP — Lab 1 Complete!</span>";
+
+
+                awardLabXP(1);
+
+            }
+
+            else {
+
+                result.innerHTML =
+
+                    "<strong>Room for improvement.</strong><br>" +
+
+                    feedback.join("<br>");
+
+            }
+
+        }
+
+
+        /* =========================
+           LAB 2
+           PHISHING DETECTIVE
+        ========================= */
+
+        function phishingAnswer(correct) {
+
+            const result =
+                document
+                .getElementById("phishingResult");
+
+
+            result.style.display = "block";
+
+
+            if (correct) {
+
+                result.innerHTML =
+
+                    "<strong>Correct! 🎯</strong><br>" +
+
+                    "Urgent language and unexpected requests " +
+
+                    "are common warning signs. Verify the message " +
+
+                    "using a trusted source instead of using a " +
+
+                    "suspicious link." +
+
+                    "<br><br>" +
+
+                    "<span class='xp'>+25 XP — Lab 2 Complete!</span>";
+
+
+                awardLabXP(2);
+
+            }
+
+            else {
+
+                result.innerHTML =
+
+                    "<strong>Not the safest choice.</strong><br>" +
+
+                    "Do not provide sensitive information or click " +
+
+                    "unexpected links. Verify the message through " +
+
+                    "a trusted method.";
+
+            }
+
+        }
+
+
+        /* =========================
+           LAB 3
+           SHA-256 HASHING
+        ========================= */
+
+        async function generateHash() {
+
+            const text =
+                document
+                .getElementById("hashInput")
+                .value;
+
+
+            const result =
+                document
+                .getElementById("hashResult");
+
+
+            if (text.length === 0) {
+
+                result.style.display = "block";
+
+                result.innerHTML =
+                    "Enter some sample text first.";
+
+                return;
+
+            }
+
+
+            const encoder =
+                new TextEncoder();
+
+
+            const data =
+                encoder.encode(text);
+
+
+            const hashBuffer =
+                await crypto.subtle.digest(
+                    "SHA-256",
+                    data
+                );
+
+
+            const hashArray =
+                Array.from(
+                    new Uint8Array(hashBuffer)
+                );
+
+
+            const hashHex =
+                hashArray
+                .map(
+                    byte =>
+                        byte
+                        .toString(16)
+                        .padStart(2, "0")
+                )
+                .join("");
+
+
+            result.style.display = "block";
+
+
+            result.innerHTML =
+
+                "<strong>SHA-256 Demo Hash:</strong><br>" +
+
+                "<span style='word-break:break-all;'>" +
+
+                hashHex +
+
+                "</span>" +
+
+                "<br><br>" +
+
+                "Change even one character and generate " +
+
+                "the hash again to see how the output changes." +
+
+                "<br><br>" +
+
+                "<span class='xp'>+25 XP — Lab 3 Complete!</span>";
+
+
+            awardLabXP(3);
+
+        }
+
+
+        /* =========================
+           CYBERSTART CHALLENGE
+        ========================= */
+
+        const questions = [
+
+            {
+                question:
+                    "Which password is the strongest?",
+
+                answers: [
+                    "password123",
+                    "CyberStart2026",
+                    "T!9q#L2@vX7$k",
+                    "123456789"
+                ],
+
+                correct: 2
+            },
+
+
+            {
+                question:
+                    "You receive an email saying you won a prize you never entered for. What should you do?",
+
+                answers: [
+                    "Click the link immediately",
+                    "Send them your information",
+                    "Ignore it and verify the message through an official source",
+                    "Forward it to everyone"
+                ],
+
+                correct: 2
+            },
+
+
+            {
+                question:
+                    "What does MFA help protect?",
+
+                answers: [
+                    "Your computer's screen brightness",
+                    "Your accounts",
+                    "Your internet speed",
+                    "Your keyboard"
+                ],
+
+                correct: 1
+            },
+
+
+            {
+                question:
+                    "What is phishing?",
+
+                answers: [
+                    "A type of computer hardware",
+                    "A method of tricking people into giving up information",
+                    "A programming language",
+                    "A type of Wi-Fi"
+                ],
+
+                correct: 1
+            },
+
+
+            {
+                question:
+                    "What should you do if you find a suspicious USB drive?",
+
+                answers: [
+                    "Plug it into your computer to see what's on it",
+                    "Give it to a friend",
+                    "Don't plug it in and report it to a trusted person",
+                    "Put it in another computer"
+                ],
+
+                correct: 2
+            }
+
+        ];
+
+
+        let currentQuestion = 0;
+
+        let points = 0;
+
+        let answered = false;
+
+
+        function loadQuestion() {
+
+            answered = false;
+
+
+            const q =
+                questions[currentQuestion];
+
+
+            document
+                .getElementById("questionNumber")
+                .textContent =
+
+                "Question " +
+                (currentQuestion + 1) +
+                " of " +
+                questions.length;
+
+
+            document
+                .getElementById("question")
+                .textContent =
+                q.question;
+
+
+            document
+                .getElementById("feedback")
+                .textContent =
+                "";
+
+
+            document
+                .getElementById("score")
+                .textContent =
+                "Score: " + points;
+
+
+            document
+                .getElementById("nextButton")
+                .style.display =
+                "none";
+
+
+            const buttons =
+                document
+                .querySelectorAll(
+                    ".answers button"
+                );
+
+
+            buttons.forEach(
+                (button, index) => {
+
+                    button.textContent =
+                        q.answers[index];
+
+                    button.disabled =
+                        false;
+
+                }
+            );
+
+        }
+
+
+        function checkAnswer(answer) {
+
+            if (answered) return;
+
+
+            answered = true;
+
+
+            const q =
+                questions[currentQuestion];
+
+
+            const buttons =
+                document
+                .querySelectorAll(
+                    ".answers button"
+                );
+
+
+            buttons.forEach(
+                button => {
+
+                    button.disabled =
+                        true;
+
+                }
+            );
+
+
+            if (answer === q.correct) {
+
+                points++;
+
+
+                document
+                    .getElementById("feedback")
+                    .textContent =
+                    "✅ Correct! Nice work.";
+
+            }
+
+            else {
+
+                document
+                    .getElementById("feedback")
+                    .textContent =
+                    "❌ Not quite. Keep learning.";
+
+            }
+
+
+            document
+                .getElementById("score")
+                .textContent =
+                "Score: " + points;
+
+
+            document
+                .getElementById("nextButton")
+                .style.display =
+                "inline-block";
+
+        }
+
+
+        function nextQuestion() {
+
+            currentQuestion++;
+
+
+            if (
+                currentQuestion <
+                questions.length
+            ) {
+
+                loadQuestion();
+
+            }
+
+            else {
+
+                document
+                    .getElementById("questionNumber")
+                    .textContent =
+                    "🏁 Challenge Complete!";
+
+
+                document
+                    .getElementById("question")
+                    .textContent =
+                    "You scored " +
+                    points +
+                    " out of " +
+                    questions.length +
+                    "!";
+
+
+                document
+                    .querySelector(".answers")
+                    .innerHTML =
+                    "";
+
+
+                if (points === 5) {
+
+                    document
+                        .getElementById("feedback")
+                        .textContent =
+                        "🏆 PERFECT SCORE! You're a CyberStart pro!";
+
+                }
+
+                else if (points >= 3) {
+
+                    document
+                        .getElementById("feedback")
+                        .textContent =
+                        "🔥 Great job! Keep sharpening your skills.";
+
+                }
+
+                else {
+
+                    document
+                        .getElementById("feedback")
+                        .textContent =
+                        "💻 Good attempt! Check out the lessons and try again.";
+
+                }
+
+
+                document
+                    .getElementById("nextButton")
+                    .textContent =
+                    "🔄 Play Again";
+
+
+                document
+                    .getElementById("nextButton")
+                    .style.display =
+                    "inline-block";
+
+
+                document
+                    .getElementById("nextButton")
+                    .onclick =
+                    restartChallenge;
+
+            }
+
+        }
+
+
+        function restartChallenge() {
+
+            currentQuestion = 0;
+
+            points = 0;
+
+            document
+                .querySelector(".answers")
+                .innerHTML =
+
+                `
+                <button onclick="checkAnswer(0)">
+                    password123
+                </button>
+
+                <button onclick="checkAnswer(1)">
+                    CyberStart2026
+                </button>
+
+                <button onclick="checkAnswer(2)">
+                    T!9q#L2@vX7$k
+                </button>
+
+                <button onclick="checkAnswer(3)">
+                    123456789
+                </button>
+                `;
+
+
+            document
+                .getElementById("nextButton")
+                .onclick =
+                nextQuestion;
+
+
+            loadQuestion();
+
+        }
+
+
+        /* =========================
+           STARTUP
+        ========================= */
+
+        updateXPDisplay();
+
+        loadQuestion();
+
+    </script>
 
 </body>
 
