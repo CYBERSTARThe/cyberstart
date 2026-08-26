@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>CyberStart - Games</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
+
+nav {
+    background: #111a33;
+    padding: 18px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 7px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #4da6ff;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #4da6ff;
+    font-size: 40px;
+}
+
+.intro {
+    text-align: center;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.game {
+    background: #111a33;
+    border: 1px solid #26345c;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.game h2 {
+    color: #78bbff;
+}
+
+.game p {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.choice {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px;
+    margin: 10px 0;
+
+    background: #182544;
+    color: white;
+
+    border: 1px solid #354878;
+    border-radius: 8px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.choice:hover {
+    background: #263b6b;
+}
+
+.result {
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: #0d162d;
+
+    border-radius: 8px;
+
+    color: #dddddd;
+
+    line-height: 1.6;
+}
+
+.xp {
+    color: #78bbff;
+    font-weight: bold;
+}
+
+.restart {
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 12px 20px;
+
+    background: #4da6ff;
+    color: #07101f;
+
+    border: none;
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.restart:hover {
+    background: #78bbff;
+}
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 30px;
+
+    background: #111a33;
+
+    color: #999999;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="lessons.html">Lessons</a>
+
+<a href="labs.html">Labs</a>
+
+<a href="quiz.html">Quiz</a>
+
+<a href="games.html">Games</a>
+
+<a href="glossary.html">Glossary</a>
+
+<a href="profile.html">Profile</a>
+
+<a href="feedback.html">Feedback</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<h1>
+🎮 CyberStart Games
+</h1>
+
+
+<p class="intro">
+
+Learn cybersecurity while having some fun.
+
+Choose a game below and test your skills.
+
+</p>
+
+
+<!-- GAME 1 -->
+
+<div class="game">
+
+<h2>
+🕵️ Phishing Detective
+</h2>
+
+<p>
+
+You receive this message:
+
+</p>
+
+<p>
+
+<strong>
+"URGENT! Your account will be deleted today!
+Click this link immediately to verify your account!"
+</strong>
+
+</p>
+
+<p>
+What should you do?
+</p>
+
+
+<button
+class="choice"
+onclick="phishingGame(true)">
+
+A. Verify the message using a trusted source
+
+</button>
+
+
+<button
+class="choice"
+onclick="phishingGame(false)">
+
+B. Click the link immediately
+
+</button>
+
+
+<button
+class="choice"
+onclick="phishingGame(false)">
+
+C. Send them your password
+
+</button>
+
+
+<div
+id="phishingResult"
+class="result">
+</div>
+
+</div>
+
+
+<!-- GAME 2 -->
+
+<div class="game">
+
+<h2>
+🔐 Password Builder
+</h2>
+
+<p>
+
+Which example has the strongest characteristics?
+
+</p>
+
+
+<button
+class="choice"
+onclick="passwordGame(false)">
+
+A. password123
+
+</button>
+
+
+<button
+class="choice"
+onclick="passwordGame(false)">
+
+B. MyDog2026
+
+</button>
+
+
+<button
+class="choice"
+onclick="passwordGame(true)">
+
+C. A long, unique password with mixed character types
+
+</button>
+
+
+<div
+id="passwordResult"
+class="result">
+</div>
+
+</div>
+
+
+<!-- GAME 3 -->
+
+<div class="game">
+
+<h2>
+🧠 Cyber Challenge
+</h2>
+
+<p>
+
+What does MFA stand for?
+
+</p>
+
+
+<button
+class="choice"
+onclick="mfaGame(false)">
+
+A. Main Firewall Access
+
+</button>
+
+
+<button
+class="choice"
+onclick="mfaGame(true)">
+
+B. Multi-Factor Authentication
+
+</button>
+
+
+<button
+class="choice"
+onclick="mfaGame(false)">
+
+C. Malware File Analysis
+
+</button>
+
+
+<div
+id="mfaResult"
+class="result">
+</div>
+
+</div>
+
+
+<!-- GAME 4 -->
+
+<div class="game">
+
+<h2>
+🛡️ CIA Triad Challenge
+</h2>
+
+<p>
+
+Which part of the CIA Triad focuses on
+keeping information accurate and protected
+from unauthorized changes?
+
+</p>
+
+
+<button
+class="choice"
+onclick="ciaGame(false)">
+
+A. Confidentiality
+
+</button>
+
+
+<button
+class="choice"
+onclick="ciaGame(true)">
+
+B. Integrity
+
+</button>
+
+
+<button
+class="choice"
+onclick="ciaGame(false)">
+
+C. Availability
+
+</button>
+
+
+<div
+id="ciaResult"
+class="result">
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+<p>
+© 2026 CyberStart | Learn. Explore. Stay Secure.
+</p>
+
+</footer>
+
+
+<script>
+
+
+/* XP SYSTEM */
+
+function awardGameXP(gameName) {
+
+
+const key =
+"cyberstartGame_" +
+gameName;
+
+
+if (
+localStorage.getItem(key)
+=== "true"
+) {
+
+return false;
+
+}
+
+
+let xp =
+Number(
+localStorage.getItem(
+"cyberstartXP"
+)
+) || 0;
+
+
+xp += 10;
+
+
+localStorage.setItem(
+"cyberstartXP",
+xp
+);
+
+
+localStorage.setItem(
+key,
+"true"
+);
+
+
+return true;
+
+}
+
+
+/* PHISHING */
+
+function phishingGame(correct) {
+
+
+const result =
+document.getElementById(
+"phishingResult"
+);
+
+
+result.style.display =
+"block";
+
+
+if (correct) {
+
+
+let earned =
+awardGameXP("phishing");
+
+
+result.innerHTML =
+
+"🎯 <strong>Correct!</strong><br>" +
+
+"Urgent messages and unexpected links " +
+
+"can be warning signs of phishing. " +
+
+"Verify messages through a trusted method.";
+
+
+if (earned) {
+
+result.innerHTML +=
+"<br><br><span class='xp'>+10 XP!</span>";
+
+}
+
+}
+
+else {
+
+
+result.innerHTML =
+
+"❌ Not quite.<br>" +
+
+"Don't immediately click suspicious links " +
+
+"or provide sensitive information.";
+
+}
+
+}
+
+
+/* PASSWORD */
+
+function passwordGame(correct) {
+
+
+const result =
+document.getElementById(
+"passwordResult"
+);
+
+
+result.style.display =
+"block";
+
+
+if (correct) {
+
+
+let earned =
+awardGameXP("password");
+
+
+result.innerHTML =
+
+"🎯 <strong>Correct!</strong><br>" +
+
+"Long, unique passwords are generally " +
+
+"more resistant to guessing attacks.";
+
+
+if (earned) {
+
+result.innerHTML +=
+"<br><br><span class='xp'>+10 XP!</span>";
+
+}
+
+}
+
+else {
+
+
+result.innerHTML =
+
+"❌ Not quite.<br>" +
+
+"Short or predictable passwords are easier " +
+
+"to guess.";
+
+}
+
+}
+
+
+/* MFA */
+
+function mfaGame(correct) {
+
+
+const result =
+document.getElementById(
+"mfaResult"
+);
+
+
+result.style.display =
+"block";
+
+
+if (correct) {
+
+
+let earned =
+awardGameXP("mfa");
+
+
+result.innerHTML =
+
+"🎯 <strong>Correct!</strong><br>" +
+
+"MFA means Multi-Factor Authentication. " +
+
+"It uses more than one type of verification.";
+
+
+if (earned) {
+
+result.innerHTML +=
+"<br><br><span class='xp'>+10 XP!</span>";
+
+}
+
+}
+
+else {
+
+
+result.innerHTML =
+
+"❌ Not quite. Try again!";
+
+}
+
+}
+
+
+/* CIA */
+
+function ciaGame(correct) {
+
+
+const result =
+document.getElementById(
+"ciaResult"
+);
+
+
+result.style.display =
+"block";
+
+
+if (correct) {
+
+
+let earned =
+awardGameXP("cia");
+
+
+result.innerHTML =
+
+"🎯 <strong>Correct!</strong><br>" +
+
+"Integrity focuses on keeping information " +
+
+"accurate and preventing unauthorized changes.";
+
+
+if (earned) {
+
+result.innerHTML +=
+"<br><br><span class='xp'>+10 XP!</span>";
+
+}
+
+}
+
+else {
+
+
+result.innerHTML =
+
+"❌ Not quite. Think about the " +
+
+"three parts of the CIA Triad.";
+
+}
+
+}
+
+</script>
+
+
+</body>
+
+</html>
