@@ -3,173 +3,204 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>CyberStart - Profile</title>
+<title>CyberStart - Profile</title>
 
-    <style>
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b1020;
-            color: white;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
 
-        nav {
-            background: #111a33;
-            padding: 18px;
-            text-align: center;
-        }
+nav {
+    background: #111a33;
+    padding: 18px;
+    text-align: center;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 8px;
-            font-weight: bold;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            color: #4da6ff;
-        }
+nav a:hover {
+    color: #4da6ff;
+}
 
-        .container {
-            max-width: 700px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px 20px;
+}
 
-        h1 {
-            text-align: center;
-            color: #4da6ff;
-            font-size: 38px;
-        }
+h1 {
+    text-align: center;
+    color: #4da6ff;
+    font-size: 38px;
+}
 
-        .profile-card {
-            background: #111a33;
-            border: 1px solid #26345c;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-        }
+.profile-card {
+    background: #111a33;
+    border: 1px solid #26345c;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
 
-        .avatar {
-            font-size: 80px;
-            margin: 10px;
-        }
+.avatar {
+    font-size: 80px;
+    margin: 10px;
+}
 
-        .nickname {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 10px;
-        }
+.nickname {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+}
 
-        .subtitle {
-            color: #aaaaaa;
-        }
+.subtitle {
+    color: #aaaaaa;
+}
 
-        .avatar-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(80px, 1fr));
+.avatar-grid {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(80px, 1fr));
 
-            gap: 12px;
-            margin: 25px 0;
-        }
+    gap: 12px;
+    margin: 25px 0;
+}
 
-        .avatar-button {
-            font-size: 40px;
-            padding: 15px;
-            background: #182544;
-            border: 2px solid #354878;
-            border-radius: 12px;
-            cursor: pointer;
-        }
+.avatar-button {
+    font-size: 40px;
+    padding: 15px;
+    background: #182544;
+    border: 2px solid #354878;
+    border-radius: 12px;
+    cursor: pointer;
+}
 
-        .avatar-button:hover {
-            background: #263b6b;
-        }
+.avatar-button:hover {
+    background: #263b6b;
+}
 
-        .avatar-button.selected {
-            border-color: #4da6ff;
-            background: #20365f;
-        }
+.avatar-button.selected {
+    border-color: #4da6ff;
+    background: #20365f;
+}
 
-        input {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 14px;
-            margin: 10px 0 15px;
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    margin: 10px 0 15px;
 
-            background: #0b1020;
-            color: white;
+    background: #0b1020;
+    color: white;
 
-            border: 1px solid #354878;
-            border-radius: 8px;
+    border: 1px solid #354878;
+    border-radius: 8px;
 
-            font-size: 16px;
-        }
+    font-size: 16px;
+}
 
-        .save-button {
-            padding: 13px 25px;
+.save-button {
+    padding: 13px 25px;
 
-            background: #4da6ff;
-            color: #07101f;
+    background: #4da6ff;
+    color: #07101f;
 
-            border: none;
-            border-radius: 8px;
+    border: none;
+    border-radius: 8px;
 
-            font-weight: bold;
-            cursor: pointer;
-        }
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .save-button:hover {
-            background: #78bbff;
-        }
+.save-button:hover {
+    background: #78bbff;
+}
 
-        .status {
-            margin-top: 20px;
-            color: #78bbff;
-            font-weight: bold;
-        }
+.status {
+    margin-top: 20px;
+    color: #78bbff;
+    font-weight: bold;
+}
 
-        .stats {
-            margin-top: 30px;
-            padding: 20px;
+.stats {
+    margin-top: 30px;
+    padding: 20px;
 
-            background: #0d162d;
-            border-radius: 10px;
+    background: #0d162d;
+    border-radius: 10px;
 
-            text-align: left;
-        }
+    text-align: left;
+}
 
-        .stats h2 {
-            color: #4da6ff;
-        }
+.stats h2 {
+    color: #4da6ff;
+}
 
-        .stats p {
-            color: #cccccc;
-            line-height: 1.6;
-        }
+.stats p {
+    color: #cccccc;
+    line-height: 1.6;
+}
 
-        .level {
-            font-size: 20px;
-            color: #78bbff;
-            font-weight: bold;
-        }
+.level {
+    font-size: 20px;
+    color: #78bbff;
+    font-weight: bold;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-            background: #111a33;
-            color: #999999;
-        }
+.xp-bar-background {
+    width: 100%;
+    height: 20px;
 
-    </style>
+    background: #202c4a;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-top: 10px;
+}
+
+.xp-bar {
+    height: 100%;
+
+    width: 0%;
+
+    background: #4da6ff;
+
+    transition: width 0.5s;
+}
+
+.xp-text {
+    text-align: center;
+    margin-top: 8px;
+
+    color: #bbbbbb;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+
+    background: #111a33;
+    color: #999999;
+}
+
+</style>
 
 </head>
 
@@ -177,417 +208,430 @@
 <body>
 
 
-    <!-- Navigation -->
+<nav>
 
-    <nav>
+<a href="index.html">Home</a>
 
-        <a href="index.html">Home</a>
+<a href="lessons.html">Lessons</a>
 
-        <a href="lessons.html">Lessons</a>
+<a href="labs.html">Labs</a>
 
-        <a href="labs.html">Labs</a>
+<a href="quiz.html">Quiz</a>
 
-        <a href="quiz.html">Quiz</a>
+<a href="glossary.html">Glossary</a>
 
-        <a href="glossary.html">Glossary</a>
+<a href="profile.html">Profile</a>
 
-        <a href="profile.html">Profile</a>
+</nav>
 
-    </nav>
 
+<div class="container">
 
-    <div class="container">
+<h1>Your CyberStart Profile</h1>
 
-        <h1>Your CyberStart Profile</h1>
 
+<div class="profile-card">
 
-        <div class="profile-card">
 
+<div id="currentAvatar"
+class="avatar">
+🤖
+</div>
 
-            <!-- Current Avatar -->
 
-            <div id="currentAvatar"
-                 class="avatar">
-                🤖
-            </div>
+<div id="currentNickname"
+class="nickname">
+CyberStudent
+</div>
 
 
-            <!-- Nickname -->
+<p class="subtitle">
+Customize your CyberStart profile.
+</p>
 
-            <div id="currentNickname"
-                 class="nickname">
-                CyberStudent
-            </div>
 
+<label for="nickname">
+Choose a nickname
+</label>
 
-            <p class="subtitle">
-                Customize your CyberStart profile.
-            </p>
 
+<input
+type="text"
+id="nickname"
+maxlength="20"
+placeholder="Enter your nickname"
+>
 
-            <label for="nickname">
-                Choose a nickname
-            </label>
 
+<h2>
+Choose Your Avatar
+</h2>
 
-            <input
-                type="text"
-                id="nickname"
-                maxlength="20"
-                placeholder="Enter your nickname"
-            >
 
+<div class="avatar-grid">
 
-            <!-- Avatar Selection -->
 
-            <h2>
-                Choose Your Avatar
-            </h2>
+<button
+class="avatar-button"
+onclick="selectAvatar('🤖', this)">
+🤖
+</button>
 
 
-            <div class="avatar-grid">
+<button
+class="avatar-button"
+onclick="selectAvatar('🧑‍💻', this)">
+🧑‍💻
+</button>
 
 
-                <button
-                    class="avatar-button"
-                    onclick="selectAvatar('🤖', this)">
-                    🤖
-                </button>
+<button
+class="avatar-button"
+onclick="selectAvatar('🕵️', this)">
+🕵️
+</button>
 
 
-                <button
-                    class="avatar-button"
-                    onclick="selectAvatar('🧑‍💻', this)">
-                    🧑‍💻
-                </button>
+<button
+class="avatar-button"
+onclick="selectAvatar('👨‍🔬', this)">
+👨‍🔬
+</button>
 
 
-                <button
-                    class="avatar-button"
-                    onclick="selectAvatar('🕵️', this)">
-                    🕵️
-                </button>
+<button
+class="avatar-button"
+onclick="selectAvatar('👩‍💻', this)">
+👩‍💻
+</button>
 
 
-                <button
-                    class="avatar-button"
-                    onclick="selectAvatar('👨‍🔬', this)">
-                    👨‍🔬
-                </button>
+<button
+class="avatar-button"
+onclick="selectAvatar('🚀', this)">
+🚀
+</button>
 
 
-                <button
-                    class="avatar-button"
-                    onclick="selectAvatar('👩‍💻', this)">
-                    👩‍💻
-                </button>
+<button
+class="avatar-button"
+onclick="selectAvatar('🥷', this)">
+🥷
+</button>
 
 
-                <button
-                    class="avatar-button"
-                    onclick="selectAvatar('🚀', this)">
-                    🚀
-                </button>
+<button
+class="avatar-button"
+onclick="selectAvatar('🦾', this)">
+🦾
+</button>
 
 
-                <button
-                    class="avatar-button"
-                    onclick="selectAvatar('🥷', this)">
-                    🥷
-                </button>
+</div>
 
 
-                <button
-                    class="avatar-button"
-                    onclick="selectAvatar('🦾', this)">
-                    🦾
-                </button>
+<button
+class="save-button"
+onclick="saveProfile()">
 
+Save Profile
 
-            </div>
+</button>
 
 
-            <button
-                class="save-button"
-                onclick="saveProfile()">
+<div
+id="status"
+class="status">
+</div>
 
-                Save Profile
 
-            </button>
+<div class="stats">
 
 
-            <div
-                id="status"
-                class="status">
-            </div>
+<h2>Your Progress</h2>
 
 
-            <!-- Progress -->
+<p>
+🧠 Last Quiz Score:
+<strong id="lastScore">
+Not completed
+</strong>
+</p>
 
-            <div class="stats">
 
-                <h2>Your Progress</h2>
+<p>
+🏆 Best Quiz Score:
+<strong id="bestScore">
+Not completed
+</strong>
+</p>
 
 
-                <p>
-                    📚 Lessons Completed:
-                    <strong>0</strong>
-                </p>
+<p class="level">
 
+🎯 CyberStart Level:
 
-                <p>
-                    🧪 Labs Completed:
-                    <strong>0</strong>
-                </p>
+<span id="level">
+1
+</span>
 
+</p>
 
-                <p>
-                    🧠 Last Quiz Score:
-                    <strong id="lastScore">
-                        Not completed
-                    </strong>
-                </p>
 
+<p>
 
-                <p>
-                    🏆 Best Quiz Score:
-                    <strong id="bestScore">
-                        Not completed
-                    </strong>
-                </p>
+⭐ Total XP:
 
+<strong id="xp">
+0
+</strong>
 
-                <p class="level">
-                    🎯 CyberStart Level:
-                    <span id="level">
-                        Beginner
-                    </span>
-                </p>
+</p>
 
-            </div>
 
+<div class="xp-bar-background">
 
-        </div>
+<div
+id="xpBar"
+class="xp-bar">
+</div>
 
-    </div>
+</div>
 
 
-    <footer>
+<div
+id="xpText"
+class="xp-text">
 
-        <p>
-            © 2026 CyberStart | Learn. Explore. Stay Secure.
-        </p>
+0 / 100 XP
 
-    </footer>
+</div>
 
 
-    <script>
+</div>
 
 
-        let selectedAvatar = "🤖";
+</div>
 
+</div>
 
-        function selectAvatar(avatar, button) {
 
-            selectedAvatar = avatar;
+<footer>
 
+<p>
+© 2026 CyberStart | Learn. Explore. Stay Secure.
+</p>
 
-            document
-                .querySelectorAll(".avatar-button")
-                .forEach(function(btn) {
+</footer>
 
-                    btn.classList.remove("selected");
 
-                });
+<script>
 
 
-            button.classList.add("selected");
+let selectedAvatar = "🤖";
 
 
-            document
-                .getElementById("currentAvatar")
-                .textContent = avatar;
+function selectAvatar(avatar, button) {
 
-        }
+selectedAvatar = avatar;
 
 
-        function saveProfile() {
+document
+.querySelectorAll(".avatar-button")
+.forEach(function(btn) {
 
-            const nickname =
-                document
-                    .getElementById("nickname")
-                    .value
-                    .trim();
+btn.classList.remove("selected");
 
+});
 
-            const finalNickname =
-                nickname || "CyberStudent";
 
+button.classList.add("selected");
 
-            localStorage.setItem(
-                "cyberstartNickname",
-                finalNickname
-            );
 
+document
+.getElementById("currentAvatar")
+.textContent = avatar;
 
-            localStorage.setItem(
-                "cyberstartAvatar",
-                selectedAvatar
-            );
+}
 
 
-            document
-                .getElementById("currentNickname")
-                .textContent = finalNickname;
+function saveProfile() {
 
+const nickname =
+document
+.getElementById("nickname")
+.value
+.trim();
 
-            document
-                .getElementById("currentAvatar")
-                .textContent = selectedAvatar;
 
+const finalNickname =
+nickname || "CyberStudent";
 
-            document
-                .getElementById("status")
-                .textContent =
-                "Profile saved!";
 
-        }
+localStorage.setItem(
+"cyberstartNickname",
+finalNickname
+);
 
 
-        function loadProfile() {
+localStorage.setItem(
+"cyberstartAvatar",
+selectedAvatar
+);
 
-            const savedNickname =
-                localStorage.getItem(
-                    "cyberstartNickname"
-                );
 
+document
+.getElementById("currentNickname")
+.textContent =
+finalNickname;
 
-            const savedAvatar =
-                localStorage.getItem(
-                    "cyberstartAvatar"
-                );
 
+document
+.getElementById("currentAvatar")
+.textContent =
+selectedAvatar;
 
-            if (savedNickname) {
 
-                document
-                    .getElementById("nickname")
-                    .value = savedNickname;
+document
+.getElementById("status")
+.textContent =
+"Profile saved!";
 
+}
 
-                document
-                    .getElementById("currentNickname")
-                    .textContent = savedNickname;
 
-            }
+function loadProfile() {
 
+const savedNickname =
+localStorage.getItem(
+"cyberstartNickname"
+);
 
-            if (savedAvatar) {
 
-                selectedAvatar = savedAvatar;
+const savedAvatar =
+localStorage.getItem(
+"cyberstartAvatar"
+);
 
 
-                document
-                    .getElementById("currentAvatar")
-                    .textContent = savedAvatar;
+if (savedNickname) {
 
-            }
+document
+.getElementById("nickname")
+.value =
+savedNickname;
 
-        }
+document
+.getElementById("currentNickname")
+.textContent =
+savedNickname;
 
+}
 
-        function loadQuizScores() {
 
-            const lastScore =
-                localStorage.getItem(
-                    "cyberstartLastScore"
-                );
+if (savedAvatar) {
 
+selectedAvatar =
+savedAvatar;
 
-            const bestScore =
-                localStorage.getItem(
-                    "cyberstartBestScore"
-                );
+document
+.getElementById("currentAvatar")
+.textContent =
+savedAvatar;
 
+}
 
-            const lastScoreElement =
-                document.getElementById(
-                    "lastScore"
-                );
+}
 
 
-            const bestScoreElement =
-                document.getElementById(
-                    "bestScore"
-                );
+function loadQuizScores() {
 
+const lastScore =
+localStorage.getItem(
+"cyberstartLastScore"
+);
 
-            if (lastScore !== null) {
 
-                lastScoreElement.textContent =
-                    lastScore + " / 10";
+const bestScore =
+localStorage.getItem(
+"cyberstartBestScore"
+);
 
-            }
 
+if (lastScore !== null) {
 
-            if (bestScore !== null) {
+document
+.getElementById("lastScore")
+.textContent =
+lastScore + " / 10";
 
-                bestScoreElement.textContent =
-                    bestScore + " / 10";
+}
 
 
-                updateLevel(
-                    Number(bestScore)
-                );
+if (bestScore !== null) {
 
-            }
+document
+.getElementById("bestScore")
+.textContent =
+bestScore + " / 10";
 
-        }
+}
 
+}
 
-        function updateLevel(score) {
 
-            const level =
-                document.getElementById("level");
+function loadXP() {
 
+let xp =
+Number(
+localStorage.getItem(
+"cyberstartXP"
+)
+) || 0;
 
-            if (score >= 10) {
 
-                level.textContent =
-                    "Cyber Expert";
+let level =
+Math.floor(xp / 100) + 1;
 
-            }
 
-            else if (score >= 8) {
+let progress =
+xp % 100;
 
-                level.textContent =
-                    "Cyber Defender";
 
-            }
+document
+.getElementById("xp")
+.textContent =
+xp;
 
-            else if (score >= 6) {
 
-                level.textContent =
-                    "Cyber Apprentice";
+document
+.getElementById("level")
+.textContent =
+level;
 
-            }
 
-            else {
+document
+.getElementById("xpBar")
+.style.width =
+progress + "%";
 
-                level.textContent =
-                    "Beginner";
 
-            }
+document
+.getElementById("xpText")
+.textContent =
+progress + " / 100 XP";
 
-        }
+}
 
 
-        loadProfile();
+loadProfile();
 
-        loadQuizScores();
+loadQuizScores();
 
+loadXP();
 
-    </script>
+
+</script>
 
 
 </body>
