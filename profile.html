@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CyberStart - Profile</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+        }
+
+        nav {
+            background: #111a33;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4da6ff;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4da6ff;
+            font-size: 38px;
+        }
+
+        .profile-card {
+            background: #111a33;
+            border: 1px solid #26345c;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .avatar {
+            font-size: 80px;
+            margin: 10px;
+        }
+
+        .nickname {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .subtitle {
+            color: #aaaaaa;
+        }
+
+        .avatar-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(80px, 1fr));
+
+            gap: 12px;
+
+            margin: 25px 0;
+        }
+
+        .avatar-button {
+            font-size: 40px;
+            padding: 15px;
+            background: #182544;
+            border: 2px solid #354878;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .avatar-button:hover {
+            background: #263b6b;
+        }
+
+        .avatar-button.selected {
+            border-color: #4da6ff;
+            background: #20365f;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px;
+            margin: 10px 0 15px;
+
+            background: #0b1020;
+            color: white;
+
+            border: 1px solid #354878;
+            border-radius: 8px;
+
+            font-size: 16px;
+        }
+
+        .save-button {
+            padding: 13px 25px;
+
+            background: #4da6ff;
+            color: #07101f;
+
+            border: none;
+            border-radius: 8px;
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .save-button:hover {
+            background: #78bbff;
+        }
+
+        .status {
+            margin-top: 20px;
+            color: #78bbff;
+            font-weight: bold;
+        }
+
+        .stats {
+            margin-top: 30px;
+            padding: 20px;
+
+            background: #0d162d;
+            border-radius: 10px;
+
+            text-align: left;
+        }
+
+        .stats h2 {
+            color: #4da6ff;
+        }
+
+        .stats p {
+            color: #cccccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+            background: #111a33;
+            color: #999999;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="lessons.html">Lessons</a>
+
+        <a href="labs.html">Labs</a>
+
+        <a href="quiz.html">Quiz</a>
+
+        <a href="glossary.html">Glossary</a>
+
+        <a href="profile.html">Profile</a>
+
+    </nav>
+
+
+    <div class="container">
+
+        <h1>Your CyberStart Profile</h1>
+
+
+        <div class="profile-card">
+
+
+            <!-- Current Avatar -->
+
+            <div id="currentAvatar"
+                 class="avatar">
+                🤖
+            </div>
+
+
+            <div id="currentNickname"
+                 class="nickname">
+                CyberStudent
+            </div>
+
+
+            <p class="subtitle">
+                Customize your CyberStart profile.
+            </p>
+
+
+            <!-- Nickname -->
+
+            <label for="nickname">
+                Choose a nickname
+            </label>
+
+            <input
+                type="text"
+                id="nickname"
+                maxlength="20"
+                placeholder="Enter your nickname"
+            >
+
+
+            <!-- Avatar Selection -->
+
+            <h2>
+                Choose Your Avatar
+            </h2>
+
+
+            <div class="avatar-grid">
+
+
+                <button
+                    class="avatar-button"
+                    onclick="selectAvatar('🤖', this)">
+                    🤖
+                </button>
+
+
+                <button
+                    class="avatar-button"
+                    onclick="selectAvatar('🧑‍💻', this)">
+                    🧑‍💻
+                </button>
+
+
+                <button
+                    class="avatar-button"
+                    onclick="selectAvatar('🕵️', this)">
+                    🕵️
+                </button>
+
+
+                <button
+                    class="avatar-button"
+                    onclick="selectAvatar('👨‍🔬', this)">
+                    👨‍🔬
+                </button>
+
+
+                <button
+                    class="avatar-button"
+                    onclick="selectAvatar('👩‍💻', this)">
+                    👩‍💻
+                </button>
+
+
+                <button
+                    class="avatar-button"
+                    onclick="selectAvatar('🚀', this)">
+                    🚀
+                </button>
+
+
+                <button
+                    class="avatar-button"
+                    onclick="selectAvatar('🥷', this)">
+                    🥷
+                </button>
+
+
+                <button
+                    class="avatar-button"
+                    onclick="selectAvatar('🦾', this)">
+                    🦾
+                </button>
+
+
+            </div>
+
+
+            <button
+                class="save-button"
+                onclick="saveProfile()">
+
+                Save Profile
+
+            </button>
+
+
+            <div
+                id="status"
+                class="status">
+            </div>
+
+
+            <!-- Future Stats -->
+
+            <div class="stats">
+
+                <h2>Your Progress</h2>
+
+                <p>
+                    📚 Lessons Completed:
+                    <strong>0</strong>
+                </p>
+
+                <p>
+                    🧪 Labs Completed:
+                    <strong>0</strong>
+                </p>
+
+                <p>
+                    🧠 Best Quiz Score:
+                    <strong>Not completed</strong>
+                </p>
+
+                <p>
+                    🏆 Level:
+                    <strong>Cyber Beginner</strong>
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            © 2026 CyberStart | Learn. Explore. Stay Secure.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+
+        let selectedAvatar = "🤖";
+
+
+        function selectAvatar(avatar, button) {
+
+            selectedAvatar = avatar;
+
+
+            document
+                .querySelectorAll(".avatar-button")
+                .forEach(function(btn) {
+
+                    btn.classList.remove("selected");
+
+                });
+
+
+            button.classList.add("selected");
+
+
+            document
+                .getElementById("currentAvatar")
+                .textContent = avatar;
+
+        }
+
+
+        function saveProfile() {
+
+            const nickname =
+                document
+                    .getElementById("nickname")
+                    .value
+                    .trim();
+
+
+            const finalNickname =
+                nickname || "CyberStudent";
+
+
+            localStorage.setItem(
+                "cyberstartNickname",
+                finalNickname
+            );
+
+
+            localStorage.setItem(
+                "cyberstartAvatar",
+                selectedAvatar
+            );
+
+
+            document
+                .getElementById("currentNickname")
+                .textContent = finalNickname;
+
+
+            document
+                .getElementById("currentAvatar")
+                .textContent = selectedAvatar;
+
+
+            document
+                .getElementById("status")
+                .textContent =
+                "Profile saved!";
+
+        }
+
+
+        function loadProfile() {
+
+            const savedNickname =
+                localStorage.getItem(
+                    "cyberstartNickname"
+                );
+
+
+            const savedAvatar =
+                localStorage.getItem(
+                    "cyberstartAvatar"
+                );
+
+
+            if (savedNickname) {
+
+                document
+                    .getElementById("nickname")
+                    .value = savedNickname;
+
+                document
+                    .getElementById("currentNickname")
+                    .textContent = savedNickname;
+
+            }
+
+
+            if (savedAvatar) {
+
+                selectedAvatar = savedAvatar;
+
+                document
+                    .getElementById("currentAvatar")
+                    .textContent = savedAvatar;
+
+            }
+
+        }
+
+
+        loadProfile();
+
+
+    </script>
+
+
+</body>
+
+</html>
