@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CyberStart - Cybersecurity Quiz</title>
+    <title>CyberStart - Level 2 Quiz</title>
 
     <style>
 
@@ -18,7 +21,7 @@
 
         nav {
             background: #111a33;
-            padding: 15px;
+            padding: 18px;
             text-align: center;
         }
 
@@ -34,97 +37,142 @@
         }
 
         .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
+            max-width: 850px;
+            margin: auto;
+            padding: 35px 20px;
         }
 
         h1 {
             text-align: center;
             color: #4da6ff;
+            font-size: 38px;
         }
 
         .intro {
             text-align: center;
             color: #cccccc;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .question {
             background: #111a33;
+            border: 1px solid #26345c;
+            border-radius: 12px;
             padding: 25px;
             margin-bottom: 20px;
-            border-radius: 12px;
-            border: 1px solid #26345c;
         }
 
-        .question h3 {
-            margin-top: 0;
+        .question-number {
+            color: #78bbff;
+            font-size: 14px;
+            font-weight: bold;
         }
 
-        button {
-            display: block;
+        .question h2 {
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        .answer {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             margin: 8px 0;
             background: #182544;
             color: white;
             border: 1px solid #354878;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
+            text-align: left;
+            font-size: 15px;
         }
 
-        button:hover {
+        .answer:hover {
             background: #263b6b;
         }
 
-        button.correct {
+        .answer.correct {
             background: #176b3a;
+            border-color: #35c978;
         }
 
-        button.wrong {
+        .answer.wrong {
             background: #8b2525;
+            border-color: #ff6666;
+        }
+
+        .answer:disabled {
+            cursor: default;
+        }
+
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #0d162d;
+            border-radius: 8px;
+            color: #cccccc;
+            line-height: 1.5;
         }
 
         #result {
             display: none;
             background: #111a33;
-            padding: 25px;
+            border: 1px solid #26345c;
             border-radius: 12px;
+            padding: 30px;
             text-align: center;
             margin-top: 30px;
-            border: 1px solid #26345c;
         }
 
         #result h2 {
             color: #4da6ff;
         }
 
-        .home-button {
+        #score {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .button {
             display: inline-block;
-            width: auto;
             padding: 12px 25px;
+            margin: 8px;
             background: #4da6ff;
             color: #07101f;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
-            margin-top: 15px;
+            border: none;
+            cursor: pointer;
         }
 
-        .home-button:hover {
+        .button:hover {
             background: #78bbff;
         }
 
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+            background: #111a33;
+            color: #999999;
+        }
+
     </style>
+
 </head>
 
+
 <body>
+
+
+    <!-- Navigation -->
 
     <nav>
 
         <a href="index.html">Home</a>
+
+        <a href="lessons.html">Lessons</a>
 
         <a href="quiz.html">Quiz</a>
 
@@ -133,10 +181,11 @@
 
     <div class="container">
 
-        <h1>Cybersecurity Basics Quiz</h1>
+
+        <h1>Cybersecurity Level 2</h1>
 
         <p class="intro">
-            Test your knowledge of basic cybersecurity concepts.
+            Test your understanding of intermediate cybersecurity concepts.
             Choose the best answer for each question.
         </p>
 
@@ -145,23 +194,36 @@
 
         <div class="question">
 
-            <h3>1. What does cybersecurity help protect?</h3>
+            <div class="question-number">
+                QUESTION 1 OF 10
+            </div>
 
-            <button onclick="answer(this, false)">
-                A. Only computers
+            <h2>
+                A company gives employees access only to the files
+                required for their jobs. Which security principle
+                does this demonstrate?
+            </h2>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                A. Defense in depth
             </button>
 
-            <button onclick="answer(this, true)">
-                B. Computers, networks, and information
+            <button class="answer" onclick="checkAnswer(this, true)">
+                B. Least privilege
             </button>
 
-            <button onclick="answer(this, false)">
-                C. Only websites
+            <button class="answer" onclick="checkAnswer(this, false)">
+                C. Availability
             </button>
 
-            <button onclick="answer(this, false)">
-                D. Only phones
+            <button class="answer" onclick="checkAnswer(this, false)">
+                D. Data redundancy
             </button>
+
+            <div class="explanation">
+                Least privilege means giving users only the access
+                they need to perform their responsibilities.
+            </div>
 
         </div>
 
@@ -170,23 +232,35 @@
 
         <div class="question">
 
-            <h3>2. What is phishing?</h3>
+            <div class="question-number">
+                QUESTION 2 OF 10
+            </div>
 
-            <button onclick="answer(this, false)">
-                A. A type of computer hardware
+            <h2>
+                Which part of the CIA Triad focuses on preventing
+                unauthorized people from accessing information?
+            </h2>
+
+            <button class="answer" onclick="checkAnswer(this, true)">
+                A. Confidentiality
             </button>
 
-            <button onclick="answer(this, true)">
-                B. A scam designed to trick someone into giving information
+            <button class="answer" onclick="checkAnswer(this, false)">
+                B. Integrity
             </button>
 
-            <button onclick="answer(this, false)">
-                C. A programming language
+            <button class="answer" onclick="checkAnswer(this, false)">
+                C. Availability
             </button>
 
-            <button onclick="answer(this, false)">
-                D. A type of firewall
+            <button class="answer" onclick="checkAnswer(this, false)">
+                D. Authentication
             </button>
+
+            <div class="explanation">
+                Confidentiality focuses on ensuring information is
+                accessible only to authorized people or systems.
+            </div>
 
         </div>
 
@@ -195,23 +269,39 @@
 
         <div class="question">
 
-            <h3>3. Which password is generally stronger?</h3>
+            <div class="question-number">
+                QUESTION 3 OF 10
+            </div>
 
-            <button onclick="answer(this, false)">
-                A. password123
+            <h2>
+                What is the primary difference between authentication
+                and authorization?
+            </h2>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                A. Authentication encrypts data while authorization
+                backs up data.
             </button>
 
-            <button onclick="answer(this, false)">
-                B. john2009
+            <button class="answer" onclick="checkAnswer(this, true)">
+                B. Authentication verifies identity while authorization
+                determines what that identity can access.
             </button>
 
-            <button onclick="answer(this, true)">
-                C. Q7!mZ#42pL
+            <button class="answer" onclick="checkAnswer(this, false)">
+                C. Authentication creates firewalls while authorization
+                detects malware.
             </button>
 
-            <button onclick="answer(this, false)">
-                D. 12345678
+            <button class="answer" onclick="checkAnswer(this, false)">
+                D. Authentication and authorization are exactly the
+                same process.
             </button>
+
+            <div class="explanation">
+                Authentication answers "Who are you?" Authorization
+                answers "What are you allowed to access?"
+            </div>
 
         </div>
 
@@ -220,23 +310,35 @@
 
         <div class="question">
 
-            <h3>4. What does a firewall help do?</h3>
+            <div class="question-number">
+                QUESTION 4 OF 10
+            </div>
 
-            <button onclick="answer(this, true)">
-                A. Control network traffic
+            <h2>
+                Why is multi-factor authentication generally stronger
+                than using only a password?
+            </h2>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                A. It makes passwords impossible to steal.
             </button>
 
-            <button onclick="answer(this, false)">
-                B. Make your computer faster
+            <button class="answer" onclick="checkAnswer(this, true)">
+                B. It requires additional verification beyond the password.
             </button>
 
-            <button onclick="answer(this, false)">
-                C. Create passwords
+            <button class="answer" onclick="checkAnswer(this, false)">
+                C. It automatically removes malware.
             </button>
 
-            <button onclick="answer(this, false)">
-                D. Charge your laptop
+            <button class="answer" onclick="checkAnswer(this, false)">
+                D. It prevents every type of cyberattack.
             </button>
+
+            <div class="explanation">
+                MFA adds another verification factor, so knowing the
+                password alone may not be enough to access the account.
+            </div>
 
         </div>
 
@@ -245,23 +347,36 @@
 
         <div class="question">
 
-            <h3>5. What should you do with a suspicious link?</h3>
+            <div class="question-number">
+                QUESTION 5 OF 10
+            </div>
 
-            <button onclick="answer(this, false)">
-                A. Click it to see what happens
+            <h2>
+                What is the main purpose of hashing a password?
+            </h2>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                A. To make the password easier to read
             </button>
 
-            <button onclick="answer(this, false)">
-                B. Send it to your friends
+            <button class="answer" onclick="checkAnswer(this, true)">
+                B. To store a one-way representation that can be
+                compared during login
             </button>
 
-            <button onclick="answer(this, true)">
-                C. Avoid clicking it and verify the source
+            <button class="answer" onclick="checkAnswer(this, false)">
+                C. To send the password to everyone on the network
             </button>
 
-            <button onclick="answer(this, false)">
-                D. Enter your password
+            <button class="answer" onclick="checkAnswer(this, false)">
+                D. To increase the screen resolution
             </button>
+
+            <div class="explanation">
+                Password systems commonly store a derived representation
+                rather than the original password so the original value
+                does not need to be stored directly.
+            </div>
 
         </div>
 
@@ -270,42 +385,222 @@
 
         <div class="question">
 
-            <h3>6. What is malware?</h3>
+            <div class="question-number">
+                QUESTION 6 OF 10
+            </div>
 
-            <button onclick="answer(this, true)">
-                A. Malicious software
+            <h2>
+                An attacker sends a fake message pretending to be
+                a company's IT department and asks an employee to
+                provide login information. What type of attack is this?
+            </h2>
+
+            <button class="answer" onclick="checkAnswer(this, true)">
+                A. Social engineering
             </button>
 
-            <button onclick="answer(this, false)">
-                B. A type of monitor
+            <button class="answer" onclick="checkAnswer(this, false)">
+                B. Hardware failure
             </button>
 
-            <button onclick="answer(this, false)">
-                C. A secure password
+            <button class="answer" onclick="checkAnswer(this, false)">
+                C. Data compression
             </button>
 
-            <button onclick="answer(this, false)">
-                D. A computer network
+            <button class="answer" onclick="checkAnswer(this, false)">
+                D. Network redundancy
             </button>
+
+            <div class="explanation">
+                Social engineering attacks manipulate people into
+                performing actions or revealing information.
+            </div>
 
         </div>
 
 
+        <!-- Question 7 -->
+
+        <div class="question">
+
+            <div class="question-number">
+                QUESTION 7 OF 10
+            </div>
+
+            <h2>
+                Which security approach uses multiple layers of
+                protection instead of relying on a single defense?
+            </h2>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                A. Least privilege
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, true)">
+                B. Defense in depth
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                C. Single-factor authentication
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                D. Data deletion
+            </button>
+
+            <div class="explanation">
+                Defense in depth uses multiple security controls so
+                one failed defense does not necessarily expose the
+                entire system.
+            </div>
+
+        </div>
+
+
+        <!-- Question 8 -->
+
+        <div class="question">
+
+            <div class="question-number">
+                QUESTION 8 OF 10
+            </div>
+
+            <h2>
+                Which CIA Triad principle focuses on keeping systems
+                and information accessible when they are needed?
+            </h2>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                A. Confidentiality
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                B. Integrity
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, true)">
+                C. Availability
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                D. Authentication
+            </button>
+
+            <div class="explanation">
+                Availability means authorized users should be able
+                to access systems and information when needed.
+            </div>
+
+        </div>
+
+
+        <!-- Question 9 -->
+
+        <div class="question">
+
+            <div class="question-number">
+                QUESTION 9 OF 10
+            </div>
+
+            <h2>
+                A security team discovers that a software application
+                has a weakness that could be exploited by attackers.
+                What is this weakness commonly called?
+            </h2>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                A. Authentication
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, true)">
+                B. Vulnerability
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                C. Encryption
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                D. Backup
+            </button>
+
+            <div class="explanation">
+                A vulnerability is a weakness in a system that could
+                potentially be exploited to compromise security.
+            </div>
+
+        </div>
+
+
+        <!-- Question 10 -->
+
+        <div class="question">
+
+            <div class="question-number">
+                QUESTION 10 OF 10
+            </div>
+
+            <h2>
+                After detecting a cybersecurity incident, why is
+                documenting what happened important?
+            </h2>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                A. It guarantees that another attack can never happen.
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, true)">
+                B. It helps organizations understand the incident,
+                improve defenses, and respond more effectively.
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                C. It automatically removes every threat.
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, false)">
+                D. It replaces the need for security controls.
+            </button>
+
+            <div class="explanation">
+                Documentation helps security teams understand what
+                occurred and improve future detection and response.
+            </div>
+
+        </div>
+
+
+        <!-- Results -->
+
         <div id="result">
 
-            <h2>Quiz Complete!</h2>
+            <h2>Level 2 Complete</h2>
 
             <p id="score"></p>
 
             <p id="message"></p>
 
-            <a class="home-button" href="index.html">
-                Back to Home
+            <button class="button" onclick="restartQuiz()">
+                Restart Quiz
+            </button>
+
+            <a class="button" href="index.html">
+                Home
             </a>
 
         </div>
 
+
     </div>
+
+
+    <footer>
+
+        <p>
+            © 2026 CyberStart | Learn. Explore. Stay Secure.
+        </p>
+
+    </footer>
 
 
     <script>
@@ -314,12 +609,10 @@
 
         let answered = 0;
 
-        const totalQuestions = 6;
+        const totalQuestions = 10;
 
 
-        function answer(button, correct) {
-
-            // Prevent answering the same question twice
+        function checkAnswer(button, correct) {
 
             const question = button.parentElement;
 
@@ -330,6 +623,17 @@
             question.dataset.answered = "true";
 
             answered++;
+
+
+            const buttons =
+                question.querySelectorAll(".answer");
+
+
+            buttons.forEach(function(btn) {
+
+                btn.disabled = true;
+
+            });
 
 
             if (correct) {
@@ -345,18 +649,11 @@
             }
 
 
-            // Disable all buttons for this question
+            const explanation =
+                question.querySelector(".explanation");
 
-            const buttons = question.querySelectorAll("button");
+            explanation.style.display = "block";
 
-            buttons.forEach(function(btn) {
-
-                btn.disabled = true;
-
-            });
-
-
-            // Show result when all questions are answered
 
             if (answered === totalQuestions) {
 
@@ -369,11 +666,14 @@
 
         function showResult() {
 
-            const result = document.getElementById("result");
+            const result =
+                document.getElementById("result");
 
-            const scoreText = document.getElementById("score");
+            const scoreText =
+                document.getElementById("score");
 
-            const message = document.getElementById("message");
+            const message =
+                document.getElementById("message");
 
 
             result.style.display = "block";
@@ -383,31 +683,57 @@
                 "Your Score: " + score + " / " + totalQuestions;
 
 
-            if (score === 6) {
+            if (score === 10) {
 
                 message.textContent =
-                    "Excellent! You have a strong understanding of the basics.";
-
-            } else if (score >= 4) {
-
-                message.textContent =
-                    "Great job! You have a good understanding of cybersecurity.";
-
-            } else if (score >= 2) {
-
-                message.textContent =
-                    "Good start! Keep learning and you will improve.";
-
-            } else {
-
-                message.textContent =
-                    "Keep practicing! Cybersecurity takes time to learn.";
+                    "Excellent! You have a strong understanding of intermediate cybersecurity concepts.";
 
             }
+
+            else if (score >= 8) {
+
+                message.textContent =
+                    "Great work! Your cybersecurity fundamentals are getting strong.";
+
+            }
+
+            else if (score >= 6) {
+
+                message.textContent =
+                    "Good job! Keep studying and continue building your cybersecurity knowledge.";
+
+            }
+
+            else if (score >= 4) {
+
+                message.textContent =
+                    "You're making progress. Review the lessons and try the quiz again.";
+
+            }
+
+            else {
+
+                message.textContent =
+                    "Keep learning! Cybersecurity takes practice and repetition.";
+
+            }
+
+
+            result.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+
+        function restartQuiz() {
+
+            location.reload();
 
         }
 
     </script>
+
 
 </body>
 
