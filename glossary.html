@@ -1,95 +1,155 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>CyberStart - Cyber Glossary</title>
+<title>CyberStart - Glossary</title>
 
-    <style>
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b1020;
-            color: white;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
 
-        nav {
-            background: #111a33;
-            padding: 18px;
-            text-align: center;
-        }
+nav {
+    background: #111a33;
+    padding: 18px;
+    text-align: center;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: bold;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 7px;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            color: #4da6ff;
-        }
+nav a:hover {
+    color: #4da6ff;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 35px 20px;
-        }
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 35px 20px;
+}
 
-        h1 {
-            text-align: center;
-            color: #4da6ff;
-            font-size: 38px;
-        }
+h1 {
+    text-align: center;
+    color: #4da6ff;
+    font-size: 40px;
+}
 
-        .intro {
-            text-align: center;
-            color: #cccccc;
-            font-size: 18px;
-            margin-bottom: 35px;
-        }
+.intro {
+    text-align: center;
+    color: #bbb;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
 
-        .term {
-            background: #111a33;
-            border: 1px solid #26345c;
-            border-radius: 12px;
-            padding: 22px;
-            margin-bottom: 15px;
-        }
 
-        .term h2 {
-            color: #4da6ff;
-            margin-top: 0;
-        }
+/* SEARCH */
 
-        .term p {
-            color: #dddddd;
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
+.search-box {
+    margin-bottom: 30px;
+}
 
-        .category {
-            color: #78bbff;
-            font-size: 13px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+.search-box input {
+    width: 100%;
+    box-sizing: border-box;
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-            background: #111a33;
-            color: #999999;
-        }
+    padding: 15px;
 
-    </style>
+    background: #111a33;
+    color: white;
+
+    border: 1px solid #354878;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #4da6ff;
+}
+
+
+/* TERMS */
+
+.term {
+    background: #111a33;
+
+    border: 1px solid #26345c;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    margin-bottom: 15px;
+}
+
+.term h2 {
+    color: #78bbff;
+
+    margin-top: 0;
+}
+
+.term p {
+    color: #ddd;
+
+    line-height: 1.7;
+}
+
+.term strong {
+    color: white;
+}
+
+
+/* HIDDEN */
+
+.hidden {
+    display: none;
+}
+
+
+/* NO RESULTS */
+
+#noResults {
+    display: none;
+
+    text-align: center;
+
+    color: #aaa;
+
+    padding: 30px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 30px;
+
+    background: #111a33;
+
+    color: #999;
+}
+
+</style>
 
 </head>
 
@@ -97,304 +157,712 @@
 <body>
 
 
-    <!-- Navigation -->
+<!-- NAVIGATION -->
 
-    <nav>
+<nav>
 
-        <a href="index.html">Home</a>
+<a href="index.html">Home</a>
 
-        <a href="lessons.html">Lessons</a>
+<a href="lessons.html">Lessons</a>
 
-        <a href="quiz.html">Quiz</a>
+<a href="labs.html">Labs</a>
 
-        <a href="glossary.html">Glossary</a>
+<a href="quiz.html">Quiz</a>
 
-    </nav>
+<a href="games.html">Games</a>
 
+<a href="glossary.html">Glossary</a>
 
-    <!-- Main Content -->
+<a href="profile.html">Profile</a>
 
-    <div class="container">
+<a href="feedback.html">Feedback</a>
 
-        <h1>Cybersecurity Glossary</h1>
+</nav>
 
-        <p class="intro">
-            Learn important cybersecurity terms and understand
-            what they mean.
-        </p>
 
+<div class="container">
 
-        <!-- Authentication -->
 
-        <div class="term">
+<h1>
+📖 Cybersecurity Glossary
+</h1>
 
-            <div class="category">
-                Account Security
-            </div>
 
-            <h2>Authentication</h2>
+<p class="intro">
 
-            <p>
-                The process of verifying the identity of a user,
-                device, or system.
-            </p>
+Learn important cybersecurity terms and
+concepts. Use the search box to find a term.
 
-        </div>
+</p>
 
 
-        <!-- Authorization -->
+<!-- SEARCH -->
 
-        <div class="term">
+<div class="search-box">
 
-            <div class="category">
-                Account Security
-            </div>
+<input
+type="text"
+id="search"
+placeholder="🔎 Search cybersecurity terms..."
+onkeyup="searchTerms()">
 
-            <h2>Authorization</h2>
+</div>
 
-            <p>
-                The process of determining what an authenticated
-                user or system is allowed to access or do.
-            </p>
 
-        </div>
+<div id="noResults">
 
+No matching terms found.
 
-        <!-- Firewall -->
+</div>
 
-        <div class="term">
 
-            <div class="category">
-                Network Security
-            </div>
+<!-- TERMS -->
 
-            <h2>Firewall</h2>
 
-            <p>
-                A security control that monitors and controls
-                network traffic according to defined rules.
-            </p>
+<div class="term">
 
-        </div>
+<h2>
+🔐 Authentication
+</h2>
 
+<p>
 
-        <!-- Malware -->
+<strong>Definition:</strong>
+The process of verifying who or what is
+attempting to access a system.
 
-        <div class="term">
+</p>
 
-            <div class="category">
-                Threats
-            </div>
+<p>
 
-            <h2>Malware</h2>
+<strong>Example:</strong>
+Logging into an account with a password or
+another verification method.
 
-            <p>
-                Software designed to perform harmful or unwanted
-                actions on a computer or other device.
-            </p>
+</p>
 
-        </div>
+</div>
 
 
-        <!-- Phishing -->
+<div class="term">
 
-        <div class="term">
+<h2>
+🛡️ Authorization
+</h2>
 
-            <div class="category">
-                Social Engineering
-            </div>
+<p>
 
-            <h2>Phishing</h2>
+<strong>Definition:</strong>
+Determining what an authenticated user or
+system is allowed to access.
 
-            <p>
-                A type of social engineering attack that attempts
-                to trick people into revealing information or
-                performing an unsafe action.
-            </p>
+</p>
 
-        </div>
+<p>
 
+<strong>Example:</strong>
+An employee may be allowed to view certain
+files but not administrative settings.
 
-        <!-- Encryption -->
+</p>
 
-        <div class="term">
+</div>
 
-            <div class="category">
-                Data Security
-            </div>
 
-            <h2>Encryption</h2>
+<div class="term">
 
-            <p>
-                The process of transforming readable data into a
-                protected form so that it cannot be easily understood
-                without the appropriate method of decryption.
-            </p>
+<h2>
+🎣 Phishing
+</h2>
 
-        </div>
+<p>
 
+<strong>Definition:</strong>
+A social engineering technique that attempts
+to trick people into revealing information
+or taking an unsafe action.
 
-        <!-- Hash -->
+</p>
 
-        <div class="term">
+<p>
 
-            <div class="category">
-                Data Security
-            </div>
+<strong>Example:</strong>
+A fake message pretending to come from a
+legitimate organization.
 
-            <h2>Hash</h2>
+</p>
 
-            <p>
-                A fixed-length value produced from data by a hashing
-                algorithm. Hashes are commonly used to verify data
-                and help protect stored passwords.
-            </p>
+</div>
 
-        </div>
 
+<div class="term">
 
-        <!-- Vulnerability -->
+<h2>
+🦠 Malware
+</h2>
 
-        <div class="term">
+<p>
 
-            <div class="category">
-                Security
-            </div>
+<strong>Definition:</strong>
+Malicious software designed to perform
+harmful or unwanted actions.
 
-            <h2>Vulnerability</h2>
+</p>
 
-            <p>
-                A weakness in a system, application, network, or
-                process that could potentially be exploited.
-            </p>
+<p>
 
-        </div>
+<strong>Examples:</strong>
+Viruses, worms, ransomware, and spyware.
 
+</p>
 
-        <!-- Exploit -->
+</div>
 
-        <div class="term">
 
-            <div class="category">
-                Threats
-            </div>
+<div class="term">
 
-            <h2>Exploit</h2>
+<h2>
+💰 Ransomware
+</h2>
 
-            <p>
-                A technique, code, or method that takes advantage
-                of a vulnerability.
-            </p>
+<p>
 
-        </div>
+<strong>Definition:</strong>
+Malware that can prevent access to data or
+systems and demand payment from victims.
 
+</p>
 
-        <!-- Ransomware -->
+</div>
 
-        <div class="term">
 
-            <div class="category">
-                Malware
-            </div>
+<div class="term">
 
-            <h2>Ransomware</h2>
+<h2>
+🔑 Encryption
+</h2>
 
-            <p>
-                A type of malware that can prevent access to data
-                or systems and may demand payment from its victims.
-            </p>
+<p>
 
-        </div>
+<strong>Definition:</strong>
+The process of transforming readable data into
+a protected form using cryptographic methods.
 
+</p>
 
-        <!-- DDoS -->
+<p>
 
-        <div class="term">
+<strong>Example:</strong>
+Encryption can help protect information while
+it is being transmitted or stored.
 
-            <div class="category">
-                Network Security
-            </div>
+</p>
 
-            <h2>DDoS</h2>
+</div>
 
-            <p>
-                A distributed denial-of-service attack attempts to
-                overwhelm a service or system with large amounts of
-                traffic or requests, making it difficult for legitimate
-                users to access.
-            </p>
 
-        </div>
+<div class="term">
 
+<h2>
+#️⃣ Hashing
+</h2>
 
-        <!-- MFA -->
+<p>
 
-        <div class="term">
+<strong>Definition:</strong>
+A process that converts data into a fixed-length
+value using a hash function.
 
-            <div class="category">
-                Account Security
-            </div>
+</p>
 
-            <h2>MFA</h2>
+<p>
 
-            <p>
-                Multi-factor authentication requires two or more
-                different types of verification before access is
-                granted.
-            </p>
+<strong>Example:</strong>
+Hashing is commonly used to verify data
+integrity and securely handle passwords.
 
-        </div>
+</p>
 
+</div>
 
-        <!-- Least Privilege -->
 
-        <div class="term">
+<div class="term">
 
-            <div class="category">
-                Security Principles
-            </div>
+<h2>
+🌐 IP Address
+</h2>
 
-            <h2>Least Privilege</h2>
+<p>
 
-            <p>
-                The principle of giving a user, application, or system
-                only the permissions necessary to perform its required
-                tasks.
-            </p>
+<strong>Definition:</strong>
+A numerical address used to identify a device
+or network interface for network communication.
 
-        </div>
+</p>
 
+<p>
 
-        <!-- CIA Triad -->
+<strong>Example:</strong>
+A device on a network may have a private IP
+address assigned by its router.
 
-        <div class="term">
+</p>
 
-            <div class="category">
-                Security Principles
-            </div>
+</div>
 
-            <h2>CIA Triad</h2>
 
-            <p>
-                A basic cybersecurity model consisting of
-                Confidentiality, Integrity, and Availability.
-            </p>
+<div class="term">
 
-        </div>
+<h2>
+📡 DNS
+</h2>
 
+<p>
 
-    </div>
+<strong>Definition:</strong>
+The Domain Name System translates domain names
+into IP addresses.
 
+</p>
 
-    <!-- Footer -->
+<p>
 
-    <footer>
+<strong>Example:</strong>
+It helps your device find the server associated
+with a website name.
 
-        <p>
-            © 2026 CyberStart | Learn. Explore. Stay Secure.
-        </p>
+</p>
 
-    </footer>
+</div>
+
+
+<div class="term">
+
+<h2>
+🧱 Firewall
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+A security control that monitors and filters
+network traffic according to defined rules.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🔌 Port
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+A logical communication endpoint used by
+network services.
+
+</p>
+
+<p>
+
+<strong>Example:</strong>
+Different network services can use different
+port numbers.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🔓 Vulnerability
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+A weakness in software, hardware, configuration,
+or a process that could potentially be exploited.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+⚠️ Exploit
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+A method or technique that takes advantage of
+a vulnerability.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🔧 Patch
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+An update designed to fix bugs, security
+vulnerabilities, or other problems.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🕳️ Zero-Day
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+A previously unknown or unpatched security
+vulnerability that may be actively exploited
+before a fix is available.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🔐 MFA
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+Multi-Factor Authentication requires multiple
+types of verification when accessing an account.
+
+</p>
+
+<p>
+
+<strong>Example:</strong>
+A password combined with a verification code
+from an authentication app.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+👤 Social Engineering
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+Techniques that manipulate people into revealing
+information or performing actions.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🧩 CIA Triad
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+A fundamental cybersecurity model consisting
+of three goals:
+
+</p>
+
+<p>
+
+<strong>Confidentiality:</strong>
+Protect information from unauthorized access.
+
+</p>
+
+<p>
+
+<strong>Integrity:</strong>
+Keep information accurate and protected from
+unauthorized changes.
+
+</p>
+
+<p>
+
+<strong>Availability:</strong>
+Make information and systems accessible when
+needed.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🚨 Incident Response
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+The process organizations use to detect,
+investigate, contain, and recover from
+cybersecurity incidents.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+☁️ Cloud Security
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+Practices and technologies used to protect
+cloud-based systems, applications, and data.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🧪 Sandbox
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+An isolated environment used to safely test
+software or analyze potentially risky behavior.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+📊 SIEM
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+Security Information and Event Management
+systems collect and analyze security-related
+events and logs.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🕵️ SOC
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+A Security Operations Center is a team or
+facility responsible for monitoring and
+responding to security events.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🔒 VPN
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+A Virtual Private Network creates an encrypted
+connection between a device and a VPN service
+or network.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+📜 Protocol
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+A set of rules that defines how systems
+communicate with each other.
+
+</p>
+
+<p>
+
+<strong>Examples:</strong>
+HTTP, HTTPS, DNS, and TCP.
+
+</p>
+
+</div>
+
+
+<div class="term">
+
+<h2>
+🧑‍💻 Endpoint
+</h2>
+
+<p>
+
+<strong>Definition:</strong>
+A device that connects to a network, such as
+a computer, phone, or server.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+<p>
+© 2026 CyberStart | Learn. Explore. Stay Secure.
+</p>
+
+</footer>
+
+
+<script>
+
+
+function searchTerms() {
+
+
+const input =
+document
+.getElementById("search")
+.value
+.toLowerCase();
+
+
+const terms =
+document
+.querySelectorAll(".term");
+
+
+let found = 0;
+
+
+terms.forEach(
+function(term) {
+
+
+const text =
+term.textContent
+.toLowerCase();
+
+
+if (
+text.includes(input)
+) {
+
+term.classList.remove(
+"hidden"
+);
+
+found++;
+
+}
+
+else {
+
+term.classList.add(
+"hidden"
+);
+
+}
+
+});
+
+
+const noResults =
+document
+.getElementById("noResults");
+
+
+if (found === 0) {
+
+noResults.style.display =
+"block";
+
+}
+
+else {
+
+noResults.style.display =
+"none";
+
+}
+
+}
+
+</script>
 
 
 </body>
