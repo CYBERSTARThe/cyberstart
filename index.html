@@ -2,417 +2,869 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>CyberStart</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
 
-<title>CyberStart</title>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-<style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+        }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b1020;
-    color: white;
-}
+        /* NAVIGATION */
 
-nav {
-    background: #111a33;
-    padding: 18px;
-    text-align: center;
-}
+        nav {
+            background: #111a33;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
-    font-weight: bold;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
 
-nav a:hover {
-    color: #4da6ff;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
 
-.hero {
-    text-align: center;
-    padding: 70px 20px;
-}
+        nav a:hover {
+            color: #38bdf8;
+        }
 
-.hero h1 {
-    font-size: 50px;
-    color: #4da6ff;
-    margin-bottom: 10px;
-}
+        /* HERO */
 
-.hero p {
-    color: #cccccc;
-    font-size: 19px;
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.6;
-}
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #0b1020, #111a33);
+        }
 
-.button {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 13px 25px;
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
 
-    background: #4da6ff;
-    color: #07101f;
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
 
-    text-decoration: none;
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 25px;
+            background: #38bdf8;
+            color: #07111f;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
 
-    border-radius: 8px;
+        .hero-button:hover {
+            transform: scale(1.05);
+        }
 
-    font-weight: bold;
-}
+        /* SECTIONS */
 
-.button:hover {
-    background: #78bbff;
-}
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-}
+        section h2 {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 35px;
+            color: #38bdf8;
+        }
 
-.section-title {
-    text-align: center;
-    color: #4da6ff;
-    font-size: 32px;
-    margin-top: 50px;
-}
+        /* CARDS */
 
-.cards {
-    display: grid;
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-    grid-template-columns:
-    repeat(auto-fit, minmax(250px, 1fr));
+        .card {
+            background: #111a33;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 200, 255, 0.08);
+        }
 
-    gap: 20px;
+        .card h3 {
+            color: #7dd3fc;
+        }
 
-    margin-top: 25px;
-}
+        .card p {
+            line-height: 1.6;
+        }
 
-.card {
-    background: #111a33;
+        /* GLOSSARY */
 
-    border: 1px solid #26345c;
+        .glossary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-    border-radius: 12px;
+        .term {
+            background: #111a33;
+            padding: 20px;
+            border-radius: 12px;
+        }
 
-    padding: 25px;
+        .term strong {
+            color: #38bdf8;
+            font-size: 20px;
+        }
 
-    text-align: center;
-}
+        /* CHALLENGE */
 
-.card h3 {
-    color: #78bbff;
-}
+        .challenge-section {
+            text-align: center;
+        }
 
-.card p {
-    color: #cccccc;
-    line-height: 1.6;
-}
+        .challenge-card {
+            max-width: 700px;
+            margin: auto;
+            background: #111a33;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.15);
+        }
 
-.donation-section {
-    max-width: 700px;
+        .challenge-card h2 {
+            margin-bottom: 10px;
+        }
 
-    margin: 60px auto;
+        .challenge-card h3 {
+            font-size: 22px;
+            margin: 25px 0;
+            line-height: 1.4;
+        }
 
-    padding: 30px;
+        #questionNumber {
+            color: #7dd3fc;
+            font-weight: bold;
+        }
 
-    text-align: center;
+        .answers {
+            display: grid;
+            gap: 12px;
+        }
 
-    background: #111a33;
+        .answers button,
+        #nextButton {
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #1e2a4a;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
 
-    border: 1px solid #26345c;
+        .answers button:hover,
+        #nextButton:hover {
+            transform: scale(1.03);
+            background: #26375f;
+        }
 
-    border-radius: 15px;
-}
+        .answers button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
 
-.donation-section h2 {
-    color: #4da6ff;
+        #feedback {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
 
-    font-size: 30px;
-}
+        #score {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px;
+        }
 
-.donation-section p {
-    color: #cccccc;
+        #nextButton {
+            background: #38bdf8;
+            color: #07111f;
+            font-weight: bold;
+        }
 
-    line-height: 1.6;
-}
+        /* FOOTER */
 
-.donation-button {
-    padding: 14px 25px;
+        footer {
+            text-align: center;
+            background: #111a33;
+            padding: 30px;
+            margin-top: 40px;
+            color: #94a3b8;
+        }
 
-    background: #4da6ff;
+        /* MOBILE */
 
-    color: #07101f;
+        @media (max-width: 700px) {
 
-    border: none;
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
 
-    border-radius: 8px;
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
 
-    font-weight: bold;
+            .hero h1 {
+                font-size: 40px;
+            }
 
-    font-size: 16px;
+            .hero p {
+                font-size: 17px;
+            }
 
-    cursor: pointer;
-}
+        }
 
-.donation-button:hover {
-    background: #78bbff;
-}
-
-.donation-message {
-    margin-top: 15px;
-
-    color: #78bbff !important;
-
-    font-weight: bold;
-}
-
-footer {
-    text-align: center;
-
-    padding: 30px;
-
-    margin-top: 40px;
-
-    background: #111a33;
-
-    color: #999999;
-}
-
-</style>
-
+    </style>
 </head>
 
 
 <body>
 
+    <!-- NAVIGATION -->
 
-<!-- NAVIGATION -->
+    <nav>
 
-<nav>
+        <div class="logo">
+            🛡️ CyberStart
+        </div>
 
-<a href="index.html">Home</a>
+        <div>
 
-<a href="lessons.html">Lessons</a>
+            <a href="#home">Home</a>
 
-<a href="labs.html">Labs</a>
+            <a href="#lessons">Lessons</a>
 
-<a href="quiz.html">Quiz</a>
+            <a href="#glossary">Glossary</a>
 
-<a href="glossary.html">Glossary</a>
+            <a href="#challenge">Challenge</a>
 
-<a href="profile.html">Profile</a>
-<a href="feedback.html">Feedback</a>
-<a href="games.html">Games</a>
-</nav>
+        </div>
 
-<!-- HERO -->
+    </nav>
 
-<section class="hero">
 
-<h1>CyberStart</h1>
+    <!-- HERO -->
 
-<p>
+    <header class="hero" id="home">
 
-Learn cybersecurity through simple lessons,
-interactive labs, quizzes, and challenges.
+        <h1>CyberStart</h1>
 
-</p>
+        <p>
+            Learn cybersecurity, understand digital threats,
+            and test your skills with interactive challenges.
+        </p>
 
-<a
-class="button"
-href="lessons.html">
+        <a class="hero-button" href="#challenge">
+            🚀 Start the Challenge
+        </a>
 
-Start Learning
+    </header>
 
-</a>
 
-</section>
+    <!-- LESSONS -->
 
+    <section id="lessons">
 
-<!-- CONTENT -->
+        <h2>📚 Cybersecurity Lessons</h2>
 
-<div class="container">
+        <div class="cards">
 
+            <div class="card">
 
-<h2 class="section-title">
-Learn Cybersecurity
-</h2>
+                <h3>🛡️ What Is Cybersecurity?</h3>
 
+                <p>
+                    Cybersecurity is the practice of protecting
+                    computers, networks, accounts, and information
+                    from digital threats.
+                </p>
 
-<div class="cards">
+            </div>
 
 
-<div class="card">
+            <div class="card">
 
-<h3>📚 Lessons</h3>
+                <h3>🎣 What Is Phishing?</h3>
 
-<p>
+                <p>
+                    Phishing is a scam where someone tries to trick
+                    you into giving away information or clicking
+                    something dangerous.
+                </p>
 
-Learn the fundamentals of cybersecurity,
-including threats, authentication,
-networks, and security principles.
+            </div>
 
-</p>
 
-<a
-class="button"
-href="lessons.html">
+            <div class="card">
 
-View Lessons
+                <h3>🔑 Strong Passwords</h3>
 
-</a>
+                <p>
+                    Strong passwords are harder for attackers to
+                    guess. Using unique passwords and additional
+                    security such as MFA can help protect accounts.
+                </p>
 
-</div>
+            </div>
 
 
-<div class="card">
+            <div class="card">
 
-<h3>🧪 Labs</h3>
+                <h3>📱 Multi-Factor Authentication</h3>
 
-<p>
+                <p>
+                    MFA adds another verification step when signing
+                    into an account, making it harder for someone
+                    else to access it.
+                </p>
 
-Practice cybersecurity concepts through
-safe educational experiments and
-interactive simulations.
+            </div>
 
-</p>
 
-<a
-class="button"
-href="labs.html">
+            <div class="card">
 
-View Labs
+                <h3>🦠 Malware</h3>
 
-</a>
+                <p>
+                    Malware is malicious software designed to
+                    disrupt systems, steal information, or perform
+                    other unwanted actions.
+                </p>
 
-</div>
+            </div>
 
 
-<div class="card">
+            <div class="card">
 
-<h3>🧠 Quizzes</h3>
+                <h3>🌐 Network Security</h3>
 
-<p>
+                <p>
+                    Network security involves protecting systems
+                    and information as they communicate across
+                    networks.
+                </p>
 
-Test your knowledge with cybersecurity
-questions and earn XP as you learn.
+            </div>
 
-</p>
+        </div>
 
-<a
-class="button"
-href="quiz.html">
+    </section>
 
-Take Quiz
 
-</a>
+    <!-- GLOSSARY -->
 
-</div>
+    <section id="glossary">
 
+        <h2>📖 Cybersecurity Glossary</h2>
 
-<div class="card">
+        <div class="glossary">
 
-<h3>📖 Glossary</h3>
+            <div class="term">
 
-<p>
+                <strong>Phishing</strong>
 
-Learn important cybersecurity terminology
-and understand what common security
-terms mean.
+                <p>
+                    A scam designed to trick people into revealing
+                    information or taking an unsafe action.
+                </p>
 
-</p>
+            </div>
 
-<a
-class="button"
-href="glossary.html">
 
-View Glossary
+            <div class="term">
 
-</a>
+                <strong>Malware</strong>
 
-</div>
+                <p>
+                    Malicious software that can harm systems or
+                    perform unwanted actions.
+                </p>
 
+            </div>
 
-</div>
 
+            <div class="term">
 
-<!-- SUPPORT -->
+                <strong>Firewall</strong>
 
-<section class="donation-section">
+                <p>
+                    A security system that helps control network
+                    traffic based on security rules.
+                </p>
 
-<h2>
-💙 Support CyberStart
-</h2>
+            </div>
 
-<p>
 
-Enjoying CyberStart?
+            <div class="term">
 
-If you'd like to help support the project
-and future cybersecurity lessons, labs,
-quizzes, and challenges, you can support us.
+                <strong>MFA</strong>
 
-</p>
+                <p>
+                    Multi-Factor Authentication. It requires more
+                    than one verification factor to access an account.
+                </p>
 
+            </div>
 
-<button
-class="donation-button"
-onclick="showDonationMessage()">
 
-💙 Support CyberStart
+            <div class="term">
 
-</button>
+                <strong>Encryption</strong>
 
+                <p>
+                    A process that transforms information so it can
+                    only be properly understood by someone with the
+                    required key or method.
+                </p>
 
-<p
-id="donationMessage"
-class="donation-message">
-</p>
+            </div>
 
 
-</section>
+            <div class="term">
 
+                <strong>VPN</strong>
 
-</div>
+                <p>
+                    A Virtual Private Network can create an
+                    encrypted connection between a device and a
+                    VPN server.
+                </p>
 
+            </div>
 
-<!-- FOOTER -->
 
-<footer>
+            <div class="term">
 
-<p>
+                <strong>Firewall</strong>
 
-© 2026 CyberStart |
-Learn. Explore. Stay Secure.
+                <p>
+                    A system that monitors and controls network
+                    traffic according to security rules.
+                </p>
 
-</p>
+            </div>
 
-</footer>
 
+            <div class="term">
 
-<script>
+                <strong>Vulnerability</strong>
 
-function showDonationMessage() {
+                <p>
+                    A weakness that could potentially be exploited
+                    to compromise a system.
+                </p>
 
-document
-.getElementById("donationMessage")
-.textContent =
-"Thank you for supporting CyberStart! A donation page will be available soon.";
+            </div>
 
-}
 
-</script>
+            <div class="term">
 
+                <strong>Authentication</strong>
+
+                <p>
+                    The process of verifying someone's identity
+                    before allowing access.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <strong>Cyber Attack</strong>
+
+                <p>
+                    An attempt to gain unauthorized access,
+                    disrupt systems, or steal information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CYBERSTART CHALLENGE -->
+
+    <section id="challenge" class="challenge-section">
+
+        <div class="challenge-card">
+
+            <h2>🛡️ CyberStart Challenge</h2>
+
+            <p>
+                Think you can spot a cyber threat?
+                Test your cybersecurity skills!
+            </p>
+
+            <div id="questionNumber">
+                Question 1 of 5
+            </div>
+
+            <h3 id="question">
+                Which password is the strongest?
+            </h3>
+
+            <div class="answers">
+
+                <button onclick="checkAnswer(0)">
+                    password123
+                </button>
+
+                <button onclick="checkAnswer(1)">
+                    CyberStart2026
+                </button>
+
+                <button onclick="checkAnswer(2)">
+                    T!9q#L2@vX7$k
+                </button>
+
+                <button onclick="checkAnswer(3)">
+                    123456789
+                </button>
+
+            </div>
+
+            <p id="feedback"></p>
+
+            <div id="score">
+                Score: 0
+            </div>
+
+            <button
+                id="nextButton"
+                onclick="nextQuestion()"
+                style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            🛡️ CyberStart
+        </p>
+
+        <p>
+            Learn. Practice. Stay Secure.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const questions = [
+
+            {
+                question:
+                    "Which password is the strongest?",
+
+                answers: [
+                    "password123",
+                    "CyberStart2026",
+                    "T!9q#L2@vX7$k",
+                    "123456789"
+                ],
+
+                correct: 2
+            },
+
+
+            {
+                question:
+                    "You receive an email saying you won a prize you never entered for. What should you do?",
+
+                answers: [
+                    "Click the link immediately",
+                    "Send them your information",
+                    "Ignore it and verify the message through an official source",
+                    "Forward it to everyone"
+                ],
+
+                correct: 2
+            },
+
+
+            {
+                question:
+                    "What does MFA help protect?",
+
+                answers: [
+                    "Your computer's screen brightness",
+                    "Your accounts",
+                    "Your internet speed",
+                    "Your keyboard"
+                ],
+
+                correct: 1
+            },
+
+
+            {
+                question:
+                    "What is phishing?",
+
+                answers: [
+                    "A type of computer hardware",
+                    "A method of tricking people into giving up information",
+                    "A programming language",
+                    "A type of Wi-Fi"
+                ],
+
+                correct: 1
+            },
+
+
+            {
+                question:
+                    "What should you do if you find a suspicious USB drive?",
+
+                answers: [
+                    "Plug it into your computer to see what's on it",
+                    "Give it to a friend",
+                    "Don't plug it in and report it to a trusted person",
+                    "Put it in another computer"
+                ],
+
+                correct: 2
+            }
+
+        ];
+
+
+        let currentQuestion = 0;
+
+        let points = 0;
+
+        let answered = false;
+
+
+        function loadQuestion() {
+
+            answered = false;
+
+            const q = questions[currentQuestion];
+
+
+            document.getElementById("questionNumber").textContent =
+                "Question " +
+                (currentQuestion + 1) +
+                " of " +
+                questions.length;
+
+
+            document.getElementById("question").textContent =
+                q.question;
+
+
+            document.getElementById("feedback").textContent =
+                "";
+
+
+            document.getElementById("score").textContent =
+                "Score: " + points;
+
+
+            document.getElementById("nextButton").style.display =
+                "none";
+
+
+            const buttons =
+                document.querySelectorAll(".answers button");
+
+
+            buttons.forEach((button, index) => {
+
+                button.textContent =
+                    q.answers[index];
+
+                button.disabled = false;
+
+            });
+
+        }
+
+
+        function checkAnswer(answer) {
+
+            if (answered) return;
+
+            answered = true;
+
+
+            const q = questions[currentQuestion];
+
+
+            const buttons =
+                document.querySelectorAll(".answers button");
+
+
+            buttons.forEach(button => {
+
+                button.disabled = true;
+
+            });
+
+
+            if (answer === q.correct) {
+
+                points++;
+
+
+                document.getElementById("feedback").textContent =
+                    "✅ Correct! Nice work.";
+
+            }
+
+            else {
+
+                document.getElementById("feedback").textContent =
+                    "❌ Not quite. Keep learning!";
+
+            }
+
+
+            document.getElementById("score").textContent =
+                "Score: " + points;
+
+
+            document.getElementById("nextButton").style.display =
+                "inline-block";
+
+        }
+
+
+        function nextQuestion() {
+
+            currentQuestion++;
+
+
+            if (currentQuestion < questions.length) {
+
+                loadQuestion();
+
+            }
+
+            else {
+
+                document.getElementById("questionNumber").textContent =
+                    "🏁 Challenge Complete!";
+
+
+                document.getElementById("question").textContent =
+                    "You scored " +
+                    points +
+                    " out of " +
+                    questions.length +
+                    "!";
+
+
+                document.querySelector(".answers").innerHTML =
+                    "";
+
+
+                if (points === 5) {
+
+                    document.getElementById("feedback").textContent =
+                        "🏆 PERFECT SCORE! You're a CyberStart pro!";
+
+                }
+
+                else if (points >= 3) {
+
+                    document.getElementById("feedback").textContent =
+                        "🔥 Great job! Keep sharpening your skills.";
+
+                }
+
+                else {
+
+                    document.getElementById("feedback").textContent =
+                        "💻 Good attempt! Check out the lessons and try again.";
+
+                }
+
+
+                document.getElementById("nextButton").textContent =
+                    "🔄 Play Again";
+
+
+                document.getElementById("nextButton").style.display =
+                    "inline-block";
+
+
+                document.getElementById("nextButton").onclick =
+                    restartChallenge;
+
+            }
+
+        }
+
+
+        function restartChallenge() {
+
+            currentQuestion = 0;
+
+            points = 0;
+
+            location.reload();
+
+        }
+
+
+        loadQuestion();
+
+    </script>
 
 </body>
 
