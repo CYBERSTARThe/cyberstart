@@ -3,161 +3,167 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CyberStart - Level 2 Quiz</title>
+<title>CyberStart - Level 2 Quiz</title>
 
-    <style>
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b1020;
-            color: white;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
 
-        nav {
-            background: #111a33;
-            padding: 18px;
-            text-align: center;
-        }
+nav {
+    background: #111a33;
+    padding: 18px;
+    text-align: center;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 8px;
-            font-weight: bold;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            color: #4da6ff;
-        }
+nav a:hover {
+    color: #4da6ff;
+}
 
-        .container {
-            max-width: 850px;
-            margin: auto;
-            padding: 35px 20px;
-        }
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px 20px;
+}
 
-        h1 {
-            text-align: center;
-            color: #4da6ff;
-            font-size: 38px;
-        }
+h1 {
+    text-align: center;
+    color: #4da6ff;
+    font-size: 38px;
+}
 
-        .intro {
-            text-align: center;
-            color: #cccccc;
-            margin-bottom: 35px;
-        }
+.intro {
+    text-align: center;
+    color: #cccccc;
+    margin-bottom: 35px;
+}
 
-        .question {
-            background: #111a33;
-            border: 1px solid #26345c;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-        }
+.question {
+    background: #111a33;
+    border: 1px solid #26345c;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
 
-        .question-number {
-            color: #78bbff;
-            font-size: 14px;
-            font-weight: bold;
-        }
+.question-number {
+    color: #78bbff;
+    font-size: 14px;
+    font-weight: bold;
+}
 
-        .question h2 {
-            font-size: 20px;
-            margin-top: 8px;
-        }
+.question h2 {
+    font-size: 20px;
+    margin-top: 8px;
+}
 
-        .answer {
-            width: 100%;
-            padding: 14px;
-            margin: 8px 0;
-            background: #182544;
-            color: white;
-            border: 1px solid #354878;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: left;
-            font-size: 15px;
-        }
+.answer {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0;
+    background: #182544;
+    color: white;
+    border: 1px solid #354878;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
+}
 
-        .answer:hover {
-            background: #263b6b;
-        }
+.answer:hover {
+    background: #263b6b;
+}
 
-        .answer.correct {
-            background: #176b3a;
-            border-color: #35c978;
-        }
+.answer.correct {
+    background: #176b3a;
+    border-color: #35c978;
+}
 
-        .answer.wrong {
-            background: #8b2525;
-            border-color: #ff6666;
-        }
+.answer.wrong {
+    background: #8b2525;
+    border-color: #ff6666;
+}
 
-        .answer:disabled {
-            cursor: default;
-        }
+.answer:disabled {
+    cursor: default;
+}
 
-        .explanation {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            background: #0d162d;
-            border-radius: 8px;
-            color: #cccccc;
-            line-height: 1.5;
-        }
+.explanation {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: #0d162d;
+    border-radius: 8px;
+    color: #cccccc;
+    line-height: 1.5;
+}
 
-        #result {
-            display: none;
-            background: #111a33;
-            border: 1px solid #26345c;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            margin-top: 30px;
-        }
+#result {
+    display: none;
+    background: #111a33;
+    border: 1px solid #26345c;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
 
-        #result h2 {
-            color: #4da6ff;
-        }
+#result h2 {
+    color: #4da6ff;
+}
 
-        #score {
-            font-size: 24px;
-            font-weight: bold;
-        }
+#score {
+    font-size: 24px;
+    font-weight: bold;
+}
 
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            margin: 8px;
-            background: #4da6ff;
-            color: #07101f;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
+.xp-earned {
+    color: #78bbff;
+    font-size: 20px;
+    font-weight: bold;
+}
 
-        .button:hover {
-            background: #78bbff;
-        }
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 8px;
+    background: #4da6ff;
+    color: #07101f;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-            background: #111a33;
-            color: #999999;
-        }
+.button:hover {
+    background: #78bbff;
+}
 
-    </style>
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    background: #111a33;
+    color: #999999;
+}
+
+</style>
 
 </head>
 
@@ -165,601 +171,673 @@
 <body>
 
 
-    <nav>
+<nav>
 
-        <a href="index.html">Home</a>
+<a href="index.html">Home</a>
 
-        <a href="lessons.html">Lessons</a>
+<a href="lessons.html">Lessons</a>
 
-        <a href="labs.html">Labs</a>
+<a href="labs.html">Labs</a>
 
-        <a href="quiz.html">Quiz</a>
+<a href="quiz.html">Quiz</a>
 
-        <a href="glossary.html">Glossary</a>
+<a href="glossary.html">Glossary</a>
 
-        <a href="profile.html">Profile</a>
+<a href="profile.html">Profile</a>
 
-    </nav>
+</nav>
 
 
-    <div class="container">
+<div class="container">
 
-        <h1>Cybersecurity Level 2</h1>
+<h1>Cybersecurity Level 2</h1>
 
-        <p class="intro">
-            Test your understanding of cybersecurity concepts.
-            Choose the best answer for each question.
-        </p>
+<p class="intro">
+Test your understanding of cybersecurity concepts.
+Choose the best answer for each question.
+</p>
 
 
-        <!-- Question 1 -->
+<!-- QUESTION 1 -->
 
-        <div class="question">
+<div class="question">
 
-            <div class="question-number">
-                QUESTION 1 OF 10
-            </div>
+<div class="question-number">
+QUESTION 1 OF 10
+</div>
 
-            <h2>
-                A company gives employees access only to the files
-                required for their jobs. Which security principle
-                does this demonstrate?
-            </h2>
+<h2>
+A company gives employees access only to the files
+required for their jobs. Which security principle
+does this demonstrate?
+</h2>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                A. Defense in depth
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+A. Defense in depth
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, true)">
-                B. Least privilege
-            </button>
+<button class="answer" onclick="checkAnswer(this, true)">
+B. Least privilege
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                C. Availability
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+C. Availability
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                D. Data redundancy
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+D. Data redundancy
+</button>
 
-            <div class="explanation">
-                Least privilege means giving users only the access
-                they need to perform their responsibilities.
-            </div>
+<div class="explanation">
+Least privilege means giving users only the access
+they need to perform their responsibilities.
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Question 2 -->
+<!-- QUESTION 2 -->
 
-        <div class="question">
+<div class="question">
 
-            <div class="question-number">
-                QUESTION 2 OF 10
-            </div>
+<div class="question-number">
+QUESTION 2 OF 10
+</div>
 
-            <h2>
-                Which part of the CIA Triad focuses on preventing
-                unauthorized people from accessing information?
-            </h2>
+<h2>
+Which part of the CIA Triad focuses on preventing
+unauthorized people from accessing information?
+</h2>
 
-            <button class="answer" onclick="checkAnswer(this, true)">
-                A. Confidentiality
-            </button>
+<button class="answer" onclick="checkAnswer(this, true)">
+A. Confidentiality
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                B. Integrity
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+B. Integrity
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                C. Availability
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+C. Availability
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                D. Authentication
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+D. Authentication
+</button>
 
-            <div class="explanation">
-                Confidentiality focuses on ensuring information is
-                accessible only to authorized people or systems.
-            </div>
+<div class="explanation">
+Confidentiality focuses on ensuring information is
+accessible only to authorized people or systems.
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Question 3 -->
+<!-- QUESTION 3 -->
 
-        <div class="question">
+<div class="question">
 
-            <div class="question-number">
-                QUESTION 3 OF 10
-            </div>
+<div class="question-number">
+QUESTION 3 OF 10
+</div>
 
-            <h2>
-                What is the primary difference between authentication
-                and authorization?
-            </h2>
+<h2>
+What is the primary difference between authentication
+and authorization?
+</h2>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                A. Authentication encrypts data while authorization
-                backs up data.
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+A. Authentication encrypts data while authorization backs up data.
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, true)">
-                B. Authentication verifies identity while authorization
-                determines what that identity can access.
-            </button>
+<button class="answer" onclick="checkAnswer(this, true)">
+B. Authentication verifies identity while authorization determines what that identity can access.
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                C. Authentication creates firewalls while authorization
-                detects malware.
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+C. Authentication creates firewalls while authorization detects malware.
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                D. They are exactly the same process.
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+D. They are exactly the same process.
+</button>
 
-            <div class="explanation">
-                Authentication answers "Who are you?"
-                Authorization answers "What are you allowed to access?"
-            </div>
+<div class="explanation">
+Authentication verifies identity. Authorization determines
+what that authenticated identity is allowed to access.
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Question 4 -->
+<!-- QUESTION 4 -->
 
-        <div class="question">
+<div class="question">
 
-            <div class="question-number">
-                QUESTION 4 OF 10
-            </div>
+<div class="question-number">
+QUESTION 4 OF 10
+</div>
 
-            <h2>
-                Why is multi-factor authentication generally stronger
-                than using only a password?
-            </h2>
+<h2>
+Why is multi-factor authentication generally stronger
+than using only a password?
+</h2>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                A. It makes passwords impossible to steal.
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+A. It makes passwords impossible to steal.
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, true)">
-                B. It requires additional verification beyond the password.
-            </button>
+<button class="answer" onclick="checkAnswer(this, true)">
+B. It requires additional verification beyond the password.
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                C. It automatically removes malware.
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+C. It automatically removes malware.
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                D. It prevents every type of cyberattack.
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+D. It prevents every type of cyberattack.
+</button>
 
-            <div class="explanation">
-                MFA adds another verification factor, so knowing the
-                password alone may not be enough to access the account.
-            </div>
+<div class="explanation">
+MFA adds another verification factor, so knowing the
+password alone may not be enough to access the account.
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Question 5 -->
+<!-- QUESTION 5 -->
 
-        <div class="question">
+<div class="question">
 
-            <div class="question-number">
-                QUESTION 5 OF 10
-            </div>
+<div class="question-number">
+QUESTION 5 OF 10
+</div>
 
-            <h2>
-                What is the main purpose of hashing a password?
-            </h2>
+<h2>
+What is the main purpose of hashing a password?
+</h2>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                A. To make the password easier to read
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+A. To make the password easier to read
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, true)">
-                B. To store a one-way representation that can be
-                compared during login
-            </button>
+<button class="answer" onclick="checkAnswer(this, true)">
+B. To store a one-way representation that can be compared during login
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                C. To send the password to everyone on the network
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+C. To send the password to everyone on the network
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                D. To increase screen resolution
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+D. To increase screen resolution
+</button>
 
-            <div class="explanation">
-                Password systems commonly store a derived representation
-                rather than the original password.
-            </div>
+<div class="explanation">
+Password systems commonly store a derived representation
+rather than the original password.
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Question 6 -->
+<!-- QUESTION 6 -->
 
-        <div class="question">
+<div class="question">
 
-            <div class="question-number">
-                QUESTION 6 OF 10
-            </div>
+<div class="question-number">
+QUESTION 6 OF 10
+</div>
 
-            <h2>
-                An attacker sends a fake message pretending to be
-                a company's IT department and asks an employee to
-                provide login information. What type of attack is this?
-            </h2>
+<h2>
+An attacker sends a fake message pretending to be
+a company's IT department and asks an employee to
+provide login information. What type of attack is this?
+</h2>
 
-            <button class="answer" onclick="checkAnswer(this, true)">
-                A. Social engineering
-            </button>
+<button class="answer" onclick="checkAnswer(this, true)">
+A. Social engineering
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                B. Hardware failure
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+B. Hardware failure
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                C. Data compression
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+C. Data compression
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                D. Network redundancy
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+D. Network redundancy
+</button>
 
-            <div class="explanation">
-                Social engineering attacks manipulate people into
-                performing actions or revealing information.
-            </div>
+<div class="explanation">
+Social engineering attacks manipulate people into
+performing actions or revealing information.
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Question 7 -->
+<!-- QUESTION 7 -->
 
-        <div class="question">
+<div class="question">
 
-            <div class="question-number">
-                QUESTION 7 OF 10
-            </div>
+<div class="question-number">
+QUESTION 7 OF 10
+</div>
 
-            <h2>
-                Which security approach uses multiple layers of
-                protection instead of relying on a single defense?
-            </h2>
+<h2>
+Which security approach uses multiple layers of
+protection instead of relying on a single defense?
+</h2>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                A. Least privilege
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+A. Least privilege
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, true)">
-                B. Defense in depth
-            </button>
+<button class="answer" onclick="checkAnswer(this, true)">
+B. Defense in depth
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                C. Single-factor authentication
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+C. Single-factor authentication
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                D. Data deletion
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+D. Data deletion
+</button>
 
-            <div class="explanation">
-                Defense in depth uses multiple security controls so
-                one failed defense does not necessarily expose the
-                entire system.
-            </div>
+<div class="explanation">
+Defense in depth uses multiple security controls so
+one failed defense does not necessarily expose the
+entire system.
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Question 8 -->
+<!-- QUESTION 8 -->
 
-        <div class="question">
+<div class="question">
 
-            <div class="question-number">
-                QUESTION 8 OF 10
-            </div>
+<div class="question-number">
+QUESTION 8 OF 10
+</div>
 
-            <h2>
-                Which CIA Triad principle focuses on keeping systems
-                and information accessible when they are needed?
-            </h2>
+<h2>
+Which CIA Triad principle focuses on keeping systems
+and information accessible when they are needed?
+</h2>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                A. Confidentiality
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+A. Confidentiality
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                B. Integrity
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+B. Integrity
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, true)">
-                C. Availability
-            </button>
+<button class="answer" onclick="checkAnswer(this, true)">
+C. Availability
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                D. Authentication
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+D. Authentication
+</button>
 
-            <div class="explanation">
-                Availability means authorized users should be able
-                to access systems and information when needed.
-            </div>
+<div class="explanation">
+Availability means authorized users should be able
+to access systems and information when needed.
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Question 9 -->
+<!-- QUESTION 9 -->
 
-        <div class="question">
+<div class="question">
 
-            <div class="question-number">
-                QUESTION 9 OF 10
-            </div>
+<div class="question-number">
+QUESTION 9 OF 10
+</div>
 
-            <h2>
-                A security team discovers that a software application
-                has a weakness that could be exploited by attackers.
-                What is this weakness commonly called?
-            </h2>
+<h2>
+A security team discovers that a software application
+has a weakness that could be exploited by attackers.
+What is this weakness commonly called?
+</h2>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                A. Authentication
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+A. Authentication
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, true)">
-                B. Vulnerability
-            </button>
+<button class="answer" onclick="checkAnswer(this, true)">
+B. Vulnerability
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                C. Encryption
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+C. Encryption
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                D. Backup
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+D. Backup
+</button>
 
-            <div class="explanation">
-                A vulnerability is a weakness in a system that could
-                potentially be exploited to compromise security.
-            </div>
+<div class="explanation">
+A vulnerability is a weakness in a system that could
+potentially be exploited to compromise security.
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Question 10 -->
+<!-- QUESTION 10 -->
 
-        <div class="question">
+<div class="question">
 
-            <div class="question-number">
-                QUESTION 10 OF 10
-            </div>
+<div class="question-number">
+QUESTION 10 OF 10
+</div>
 
-            <h2>
-                After detecting a cybersecurity incident, why is
-                documenting what happened important?
-            </h2>
+<h2>
+After detecting a cybersecurity incident, why is
+documenting what happened important?
+</h2>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                A. It guarantees another attack can never happen.
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+A. It guarantees another attack can never happen.
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, true)">
-                B. It helps organizations understand the incident,
-                improve defenses, and respond more effectively.
-            </button>
+<button class="answer" onclick="checkAnswer(this, true)">
+B. It helps organizations understand the incident, improve defenses, and respond more effectively.
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                C. It automatically removes every threat.
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+C. It automatically removes every threat.
+</button>
 
-            <button class="answer" onclick="checkAnswer(this, false)">
-                D. It replaces the need for security controls.
-            </button>
+<button class="answer" onclick="checkAnswer(this, false)">
+D. It replaces the need for security controls.
+</button>
 
-            <div class="explanation">
-                Documentation helps security teams understand what
-                occurred and improve future detection and response.
-            </div>
+<div class="explanation">
+Documentation helps security teams understand what
+occurred and improve future detection and response.
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Result -->
+<!-- RESULT -->
 
-        <div id="result">
+<div id="result">
 
-            <h2>Level 2 Complete</h2>
+<h2>Level 2 Complete 🎉</h2>
 
-            <p id="score"></p>
+<p id="score"></p>
 
-            <p id="message"></p>
+<p id="message"></p>
 
-            <button class="button" onclick="restartQuiz()">
-                Restart Quiz
-            </button>
+<p class="xp-earned">
+⭐ +50 XP Earned!
+</p>
 
-            <a class="button" href="profile.html">
-                View Profile
-            </a>
+<button class="button" onclick="restartQuiz()">
+Restart Quiz
+</button>
 
-        </div>
+<a class="button" href="profile.html">
+View Profile
+</a>
 
+</div>
 
-    </div>
 
+</div>
 
-    <footer>
 
-        <p>
-            © 2026 CyberStart | Learn. Explore. Stay Secure.
-        </p>
+<footer>
 
-    </footer>
+<p>
+© 2026 CyberStart | Learn. Explore. Stay Secure.
+</p>
 
+</footer>
 
-    <script>
 
-        let score = 0;
+<script>
 
-        let answered = 0;
 
-        const totalQuestions = 10;
+let score = 0;
 
+let answered = 0;
 
-        function checkAnswer(button, correct) {
+const totalQuestions = 10;
 
-            const question = button.parentElement;
 
-            if (question.dataset.answered === "true") {
-                return;
-            }
+/*
+CHECK ANSWER
+*/
 
-            question.dataset.answered = "true";
+function checkAnswer(button, correct) {
 
-            answered++;
+const question =
+button.parentElement;
 
 
-            const buttons =
-                question.querySelectorAll(".answer");
+if (
+question.dataset.answered === "true"
+) {
 
+return;
 
-            buttons.forEach(function(btn) {
-                btn.disabled = true;
-            });
+}
 
 
-            if (correct) {
+question.dataset.answered = "true";
 
-                button.classList.add("correct");
+answered++;
 
-                score++;
 
-            } else {
+const buttons =
+question.querySelectorAll(".answer");
 
-                button.classList.add("wrong");
 
-            }
+buttons.forEach(function(btn) {
 
+btn.disabled = true;
 
-            const explanation =
-                question.querySelector(".explanation");
+});
 
-            explanation.style.display = "block";
 
+if (correct) {
 
-            if (answered === totalQuestions) {
-                showResult();
-            }
+button.classList.add("correct");
 
-        }
+score++;
 
+}
 
-        function showResult() {
+else {
 
-            const result =
-                document.getElementById("result");
+button.classList.add("wrong");
 
-            const scoreText =
-                document.getElementById("score");
+}
 
-            const message =
-                document.getElementById("message");
 
+const explanation =
+question.querySelector(".explanation");
 
-            result.style.display = "block";
 
+explanation.style.display = "block";
 
-            scoreText.textContent =
-                "Your Score: " +
-                score +
-                " / " +
-                totalQuestions;
 
+if (answered === totalQuestions) {
 
-            /* SAVE LAST SCORE */
+showResult();
 
-            localStorage.setItem(
-                "cyberstartLastScore",
-                score
-            );
+}
 
+}
 
-            /* SAVE BEST SCORE */
 
-            let bestScore =
-                Number(
-                    localStorage.getItem(
-                        "cyberstartBestScore"
-                    )
-                ) || 0;
+/*
+SHOW RESULT
+*/
 
+function showResult() {
 
-            if (score > bestScore) {
 
-                localStorage.setItem(
-                    "cyberstartBestScore",
-                    score
-                );
+const result =
+document.getElementById("result");
 
-            }
 
+const scoreText =
+document.getElementById("score");
 
-            if (score === 10) {
 
-                message.textContent =
-                    "Excellent! You have a strong understanding of cybersecurity concepts.";
+const message =
+document.getElementById("message");
 
-            }
 
-            else if (score >= 8) {
+result.style.display = "block";
 
-                message.textContent =
-                    "Great work! Your cybersecurity fundamentals are getting strong.";
 
-            }
+scoreText.textContent =
+"Your Score: " +
+score +
+" / " +
+totalQuestions;
 
-            else if (score >= 6) {
 
-                message.textContent =
-                    "Good job! Keep studying and building your cybersecurity knowledge.";
+/*
+SAVE LAST SCORE
+*/
 
-            }
+localStorage.setItem(
+"cyberstartLastScore",
+score
+);
 
-            else if (score >= 4) {
 
-                message.textContent =
-                    "You're making progress. Review the lessons and try again.";
+/*
+SAVE BEST SCORE
+*/
 
-            }
+let bestScore =
+Number(
+localStorage.getItem(
+"cyberstartBestScore"
+)
+) || 0;
 
-            else {
 
-                message.textContent =
-                    "Keep learning! Cybersecurity takes practice.";
+if (score > bestScore) {
 
-            }
+localStorage.setItem(
+"cyberstartBestScore",
+score
+);
 
+}
 
-            result.scrollIntoView({
-                behavior: "smooth"
-            });
 
-        }
+/*
+ADD 50 XP ONLY ONCE
+*/
 
+let quizCompleted =
+localStorage.getItem(
+"cyberstartQuizCompleted"
+);
 
-        function restartQuiz() {
 
-            location.reload();
+if (quizCompleted !== "true") {
 
-        }
 
-    </script>
+let currentXP =
+Number(
+localStorage.getItem(
+"cyberstartXP"
+)
+) || 0;
+
+
+currentXP += 50;
+
+
+localStorage.setItem(
+"cyberstartXP",
+currentXP
+);
+
+
+localStorage.setItem(
+"cyberstartQuizCompleted",
+"true"
+);
+
+}
+
+
+if (score === 10) {
+
+message.textContent =
+"Perfect score! Excellent cybersecurity knowledge.";
+
+}
+
+else if (score >= 8) {
+
+message.textContent =
+"Great work! Your cybersecurity fundamentals are strong.";
+
+}
+
+else if (score >= 6) {
+
+message.textContent =
+"Good job! Keep studying and improving your knowledge.";
+
+}
+
+else if (score >= 4) {
+
+message.textContent =
+"You're making progress. Review the lessons and try again.";
+
+}
+
+else {
+
+message.textContent =
+"Keep learning! Cybersecurity takes practice.";
+
+}
+
+
+result.scrollIntoView({
+behavior: "smooth"
+});
+
+}
+
+
+/*
+RESTART QUIZ
+*/
+
+function restartQuiz() {
+
+location.reload();
+
+}
+
+
+</script>
 
 
 </body>
