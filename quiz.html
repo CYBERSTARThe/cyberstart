@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberStart - Cybersecurity Quiz</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+        }
+
+        nav {
+            background: #111a33;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4da6ff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4da6ff;
+        }
+
+        .intro {
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            background: #111a33;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 1px solid #26345c;
+        }
+
+        .question h3 {
+            margin-top: 0;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            background: #182544;
+            color: white;
+            border: 1px solid #354878;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #263b6b;
+        }
+
+        button.correct {
+            background: #176b3a;
+        }
+
+        button.wrong {
+            background: #8b2525;
+        }
+
+        #result {
+            display: none;
+            background: #111a33;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+            border: 1px solid #26345c;
+        }
+
+        #result h2 {
+            color: #4da6ff;
+        }
+
+        .home-button {
+            display: inline-block;
+            width: auto;
+            padding: 12px 25px;
+            background: #4da6ff;
+            color: #07101f;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .home-button:hover {
+            background: #78bbff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="quiz.html">Quiz</a>
+
+    </nav>
+
+
+    <div class="container">
+
+        <h1>Cybersecurity Basics Quiz</h1>
+
+        <p class="intro">
+            Test your knowledge of basic cybersecurity concepts.
+            Choose the best answer for each question.
+        </p>
+
+
+        <!-- Question 1 -->
+
+        <div class="question">
+
+            <h3>1. What does cybersecurity help protect?</h3>
+
+            <button onclick="answer(this, false)">
+                A. Only computers
+            </button>
+
+            <button onclick="answer(this, true)">
+                B. Computers, networks, and information
+            </button>
+
+            <button onclick="answer(this, false)">
+                C. Only websites
+            </button>
+
+            <button onclick="answer(this, false)">
+                D. Only phones
+            </button>
+
+        </div>
+
+
+        <!-- Question 2 -->
+
+        <div class="question">
+
+            <h3>2. What is phishing?</h3>
+
+            <button onclick="answer(this, false)">
+                A. A type of computer hardware
+            </button>
+
+            <button onclick="answer(this, true)">
+                B. A scam designed to trick someone into giving information
+            </button>
+
+            <button onclick="answer(this, false)">
+                C. A programming language
+            </button>
+
+            <button onclick="answer(this, false)">
+                D. A type of firewall
+            </button>
+
+        </div>
+
+
+        <!-- Question 3 -->
+
+        <div class="question">
+
+            <h3>3. Which password is generally stronger?</h3>
+
+            <button onclick="answer(this, false)">
+                A. password123
+            </button>
+
+            <button onclick="answer(this, false)">
+                B. john2009
+            </button>
+
+            <button onclick="answer(this, true)">
+                C. Q7!mZ#42pL
+            </button>
+
+            <button onclick="answer(this, false)">
+                D. 12345678
+            </button>
+
+        </div>
+
+
+        <!-- Question 4 -->
+
+        <div class="question">
+
+            <h3>4. What does a firewall help do?</h3>
+
+            <button onclick="answer(this, true)">
+                A. Control network traffic
+            </button>
+
+            <button onclick="answer(this, false)">
+                B. Make your computer faster
+            </button>
+
+            <button onclick="answer(this, false)">
+                C. Create passwords
+            </button>
+
+            <button onclick="answer(this, false)">
+                D. Charge your laptop
+            </button>
+
+        </div>
+
+
+        <!-- Question 5 -->
+
+        <div class="question">
+
+            <h3>5. What should you do with a suspicious link?</h3>
+
+            <button onclick="answer(this, false)">
+                A. Click it to see what happens
+            </button>
+
+            <button onclick="answer(this, false)">
+                B. Send it to your friends
+            </button>
+
+            <button onclick="answer(this, true)">
+                C. Avoid clicking it and verify the source
+            </button>
+
+            <button onclick="answer(this, false)">
+                D. Enter your password
+            </button>
+
+        </div>
+
+
+        <!-- Question 6 -->
+
+        <div class="question">
+
+            <h3>6. What is malware?</h3>
+
+            <button onclick="answer(this, true)">
+                A. Malicious software
+            </button>
+
+            <button onclick="answer(this, false)">
+                B. A type of monitor
+            </button>
+
+            <button onclick="answer(this, false)">
+                C. A secure password
+            </button>
+
+            <button onclick="answer(this, false)">
+                D. A computer network
+            </button>
+
+        </div>
+
+
+        <div id="result">
+
+            <h2>Quiz Complete!</h2>
+
+            <p id="score"></p>
+
+            <p id="message"></p>
+
+            <a class="home-button" href="index.html">
+                Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let score = 0;
+
+        let answered = 0;
+
+        const totalQuestions = 6;
+
+
+        function answer(button, correct) {
+
+            // Prevent answering the same question twice
+
+            const question = button.parentElement;
+
+            if (question.dataset.answered === "true") {
+                return;
+            }
+
+            question.dataset.answered = "true";
+
+            answered++;
+
+
+            if (correct) {
+
+                button.classList.add("correct");
+
+                score++;
+
+            } else {
+
+                button.classList.add("wrong");
+
+            }
+
+
+            // Disable all buttons for this question
+
+            const buttons = question.querySelectorAll("button");
+
+            buttons.forEach(function(btn) {
+
+                btn.disabled = true;
+
+            });
+
+
+            // Show result when all questions are answered
+
+            if (answered === totalQuestions) {
+
+                showResult();
+
+            }
+
+        }
+
+
+        function showResult() {
+
+            const result = document.getElementById("result");
+
+            const scoreText = document.getElementById("score");
+
+            const message = document.getElementById("message");
+
+
+            result.style.display = "block";
+
+
+            scoreText.textContent =
+                "Your Score: " + score + " / " + totalQuestions;
+
+
+            if (score === 6) {
+
+                message.textContent =
+                    "Excellent! You have a strong understanding of the basics.";
+
+            } else if (score >= 4) {
+
+                message.textContent =
+                    "Great job! You have a good understanding of cybersecurity.";
+
+            } else if (score >= 2) {
+
+                message.textContent =
+                    "Good start! Keep learning and you will improve.";
+
+            } else {
+
+                message.textContent =
+                    "Keep practicing! Cybersecurity takes time to learn.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
