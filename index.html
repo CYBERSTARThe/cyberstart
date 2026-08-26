@@ -1,367 +1,418 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CyberStart</title>
+<title>CyberStart</title>
 
-    <style>
+<style>
 
-        body {
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
 
-            margin: 0;
+nav {
+    background: #111a33;
+    padding: 18px;
+    text-align: center;
+}
 
-            font-family: Arial, sans-serif;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: bold;
+}
 
-            background: #0b1020;
+nav a:hover {
+    color: #4da6ff;
+}
 
-            color: white;
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+}
 
-        }
+.hero h1 {
+    font-size: 50px;
+    color: #4da6ff;
+    margin-bottom: 10px;
+}
 
-        nav {
+.hero p {
+    color: #cccccc;
+    font-size: 19px;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+}
 
-            background: #111a33;
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 25px;
 
-            padding: 18px;
+    background: #4da6ff;
+    color: #07101f;
 
-            text-align: center;
+    text-decoration: none;
 
-        }
+    border-radius: 8px;
 
-        nav a {
+    font-weight: bold;
+}
 
-            color: white;
+.button:hover {
+    background: #78bbff;
+}
 
-            text-decoration: none;
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
 
-            margin: 0 15px;
+.section-title {
+    text-align: center;
+    color: #4da6ff;
+    font-size: 32px;
+    margin-top: 50px;
+}
 
-            font-weight: bold;
+.cards {
+    display: grid;
 
-        }
+    grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
 
-        nav a:hover {
+    gap: 20px;
 
-            color: #4da6ff;
+    margin-top: 25px;
+}
 
-        }
+.card {
+    background: #111a33;
 
-        header {
+    border: 1px solid #26345c;
 
-            text-align: center;
+    border-radius: 12px;
 
-            padding: 50px 20px;
+    padding: 25px;
 
-            background: #0e1630;
+    text-align: center;
+}
 
-        }
+.card h3 {
+    color: #78bbff;
+}
 
-        header h1 {
+.card p {
+    color: #cccccc;
+    line-height: 1.6;
+}
 
-            font-size: 42px;
+.donation-section {
+    max-width: 700px;
 
-            color: #4da6ff;
+    margin: 60px auto;
 
-            margin-bottom: 10px;
+    padding: 30px;
 
-        }
+    text-align: center;
 
-        header p {
+    background: #111a33;
 
-            font-size: 18px;
+    border: 1px solid #26345c;
 
-            color: #cccccc;
+    border-radius: 15px;
+}
 
-        }
+.donation-section h2 {
+    color: #4da6ff;
 
-        .container {
+    font-size: 30px;
+}
 
-            max-width: 1000px;
+.donation-section p {
+    color: #cccccc;
 
-            margin: auto;
+    line-height: 1.6;
+}
 
-            padding: 30px 20px;
+.donation-button {
+    padding: 14px 25px;
 
-        }
+    background: #4da6ff;
 
-        .card-container {
+    color: #07101f;
 
-            display: grid;
+    border: none;
 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    border-radius: 8px;
 
-            gap: 20px;
+    font-weight: bold;
 
-        }
+    font-size: 16px;
 
-        .card {
+    cursor: pointer;
+}
 
-            background: #111a33;
+.donation-button:hover {
+    background: #78bbff;
+}
 
-            padding: 25px;
+.donation-message {
+    margin-top: 15px;
 
-            border-radius: 12px;
+    color: #78bbff !important;
 
-            border: 1px solid #26345c;
+    font-weight: bold;
+}
 
-        }
+footer {
+    text-align: center;
 
-        .card h2 {
+    padding: 30px;
 
-            color: #4da6ff;
+    margin-top: 40px;
 
-        }
+    background: #111a33;
 
-        .card p {
+    color: #999999;
+}
 
-            color: #dddddd;
-
-            line-height: 1.6;
-
-        }
-
-        .quiz-button {
-
-            display: inline-block;
-
-            margin-top: 15px;
-
-            padding: 12px 25px;
-
-            background: #4da6ff;
-
-            color: #07101f;
-
-            text-decoration: none;
-
-            border-radius: 8px;
-
-            font-weight: bold;
-
-        }
-
-        .quiz-button:hover {
-
-            background: #78bbff;
-
-        }
-
-        footer {
-
-            text-align: center;
-
-            padding: 25px;
-
-            margin-top: 30px;
-
-            background: #111a33;
-
-            color: #999999;
-
-        }
-
-    </style>
+</style>
 
 </head>
 
+
 <body>
 
-    <!-- Navigation -->
+
+<!-- NAVIGATION -->
+
 <nav>
 
-    <a href="index.html">Home</a>
+<a href="index.html">Home</a>
 
-    <a href="lessons.html">Lessons</a>
+<a href="lessons.html">Lessons</a>
 
+<a href="labs.html">Labs</a>
 
+<a href="quiz.html">Quiz</a>
 
+<a href="glossary.html">Glossary</a>
 
-    <a href="labs.html">Labs</a>
-    <a href="quiz.html">Quiz</a>
+<a href="profile.html">Profile</a>
 
-    <a href="glossary.html">Glossary</a>
-    <a href="profile.html">Profile</a>
 </nav>
-                                   
-    <!-- Header -->
 
-    <header>
 
-        <h1>CyberStart</h1>
+<!-- HERO -->
 
-        <p>
+<section class="hero">
 
-            Your starting point for learning cybersecurity.
+<h1>CyberStart</h1>
 
-        </p>
+<p>
 
-    </header>
+Learn cybersecurity through simple lessons,
+interactive labs, quizzes, and challenges.
 
-    <!-- Main Content -->
+</p>
 
-    <div class="container">
+<a
+class="button"
+href="lessons.html">
 
-        <h2>Cybersecurity Basics</h2>
+Start Learning
 
-        <p>
+</a>
 
-            Welcome to CyberStart! This website is designed to
+</section>
 
-            help beginners understand the basics of cybersecurity.
 
-        </p>
+<!-- CONTENT -->
 
-        <div class="card-container">
+<div class="container">
 
-            <!-- Cybersecurity Card -->
 
-            <div class="card">
+<h2 class="section-title">
+Learn Cybersecurity
+</h2>
 
-                <h2>What Is Cybersecurity?</h2>
 
-                <p>
+<div class="cards">
 
-                    Cybersecurity is the practice of protecting
 
-                    computers, networks, accounts, and information
+<div class="card">
 
-                    from digital threats.
+<h3>📚 Lessons</h3>
 
-                </p>
+<p>
 
-            </div>
+Learn the fundamentals of cybersecurity,
+including threats, authentication,
+networks, and security principles.
 
-            <!-- Phishing Card -->
+</p>
 
-            <div class="card">
+<a
+class="button"
+href="lessons.html">
 
-                <h2>What Is Phishing?</h2>
+View Lessons
 
-                <p>
+</a>
 
-                    Phishing is a type of scam where someone tries
+</div>
 
-                    to trick you into giving away information or
 
-                    clicking a dangerous link.
+<div class="card">
 
-                </p>
+<h3>🧪 Labs</h3>
 
-            </div>
+<p>
 
-            <!-- Malware Card -->
+Practice cybersecurity concepts through
+safe educational experiments and
+interactive simulations.
 
-            <div class="card">
+</p>
 
-                <h2>What Is Malware?</h2>
+<a
+class="button"
+href="labs.html">
 
-                <p>
+View Labs
 
-                    Malware is software designed to harm a computer,
+</a>
 
-                    steal information, or perform unwanted actions.
+</div>
 
-                </p>
 
-            </div>
+<div class="card">
 
-            <!-- Password Card -->
+<h3>🧠 Quizzes</h3>
 
-            <div class="card">
+<p>
 
-                <h2>Strong Passwords</h2>
+Test your knowledge with cybersecurity
+questions and earn XP as you learn.
 
-                <p>
+</p>
 
-                    Strong passwords are difficult to guess.
+<a
+class="button"
+href="quiz.html">
 
-                    Using a combination of letters, numbers,
+Take Quiz
 
-                    and symbols can make an account harder to break into.
+</a>
 
-                </p>
+</div>
 
-            </div>
 
-            <!-- Firewall Card -->
+<div class="card">
 
-            <div class="card">
+<h3>📖 Glossary</h3>
 
-                <h2>What Is a Firewall?</h2>
+<p>
 
-                <p>
+Learn important cybersecurity terminology
+and understand what common security
+terms mean.
 
-                    A firewall helps control network traffic and
+</p>
 
-                    can block unwanted connections from reaching
+<a
+class="button"
+href="glossary.html">
 
-                    a device or network.
+View Glossary
 
-                </p>
+</a>
 
-            </div>
+</div>
 
-            <!-- Online Safety Card -->
 
-            <div class="card">
+</div>
 
-                <h2>Stay Safe Online</h2>
 
-                <p>
+<!-- SUPPORT -->
 
-                    Think carefully before clicking links,
+<section class="donation-section">
 
-                    downloading files, or sharing personal
+<h2>
+💙 Support CyberStart
+</h2>
 
-                    information online.
+<p>
 
-                </p>
+Enjoying CyberStart?
 
-            </div>
+If you'd like to help support the project
+and future cybersecurity lessons, labs,
+quizzes, and challenges, you can support us.
 
-        </div>
+</p>
 
-        <!-- Quiz Section -->
 
-        <div class="card" style="margin-top: 30px; text-align: center;">
+<button
+class="donation-button"
+onclick="showDonationMessage()">
 
-            <h2>Test Your Knowledge</h2>
+💙 Support CyberStart
 
-            <p>
+</button>
 
-                Think you know the basics? Take the CyberStart
 
-                cybersecurity quiz and see how much you've learned.
+<p
+id="donationMessage"
+class="donation-message">
+</p>
 
-            </p>
 
-            <a class="quiz-button" href="quiz.html">
+</section>
 
-                Take the Quiz
 
-            </a>
+</div>
 
-        </div>
 
-    </div>
+<!-- FOOTER -->
 
-    <!-- Footer -->
+<footer>
 
-    <footer>
+<p>
 
-        <p>
+© 2026 CyberStart |
+Learn. Explore. Stay Secure.
 
-            © 2026 CyberStart | Learn. Explore. Stay Secure.
+</p>
 
-        </p>
+</footer>
 
-    </footer>
+
+<script>
+
+function showDonationMessage() {
+
+document
+.getElementById("donationMessage")
+.textContent =
+"Thank you for supporting CyberStart! A donation page will be available soon.";
+
+}
+
+</script>
+
 
 </body>
 
