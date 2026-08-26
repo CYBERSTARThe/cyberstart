@@ -5,11 +5,20 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>CyberStart - Level 2 Quiz</title>
 
 <style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -18,16 +27,24 @@ body {
     color: white;
 }
 
+
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
     background: #111a33;
     padding: 18px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 7px;
     font-weight: bold;
 }
 
@@ -35,11 +52,21 @@ nav a:hover {
     color: #4da6ff;
 }
 
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container {
     max-width: 850px;
     margin: auto;
     padding: 35px 20px;
 }
+
+
+/* =========================
+   HEADER
+========================= */
 
 h1 {
     text-align: center;
@@ -51,7 +78,39 @@ h1 {
     text-align: center;
     color: #cccccc;
     margin-bottom: 35px;
+    line-height: 1.6;
 }
+
+
+/* =========================
+   XP DISPLAY
+========================= */
+
+.xp-box {
+    background: #111a33;
+    border: 1px solid #26345c;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.xp-title {
+    color: #78bbff;
+    font-weight: bold;
+}
+
+#totalXP {
+    font-size: 25px;
+    font-weight: bold;
+    color: #4da6ff;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   QUESTIONS
+========================= */
 
 .question {
     background: #111a33;
@@ -70,7 +129,13 @@ h1 {
 .question h2 {
     font-size: 20px;
     margin-top: 8px;
+    line-height: 1.5;
 }
+
+
+/* =========================
+   ANSWERS
+========================= */
 
 .answer {
     width: 100%;
@@ -103,6 +168,11 @@ h1 {
     cursor: default;
 }
 
+
+/* =========================
+   EXPLANATION
+========================= */
+
 .explanation {
     display: none;
     margin-top: 15px;
@@ -112,6 +182,11 @@ h1 {
     color: #cccccc;
     line-height: 1.5;
 }
+
+
+/* =========================
+   RESULT
+========================= */
 
 #result {
     display: none;
@@ -138,6 +213,11 @@ h1 {
     font-weight: bold;
 }
 
+
+/* =========================
+   BUTTONS
+========================= */
+
 .button {
     display: inline-block;
     padding: 12px 25px;
@@ -155,12 +235,43 @@ h1 {
     background: #78bbff;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
     text-align: center;
     padding: 25px;
     margin-top: 30px;
     background: #111a33;
     color: #999999;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        line-height: 2;
+    }
+
+    nav a {
+        margin: 0 5px;
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .question h2 {
+        font-size: 18px;
+    }
+
 }
 
 </style>
@@ -170,6 +281,10 @@ footer {
 
 <body>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
@@ -181,24 +296,57 @@ footer {
 
 <a href="quiz.html">Quiz</a>
 
+<a href="games.html">Games</a>
+
 <a href="glossary.html">Glossary</a>
 
+<a href="challenge.html">Challenge</a>
+
 <a href="profile.html">Profile</a>
+
+<a href="feedback.html">Feedback</a>
 
 </nav>
 
 
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
 <div class="container">
 
-<h1>Cybersecurity Level 2</h1>
+
+<h1>
+🧠 Cybersecurity Level 2
+</h1>
+
 
 <p class="intro">
+
 Test your understanding of cybersecurity concepts.
 Choose the best answer for each question.
+
 </p>
 
 
-<!-- QUESTION 1 -->
+<!-- XP -->
+
+<div class="xp-box">
+
+<div class="xp-title">
+🏆 Your CyberStart XP
+</div>
+
+<div id="totalXP">
+0 XP
+</div>
+
+</div>
+
+
+<!-- =========================
+     QUESTION 1
+========================= -->
 
 <div class="question">
 
@@ -207,36 +355,59 @@ QUESTION 1 OF 10
 </div>
 
 <h2>
+
 A company gives employees access only to the files
 required for their jobs. Which security principle
 does this demonstrate?
+
 </h2>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 A. Defense in depth
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, true)">
+
+<button class="answer"
+onclick="checkAnswer(this, true)">
+
 B. Least privilege
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 C. Availability
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 D. Data redundancy
+
 </button>
+
 
 <div class="explanation">
+
 Least privilege means giving users only the access
 they need to perform their responsibilities.
-</div>
 
 </div>
 
+</div>
 
-<!-- QUESTION 2 -->
+
+<!-- =========================
+     QUESTION 2
+========================= -->
 
 <div class="question">
 
@@ -245,35 +416,58 @@ QUESTION 2 OF 10
 </div>
 
 <h2>
+
 Which part of the CIA Triad focuses on preventing
 unauthorized people from accessing information?
+
 </h2>
 
-<button class="answer" onclick="checkAnswer(this, true)">
+
+<button class="answer"
+onclick="checkAnswer(this, true)">
+
 A. Confidentiality
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 B. Integrity
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 C. Availability
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 D. Authentication
+
 </button>
+
 
 <div class="explanation">
+
 Confidentiality focuses on ensuring information is
 accessible only to authorized people or systems.
-</div>
 
 </div>
 
+</div>
 
-<!-- QUESTION 3 -->
+
+<!-- =========================
+     QUESTION 3
+========================= -->
 
 <div class="question">
 
@@ -282,35 +476,62 @@ QUESTION 3 OF 10
 </div>
 
 <h2>
+
 What is the primary difference between authentication
 and authorization?
+
 </h2>
 
-<button class="answer" onclick="checkAnswer(this, false)">
-A. Authentication encrypts data while authorization backs up data.
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
+A. Authentication encrypts data while authorization
+backs up data.
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, true)">
-B. Authentication verifies identity while authorization determines what that identity can access.
+
+<button class="answer"
+onclick="checkAnswer(this, true)">
+
+B. Authentication verifies identity while authorization
+determines what that identity can access.
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
-C. Authentication creates firewalls while authorization detects malware.
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
+C. Authentication creates firewalls while authorization
+detects malware.
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 D. They are exactly the same process.
+
 </button>
+
 
 <div class="explanation">
-Authentication verifies identity. Authorization determines
-what that authenticated identity is allowed to access.
-</div>
+
+Authentication verifies identity.
+Authorization determines what that authenticated
+identity is allowed to access.
 
 </div>
 
+</div>
 
-<!-- QUESTION 4 -->
+
+<!-- =========================
+     QUESTION 4
+========================= -->
 
 <div class="question">
 
@@ -319,35 +540,58 @@ QUESTION 4 OF 10
 </div>
 
 <h2>
+
 Why is multi-factor authentication generally stronger
 than using only a password?
+
 </h2>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 A. It makes passwords impossible to steal.
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, true)">
+
+<button class="answer"
+onclick="checkAnswer(this, true)">
+
 B. It requires additional verification beyond the password.
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 C. It automatically removes malware.
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 D. It prevents every type of cyberattack.
+
 </button>
+
 
 <div class="explanation">
+
 MFA adds another verification factor, so knowing the
 password alone may not be enough to access the account.
-</div>
 
 </div>
 
+</div>
 
-<!-- QUESTION 5 -->
+
+<!-- =========================
+     QUESTION 5
+========================= -->
 
 <div class="question">
 
@@ -356,34 +600,58 @@ QUESTION 5 OF 10
 </div>
 
 <h2>
+
 What is the main purpose of hashing a password?
+
 </h2>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 A. To make the password easier to read
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, true)">
-B. To store a one-way representation that can be compared during login
+
+<button class="answer"
+onclick="checkAnswer(this, true)">
+
+B. To store a one-way representation that can be
+compared during login
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 C. To send the password to everyone on the network
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 D. To increase screen resolution
+
 </button>
+
 
 <div class="explanation">
+
 Password systems commonly store a derived representation
 rather than the original password.
-</div>
 
 </div>
 
+</div>
 
-<!-- QUESTION 6 -->
+
+<!-- =========================
+     QUESTION 6
+========================= -->
 
 <div class="question">
 
@@ -392,36 +660,59 @@ QUESTION 6 OF 10
 </div>
 
 <h2>
+
 An attacker sends a fake message pretending to be
 a company's IT department and asks an employee to
 provide login information. What type of attack is this?
+
 </h2>
 
-<button class="answer" onclick="checkAnswer(this, true)">
+
+<button class="answer"
+onclick="checkAnswer(this, true)">
+
 A. Social engineering
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 B. Hardware failure
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 C. Data compression
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 D. Network redundancy
+
 </button>
+
 
 <div class="explanation">
+
 Social engineering attacks manipulate people into
 performing actions or revealing information.
-</div>
 
 </div>
 
+</div>
 
-<!-- QUESTION 7 -->
+
+<!-- =========================
+     QUESTION 7
+========================= -->
 
 <div class="question">
 
@@ -430,36 +721,59 @@ QUESTION 7 OF 10
 </div>
 
 <h2>
+
 Which security approach uses multiple layers of
 protection instead of relying on a single defense?
+
 </h2>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 A. Least privilege
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, true)">
+
+<button class="answer"
+onclick="checkAnswer(this, true)">
+
 B. Defense in depth
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 C. Single-factor authentication
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 D. Data deletion
+
 </button>
+
 
 <div class="explanation">
+
 Defense in depth uses multiple security controls so
 one failed defense does not necessarily expose the
 entire system.
-</div>
 
 </div>
 
+</div>
 
-<!-- QUESTION 8 -->
+
+<!-- =========================
+     QUESTION 8
+========================= -->
 
 <div class="question">
 
@@ -468,35 +782,58 @@ QUESTION 8 OF 10
 </div>
 
 <h2>
+
 Which CIA Triad principle focuses on keeping systems
 and information accessible when they are needed?
+
 </h2>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 A. Confidentiality
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 B. Integrity
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, true)">
+
+<button class="answer"
+onclick="checkAnswer(this, true)">
+
 C. Availability
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 D. Authentication
+
 </button>
+
 
 <div class="explanation">
+
 Availability means authorized users should be able
 to access systems and information when needed.
-</div>
 
 </div>
 
+</div>
 
-<!-- QUESTION 9 -->
+
+<!-- =========================
+     QUESTION 9
+========================= -->
 
 <div class="question">
 
@@ -505,36 +842,59 @@ QUESTION 9 OF 10
 </div>
 
 <h2>
+
 A security team discovers that a software application
 has a weakness that could be exploited by attackers.
 What is this weakness commonly called?
+
 </h2>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 A. Authentication
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, true)">
+
+<button class="answer"
+onclick="checkAnswer(this, true)">
+
 B. Vulnerability
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 C. Encryption
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 D. Backup
+
 </button>
+
 
 <div class="explanation">
+
 A vulnerability is a weakness in a system that could
 potentially be exploited to compromise security.
-</div>
 
 </div>
 
+</div>
 
-<!-- QUESTION 10 -->
+
+<!-- =========================
+     QUESTION 10
+========================= -->
 
 <div class="question">
 
@@ -543,54 +903,93 @@ QUESTION 10 OF 10
 </div>
 
 <h2>
+
 After detecting a cybersecurity incident, why is
 documenting what happened important?
+
 </h2>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 A. It guarantees another attack can never happen.
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, true)">
-B. It helps organizations understand the incident, improve defenses, and respond more effectively.
+
+<button class="answer"
+onclick="checkAnswer(this, true)">
+
+B. It helps organizations understand the incident,
+improve defenses, and respond more effectively.
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 C. It automatically removes every threat.
+
 </button>
 
-<button class="answer" onclick="checkAnswer(this, false)">
+
+<button class="answer"
+onclick="checkAnswer(this, false)">
+
 D. It replaces the need for security controls.
+
 </button>
+
 
 <div class="explanation">
+
 Documentation helps security teams understand what
 occurred and improve future detection and response.
-</div>
 
 </div>
 
+</div>
 
-<!-- RESULT -->
+
+<!-- =========================
+     RESULT
+========================= -->
 
 <div id="result">
 
-<h2>Level 2 Complete 🎉</h2>
+<h2>
+Level 2 Complete 🎉
+</h2>
+
 
 <p id="score"></p>
 
+
 <p id="message"></p>
+
 
 <p class="xp-earned">
 ⭐ +50 XP Earned!
 </p>
 
-<button class="button" onclick="restartQuiz()">
+
+<button
+class="button"
+onclick="restartQuiz()">
+
 Restart Quiz
+
 </button>
 
-<a class="button" href="profile.html">
+
+<a
+class="button"
+href="profile.html">
+
 View Profile
+
 </a>
 
 </div>
@@ -598,6 +997,10 @@ View Profile
 
 </div>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -611,6 +1014,27 @@ View Profile
 <script>
 
 
+/* =========================
+   XP DISPLAY
+========================= */
+
+function updateXP() {
+
+const xp =
+Number(
+localStorage.getItem("cyberstartXP")
+) || 0;
+
+document.getElementById("totalXP").textContent =
+xp + " XP";
+
+}
+
+
+/* =========================
+   QUIZ VARIABLES
+========================= */
+
 let score = 0;
 
 let answered = 0;
@@ -618,15 +1042,18 @@ let answered = 0;
 const totalQuestions = 10;
 
 
-/*
-CHECK ANSWER
-*/
+/* =========================
+   CHECK ANSWER
+========================= */
 
 function checkAnswer(button, correct) {
+
 
 const question =
 button.parentElement;
 
+
+/* Prevent answering twice */
 
 if (
 question.dataset.answered === "true"
@@ -642,6 +1069,8 @@ question.dataset.answered = "true";
 answered++;
 
 
+/* Disable all answers */
+
 const buttons =
 question.querySelectorAll(".answer");
 
@@ -652,6 +1081,8 @@ btn.disabled = true;
 
 });
 
+
+/* Check answer */
 
 if (correct) {
 
@@ -668,14 +1099,19 @@ button.classList.add("wrong");
 }
 
 
+/* Show explanation */
+
 const explanation =
 question.querySelector(".explanation");
-
 
 explanation.style.display = "block";
 
 
-if (answered === totalQuestions) {
+/* Finish quiz */
+
+if (
+answered === totalQuestions
+) {
 
 showResult();
 
@@ -684,9 +1120,9 @@ showResult();
 }
 
 
-/*
-SHOW RESULT
-*/
+/* =========================
+   SHOW RESULT
+========================= */
 
 function showResult() {
 
@@ -713,9 +1149,7 @@ score +
 totalQuestions;
 
 
-/*
-SAVE LAST SCORE
-*/
+/* Save latest score */
 
 localStorage.setItem(
 "cyberstartLastScore",
@@ -723,9 +1157,7 @@ score
 );
 
 
-/*
-SAVE BEST SCORE
-*/
+/* Save best score */
 
 let bestScore =
 Number(
@@ -745,9 +1177,9 @@ score
 }
 
 
-/*
-ADD 50 XP ONLY ONCE
-*/
+/* =========================
+   ADD XP ONLY ONCE
+========================= */
 
 let quizCompleted =
 localStorage.getItem(
@@ -755,7 +1187,9 @@ localStorage.getItem(
 );
 
 
-if (quizCompleted !== "true") {
+if (
+quizCompleted !== "true"
+) {
 
 
 let currentXP =
@@ -783,41 +1217,50 @@ localStorage.setItem(
 }
 
 
+/* Update XP display */
+
+updateXP();
+
+
+/* Result message */
+
 if (score === 10) {
 
 message.textContent =
-"Perfect score! Excellent cybersecurity knowledge.";
+"🏆 Perfect score! Excellent cybersecurity knowledge.";
 
 }
 
 else if (score >= 8) {
 
 message.textContent =
-"Great work! Your cybersecurity fundamentals are strong.";
+"🔥 Great work! Your cybersecurity fundamentals are strong.";
 
 }
 
 else if (score >= 6) {
 
 message.textContent =
-"Good job! Keep studying and improving your knowledge.";
+"👍 Good job! Keep studying and improving your knowledge.";
 
 }
 
 else if (score >= 4) {
 
 message.textContent =
-"You're making progress. Review the lessons and try again.";
+"📚 You're making progress. Review the lessons and try again.";
 
 }
 
 else {
 
 message.textContent =
-"Keep learning! Cybersecurity takes practice.";
+"💻 Keep learning! Cybersecurity takes practice.";
 
 }
 
+
+/* Scroll to result */
 
 result.scrollIntoView({
 behavior: "smooth"
@@ -826,9 +1269,9 @@ behavior: "smooth"
 }
 
 
-/*
-RESTART QUIZ
-*/
+/* =========================
+   RESTART QUIZ
+========================= */
 
 function restartQuiz() {
 
@@ -836,6 +1279,12 @@ location.reload();
 
 }
 
+
+/* =========================
+   START
+========================= */
+
+updateXP();
 
 </script>
 
