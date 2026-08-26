@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>CyberStart - Feedback</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
+
+nav {
+    background: #111a33;
+    padding: 18px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #4da6ff;
+}
+
+.container {
+    max-width: 750px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #4da6ff;
+    font-size: 38px;
+}
+
+.intro {
+    text-align: center;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.question {
+    background: #111a33;
+    border: 1px solid #26345c;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.question h2 {
+    font-size: 19px;
+    color: #78bbff;
+}
+
+label {
+    display: block;
+    margin: 12px 0;
+    color: #dddddd;
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+select,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #0b1020;
+    color: white;
+
+    border: 1px solid #354878;
+    border-radius: 8px;
+
+    padding: 13px;
+
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.submit-button {
+    display: block;
+
+    margin: 30px auto;
+
+    padding: 14px 30px;
+
+    background: #4da6ff;
+    color: #07101f;
+
+    border: none;
+    border-radius: 8px;
+
+    font-weight: bold;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #78bbff;
+}
+
+#thankYou {
+    display: none;
+
+    background: #111a33;
+
+    border: 1px solid #26345c;
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    margin-top: 30px;
+}
+
+#thankYou h2 {
+    color: #4da6ff;
+}
+
+#thankYou p {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 30px;
+
+    background: #111a33;
+
+    color: #999999;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="lessons.html">Lessons</a>
+
+<a href="labs.html">Labs</a>
+
+<a href="quiz.html">Quiz</a>
+
+<a href="glossary.html">Glossary</a>
+
+<a href="profile.html">Profile</a>
+
+<a href="feedback.html">Feedback</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<h1>
+💡 Help Improve CyberStart
+</h1>
+
+
+<p class="intro">
+
+CyberStart is being built to help people learn
+cybersecurity in a simple and interactive way.
+
+Your feedback can help decide what we build next.
+
+</p>
+
+
+<form id="feedbackForm">
+
+
+<!-- QUESTION 1 -->
+
+<div class="question">
+
+<h2>
+1. What would you like to see added to CyberStart?
+</h2>
+
+<label>
+<input
+type="checkbox"
+name="features"
+value="More labs">
+
+More cybersecurity labs
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="features"
+value="More quizzes">
+
+More quizzes
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="features"
+value="More games">
+
+More games and challenges
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="features"
+value="More lessons">
+
+More lessons
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="features"
+value="More videos">
+
+Videos and demonstrations
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="features"
+value="Other">
+
+Something else
+
+</label>
+
+</div>
+
+
+<!-- QUESTION 2 -->
+
+<div class="question">
+
+<h2>
+2. What type of cybersecurity topics would
+help you the most?
+</h2>
+
+<label>
+<input
+type="checkbox"
+name="topics"
+value="Networking">
+
+Networking
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="topics"
+value="Ethical hacking">
+
+Ethical hacking
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="topics"
+value="Cyber threats">
+
+Cyber threats
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="topics"
+value="Programming">
+
+Programming
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="topics"
+value="Security tools">
+
+Security tools
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="topics"
+value="Career">
+
+Cybersecurity careers
+
+</label>
+
+</div>
+
+
+<!-- QUESTION 3 -->
+
+<div class="question">
+
+<h2>
+3. What difficulty would you prefer?
+</h2>
+
+<label>
+<input
+type="radio"
+name="difficulty"
+value="Beginner"
+required>
+
+Beginner
+
+</label>
+
+<label>
+<input
+type="radio"
+name="difficulty"
+value="Intermediate">
+
+Intermediate
+
+</label>
+
+<label>
+<input
+type="radio"
+name="difficulty"
+value="Advanced">
+
+Advanced
+
+</label>
+
+<label>
+<input
+type="radio"
+name="difficulty"
+value="Mixed">
+
+A mixture of all levels
+
+</label>
+
+</div>
+
+
+<!-- QUESTION 4 -->
+
+<div class="question">
+
+<h2>
+4. What would make CyberStart more fun?
+</h2>
+
+<label>
+<input
+type="checkbox"
+name="fun"
+value="XP">
+
+XP and leveling
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="fun"
+value="Achievements">
+
+Achievements
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="fun"
+value="Leaderboard">
+
+Leaderboards
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="fun"
+value="Challenges">
+
+Challenges
+
+</label>
+
+<label>
+<input
+type="checkbox"
+name="fun"
+value="Story">
+
+Story-based missions
+
+</label>
+
+</div>
+
+
+<!-- QUESTION 5 -->
+
+<div class="question">
+
+<h2>
+5. What do you think would help you learn cybersecurity better?
+</h2>
+
+<textarea
+name="learning"
+placeholder="Tell us what would help you...">
+</textarea>
+
+</div>
+
+
+<!-- QUESTION 6 -->
+
+<div class="question">
+
+<h2>
+6. What is one thing you would change about CyberStart?
+</h2>
+
+<textarea
+name="changes"
+placeholder="Tell us what you would change...">
+</textarea>
+
+</div>
+
+
+<!-- QUESTION 7 -->
+
+<div class="question">
+
+<h2>
+7. How would you rate CyberStart so far?
+</h2>
+
+<select
+name="rating"
+required>
+
+<option value="">
+Choose a rating
+</option>
+
+<option value="5">
+⭐⭐⭐⭐⭐ Excellent
+</option>
+
+<option value="4">
+⭐⭐⭐⭐ Good
+</option>
+
+<option value="3">
+⭐⭐⭐ Okay
+</option>
+
+<option value="2">
+⭐⭐ Needs improvement
+</option>
+
+<option value="1">
+⭐ Needs major improvement
+</option>
+
+</select>
+
+</div>
+
+
+<!-- QUESTION 8 -->
+
+<div class="question">
+
+<h2>
+8. Any other ideas?
+</h2>
+
+<textarea
+name="ideas"
+placeholder="Anything else you'd like to see?">
+</textarea>
+
+</div>
+
+
+<button
+class="submit-button"
+type="submit">
+
+Send Feedback
+
+</button>
+
+
+</form>
+
+
+<!-- THANK YOU -->
+
+<div id="thankYou">
+
+<h2>
+🎉 Thank You!
+</h2>
+
+<p>
+
+Your feedback has been recorded on this device.
+
+Thanks for helping make CyberStart better!
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+<p>
+© 2026 CyberStart | Learn. Explore. Stay Secure.
+</p>
+
+</footer>
+
+
+<script>
+
+document
+.getElementById("feedbackForm")
+.addEventListener("submit", function(event) {
+
+event.preventDefault();
+
+
+/*
+For now, this stores the feedback
+locally in the visitor's browser.
+*/
+
+const formData =
+new FormData(this);
+
+
+const feedback = {};
+
+
+for (
+const [key, value]
+of formData.entries()
+) {
+
+if (feedback[key]) {
+
+feedback[key] +=
+", " + value;
+
+}
+
+else {
+
+feedback[key] = value;
+
+}
+
+}
+
+
+const previousFeedback =
+JSON.parse(
+localStorage.getItem(
+"cyberstartFeedback"
+)
+) || [];
+
+
+previousFeedback.push(feedback);
+
+
+localStorage.setItem(
+"cyberstartFeedback",
+JSON.stringify(previousFeedback)
+);
+
+
+document
+.getElementById("feedbackForm")
+.style.display = "none";
+
+
+document
+.getElementById("thankYou")
+.style.display = "block";
+
+
+window.scrollTo({
+top: 0,
+behavior: "smooth"
+});
+
+});
+
+</script>
+
+
+</body>
+
+</html>
