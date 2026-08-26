@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -28,7 +27,7 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 8px;
             font-weight: bold;
         }
 
@@ -166,26 +165,29 @@
 <body>
 
 
-    <!-- Navigation -->
-
     <nav>
 
         <a href="index.html">Home</a>
 
         <a href="lessons.html">Lessons</a>
 
+        <a href="labs.html">Labs</a>
+
         <a href="quiz.html">Quiz</a>
+
+        <a href="glossary.html">Glossary</a>
+
+        <a href="profile.html">Profile</a>
 
     </nav>
 
 
     <div class="container">
 
-
         <h1>Cybersecurity Level 2</h1>
 
         <p class="intro">
-            Test your understanding of intermediate cybersecurity concepts.
+            Test your understanding of cybersecurity concepts.
             Choose the best answer for each question.
         </p>
 
@@ -294,13 +296,12 @@
             </button>
 
             <button class="answer" onclick="checkAnswer(this, false)">
-                D. Authentication and authorization are exactly the
-                same process.
+                D. They are exactly the same process.
             </button>
 
             <div class="explanation">
-                Authentication answers "Who are you?" Authorization
-                answers "What are you allowed to access?"
+                Authentication answers "Who are you?"
+                Authorization answers "What are you allowed to access?"
             </div>
 
         </div>
@@ -369,13 +370,12 @@
             </button>
 
             <button class="answer" onclick="checkAnswer(this, false)">
-                D. To increase the screen resolution
+                D. To increase screen resolution
             </button>
 
             <div class="explanation">
                 Password systems commonly store a derived representation
-                rather than the original password so the original value
-                does not need to be stored directly.
+                rather than the original password.
             </div>
 
         </div>
@@ -546,7 +546,7 @@
             </h2>
 
             <button class="answer" onclick="checkAnswer(this, false)">
-                A. It guarantees that another attack can never happen.
+                A. It guarantees another attack can never happen.
             </button>
 
             <button class="answer" onclick="checkAnswer(this, true)">
@@ -570,7 +570,7 @@
         </div>
 
 
-        <!-- Results -->
+        <!-- Result -->
 
         <div id="result">
 
@@ -584,8 +584,8 @@
                 Restart Quiz
             </button>
 
-            <a class="button" href="index.html">
-                Home
+            <a class="button" href="profile.html">
+                View Profile
             </a>
 
         </div>
@@ -630,9 +630,7 @@
 
 
             buttons.forEach(function(btn) {
-
                 btn.disabled = true;
-
             });
 
 
@@ -656,9 +654,7 @@
 
 
             if (answered === totalQuestions) {
-
                 showResult();
-
             }
 
         }
@@ -680,13 +676,44 @@
 
 
             scoreText.textContent =
-                "Your Score: " + score + " / " + totalQuestions;
+                "Your Score: " +
+                score +
+                " / " +
+                totalQuestions;
+
+
+            /* SAVE LAST SCORE */
+
+            localStorage.setItem(
+                "cyberstartLastScore",
+                score
+            );
+
+
+            /* SAVE BEST SCORE */
+
+            let bestScore =
+                Number(
+                    localStorage.getItem(
+                        "cyberstartBestScore"
+                    )
+                ) || 0;
+
+
+            if (score > bestScore) {
+
+                localStorage.setItem(
+                    "cyberstartBestScore",
+                    score
+                );
+
+            }
 
 
             if (score === 10) {
 
                 message.textContent =
-                    "Excellent! You have a strong understanding of intermediate cybersecurity concepts.";
+                    "Excellent! You have a strong understanding of cybersecurity concepts.";
 
             }
 
@@ -700,21 +727,21 @@
             else if (score >= 6) {
 
                 message.textContent =
-                    "Good job! Keep studying and continue building your cybersecurity knowledge.";
+                    "Good job! Keep studying and building your cybersecurity knowledge.";
 
             }
 
             else if (score >= 4) {
 
                 message.textContent =
-                    "You're making progress. Review the lessons and try the quiz again.";
+                    "You're making progress. Review the lessons and try again.";
 
             }
 
             else {
 
                 message.textContent =
-                    "Keep learning! Cybersecurity takes practice and repetition.";
+                    "Keep learning! Cybersecurity takes practice.";
 
             }
 
