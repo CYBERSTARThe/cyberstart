@@ -28,7 +28,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 7px;
     font-weight: bold;
 }
 
@@ -124,40 +124,11 @@ textarea {
     background: #78bbff;
 }
 
-#thankYou {
-    display: none;
-
-    background: #111a33;
-
-    border: 1px solid #26345c;
-
-    border-radius: 12px;
-
-    padding: 30px;
-
-    text-align: center;
-
-    margin-top: 30px;
-}
-
-#thankYou h2 {
-    color: #4da6ff;
-}
-
-#thankYou p {
-    color: #cccccc;
-    line-height: 1.6;
-}
-
 footer {
     text-align: center;
-
     padding: 25px;
-
     margin-top: 30px;
-
     background: #111a33;
-
     color: #999999;
 }
 
@@ -168,8 +139,6 @@ footer {
 
 <body>
 
-
-<!-- NAVIGATION -->
 
 <nav>
 
@@ -192,11 +161,9 @@ footer {
 
 <div class="container">
 
-
 <h1>
 💡 Help Improve CyberStart
 </h1>
-
 
 <p class="intro">
 
@@ -208,7 +175,11 @@ Your feedback can help decide what we build next.
 </p>
 
 
-<form id="feedbackForm">
+<!-- REAL FORMSPREE FORM -->
+
+<form
+action="https://formspree.io/f/mqpzrgqo"
+method="POST">
 
 
 <!-- QUESTION 1 -->
@@ -223,10 +194,9 @@ Your feedback can help decide what we build next.
 <input
 type="checkbox"
 name="features"
-value="More labs">
+value="More cybersecurity labs">
 
 More cybersecurity labs
-
 </label>
 
 <label>
@@ -236,7 +206,6 @@ name="features"
 value="More quizzes">
 
 More quizzes
-
 </label>
 
 <label>
@@ -246,7 +215,6 @@ name="features"
 value="More games">
 
 More games and challenges
-
 </label>
 
 <label>
@@ -256,27 +224,24 @@ name="features"
 value="More lessons">
 
 More lessons
-
 </label>
 
 <label>
 <input
 type="checkbox"
 name="features"
-value="More videos">
+value="Videos">
 
 Videos and demonstrations
-
 </label>
 
 <label>
 <input
 type="checkbox"
 name="features"
-value="Other">
+value="Something else">
 
 Something else
-
 </label>
 
 </div>
@@ -287,8 +252,7 @@ Something else
 <div class="question">
 
 <h2>
-2. What type of cybersecurity topics would
-help you the most?
+2. What cybersecurity topics would help you the most?
 </h2>
 
 <label>
@@ -298,7 +262,6 @@ name="topics"
 value="Networking">
 
 Networking
-
 </label>
 
 <label>
@@ -308,7 +271,6 @@ name="topics"
 value="Ethical hacking">
 
 Ethical hacking
-
 </label>
 
 <label>
@@ -318,7 +280,6 @@ name="topics"
 value="Cyber threats">
 
 Cyber threats
-
 </label>
 
 <label>
@@ -328,7 +289,6 @@ name="topics"
 value="Programming">
 
 Programming
-
 </label>
 
 <label>
@@ -338,17 +298,15 @@ name="topics"
 value="Security tools">
 
 Security tools
-
 </label>
 
 <label>
 <input
 type="checkbox"
 name="topics"
-value="Career">
+value="Cybersecurity careers">
 
 Cybersecurity careers
-
 </label>
 
 </div>
@@ -370,7 +328,6 @@ value="Beginner"
 required>
 
 Beginner
-
 </label>
 
 <label>
@@ -380,7 +337,6 @@ name="difficulty"
 value="Intermediate">
 
 Intermediate
-
 </label>
 
 <label>
@@ -390,7 +346,6 @@ name="difficulty"
 value="Advanced">
 
 Advanced
-
 </label>
 
 <label>
@@ -400,7 +355,6 @@ name="difficulty"
 value="Mixed">
 
 A mixture of all levels
-
 </label>
 
 </div>
@@ -418,10 +372,9 @@ A mixture of all levels
 <input
 type="checkbox"
 name="fun"
-value="XP">
+value="XP and leveling">
 
 XP and leveling
-
 </label>
 
 <label>
@@ -431,17 +384,15 @@ name="fun"
 value="Achievements">
 
 Achievements
-
 </label>
 
 <label>
 <input
 type="checkbox"
 name="fun"
-value="Leaderboard">
+value="Leaderboards">
 
 Leaderboards
-
 </label>
 
 <label>
@@ -451,17 +402,15 @@ name="fun"
 value="Challenges">
 
 Challenges
-
 </label>
 
 <label>
 <input
 type="checkbox"
 name="fun"
-value="Story">
+value="Story missions">
 
 Story-based missions
-
 </label>
 
 </div>
@@ -472,7 +421,7 @@ Story-based missions
 <div class="question">
 
 <h2>
-5. What do you think would help you learn cybersecurity better?
+5. What would help you learn cybersecurity better?
 </h2>
 
 <textarea
@@ -515,23 +464,23 @@ required>
 Choose a rating
 </option>
 
-<option value="5">
+<option value="5 - Excellent">
 ⭐⭐⭐⭐⭐ Excellent
 </option>
 
-<option value="4">
+<option value="4 - Good">
 ⭐⭐⭐⭐ Good
 </option>
 
-<option value="3">
+<option value="3 - Okay">
 ⭐⭐⭐ Okay
 </option>
 
-<option value="2">
+<option value="2 - Needs improvement">
 ⭐⭐ Needs improvement
 </option>
 
-<option value="1">
+<option value="1 - Needs major improvement">
 ⭐ Needs major improvement
 </option>
 
@@ -560,32 +509,12 @@ placeholder="Anything else you'd like to see?">
 class="submit-button"
 type="submit">
 
-Send Feedback
+📨 Send Feedback
 
 </button>
 
 
 </form>
-
-
-<!-- THANK YOU -->
-
-<div id="thankYou">
-
-<h2>
-🎉 Thank You!
-</h2>
-
-<p>
-
-Your feedback has been recorded on this device.
-
-Thanks for helping make CyberStart better!
-
-</p>
-
-</div>
-
 
 </div>
 
@@ -597,85 +526,6 @@ Thanks for helping make CyberStart better!
 </p>
 
 </footer>
-
-
-<script>
-
-document
-.getElementById("feedbackForm")
-.addEventListener("submit", function(event) {
-
-event.preventDefault();
-
-
-/*
-For now, this stores the feedback
-locally in the visitor's browser.
-*/
-
-const formData =
-new FormData(this);
-
-
-const feedback = {};
-
-
-for (
-const [key, value]
-of formData.entries()
-) {
-
-if (feedback[key]) {
-
-feedback[key] +=
-", " + value;
-
-}
-
-else {
-
-feedback[key] = value;
-
-}
-
-}
-
-
-const previousFeedback =
-JSON.parse(
-localStorage.getItem(
-"cyberstartFeedback"
-)
-) || [];
-
-
-previousFeedback.push(feedback);
-
-
-localStorage.setItem(
-"cyberstartFeedback",
-JSON.stringify(previousFeedback)
-);
-
-
-document
-.getElementById("feedbackForm")
-.style.display = "none";
-
-
-document
-.getElementById("thankYou")
-.style.display = "block";
-
-
-window.scrollTo({
-top: 0,
-behavior: "smooth"
-});
-
-});
-
-</script>
 
 
 </body>
