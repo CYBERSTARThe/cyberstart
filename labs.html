@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberStart - Labs</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+        }
+
+        nav {
+            background: #111a33;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4da6ff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 35px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4da6ff;
+            font-size: 38px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #cccccc;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .lab {
+            background: #111a33;
+            border: 1px solid #26345c;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .lab-number {
+            color: #78bbff;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .lab h2 {
+            color: #4da6ff;
+        }
+
+        .lab p {
+            color: #dddddd;
+            line-height: 1.6;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background: #0b1020;
+            color: white;
+            border: 1px solid #354878;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #4da6ff;
+            color: #07101f;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: #78bbff;
+        }
+
+        .result {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #0d162d;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        .choice {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: #182544;
+            color: white;
+            border: 1px solid #354878;
+            margin: 8px 0;
+        }
+
+        .choice:hover {
+            background: #263b6b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+            background: #111a33;
+            color: #999999;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="lessons.html">Lessons</a>
+
+        <a href="labs.html">Labs</a>
+
+        <a href="quiz.html">Quiz</a>
+
+        <a href="glossary.html">Glossary</a>
+
+    </nav>
+
+
+    <div class="container">
+
+
+        <h1>Cybersecurity Labs</h1>
+
+        <p class="intro">
+            Learn cybersecurity by experimenting with safe,
+            interactive simulations.
+        </p>
+
+
+        <!-- LAB 1 -->
+
+        <div class="lab">
+
+            <div class="lab-number">
+                LAB 1
+            </div>
+
+            <h2>Password Strength Experiment</h2>
+
+            <p>
+                Enter an example password and see what characteristics
+                make it stronger or weaker.
+            </p>
+
+            <input
+                type="text"
+                id="passwordInput"
+                placeholder="Enter an example password"
+            >
+
+            <button onclick="checkPassword()">
+                Analyze Password
+            </button>
+
+            <div class="result" id="passwordResult"></div>
+
+        </div>
+
+
+        <!-- LAB 2 -->
+
+        <div class="lab">
+
+            <div class="lab-number">
+                LAB 2
+            </div>
+
+            <h2>Phishing Detective</h2>
+
+            <p>
+                You receive this fictional message:
+            </p>
+
+            <p>
+                <strong>
+                    "URGENT! Your account will be locked today.
+                    Click the link immediately to verify your account."
+                </strong>
+            </p>
+
+            <p>
+                What is the safest response?
+            </p>
+
+            <button class="choice"
+                onclick="phishingAnswer(false)">
+                A. Click the link immediately
+            </button>
+
+            <button class="choice"
+                onclick="phishingAnswer(true)">
+                B. Verify the message using a trusted source
+            </button>
+
+            <button class="choice"
+                onclick="phishingAnswer(false)">
+                C. Reply with your password
+            </button>
+
+            <button class="choice"
+                onclick="phishingAnswer(false)">
+                D. Forward it to everyone
+            </button>
+
+            <div class="result" id="phishingResult"></div>
+
+        </div>
+
+
+        <!-- LAB 3 -->
+
+        <div class="lab">
+
+            <div class="lab-number">
+                LAB 3
+            </div>
+
+            <h2>Hashing Experiment</h2>
+
+            <p>
+                Hash functions turn input data into a fixed-length
+                value. Even a small change to the input can produce
+                a different hash.
+            </p>
+
+            <input
+                type="text"
+                id="hashInput"
+                placeholder="Enter sample text"
+            >
+
+            <button onclick="generateHash()">
+                Generate Demo Hash
+            </button>
+
+            <div class="result" id="hashResult"></div>
+
+            <p>
+                <strong>Note:</strong>
+                This is an educational demonstration. It is not
+                intended to be a secure password-hashing system.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            © 2026 CyberStart | Learn. Explore. Stay Secure.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+
+        // LAB 1
+        // Password Strength
+
+        function checkPassword() {
+
+            const password =
+                document.getElementById("passwordInput").value;
+
+            const result =
+                document.getElementById("passwordResult");
+
+            if (password.length === 0) {
+
+                result.style.display = "block";
+
+                result.innerHTML =
+                    "Enter an example password to analyze it.";
+
+                return;
+            }
+
+
+            let score = 0;
+
+            let feedback = [];
+
+
+            if (password.length >= 12) {
+
+                score++;
+
+            } else {
+
+                feedback.push(
+                    "Try using at least 12 characters."
+                );
+
+            }
+
+
+            if (/[A-Z]/.test(password)) {
+
+                score++;
+
+            } else {
+
+                feedback.push(
+                    "Consider including uppercase letters."
+                );
+
+            }
+
+
+            if (/[a-z]/.test(password)) {
+
+                score++;
+
+            } else {
+
+                feedback.push(
+                    "Consider including lowercase letters."
+                );
+
+            }
+
+
+            if (/[0-9]/.test(password)) {
+
+                score++;
+
+            } else {
+
+                feedback.push(
+                    "Consider including numbers."
+                );
+
+            }
+
+
+            if (/[^A-Za-z0-9]/.test(password)) {
+
+                score++;
+
+            } else {
+
+                feedback.push(
+                    "Consider including symbols."
+                );
+
+            }
+
+
+            result.style.display = "block";
+
+
+            if (score >= 5) {
+
+                result.innerHTML =
+                    "<strong>Good characteristics.</strong><br>" +
+                    "This example contains several characteristics " +
+                    "commonly associated with stronger passwords.";
+
+            } else {
+
+                result.innerHTML =
+                    "<strong>Room for improvement.</strong><br>" +
+                    feedback.join("<br>");
+
+            }
+
+        }
+
+
+        // LAB 2
+        // Phishing Detective
+
+        function phishingAnswer(correct) {
+
+            const result =
+                document.getElementById("phishingResult");
+
+            result.style.display = "block";
+
+
+            if (correct) {
+
+                result.innerHTML =
+                    "<strong>Correct!</strong><br>" +
+                    "Urgent language and unexpected requests are " +
+                    "common warning signs. Verify the message using " +
+                    "a trusted source instead of using a suspicious link.";
+
+            } else {
+
+                result.innerHTML =
+                    "<strong>Not the safest choice.</strong><br>" +
+                    "Do not provide sensitive information or click " +
+                    "unexpected links. Verify the message through a " +
+                    "trusted method.";
+
+            }
+
+        }
+
+
+        // LAB 3
+        // Educational Hash Demonstration
+
+        async function generateHash() {
+
+            const text =
+                document.getElementById("hashInput").value;
+
+            const result =
+                document.getElementById("hashResult");
+
+
+            if (text.length === 0) {
+
+                result.style.display = "block";
+
+                result.innerHTML =
+                    "Enter some sample text first.";
+
+                return;
+
+            }
+
+
+            const encoder =
+                new TextEncoder();
+
+            const data =
+                encoder.encode(text);
+
+
+            const hashBuffer =
+                await crypto.subtle.digest(
+                    "SHA-256",
+                    data
+                );
+
+
+            const hashArray =
+                Array.from(
+                    new Uint8Array(hashBuffer)
+                );
+
+
+            const hashHex =
+                hashArray
+                    .map(
+                        byte =>
+                            byte
+                                .toString(16)
+                                .padStart(2, "0")
+                    )
+                    .join("");
+
+
+            result.style.display = "block";
+
+
+            result.innerHTML =
+                "<strong>SHA-256 Demo Hash:</strong><br>" +
+                "<span style='word-break: break-all;'>" +
+                hashHex +
+                "</span><br><br>" +
+                "Change even one character in the input " +
+                "and generate the hash again to see how " +
+                "the output changes.";
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
