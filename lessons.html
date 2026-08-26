@@ -1,126 +1,147 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>CyberStart - Lessons</title>
+<title>CyberStart - Lessons</title>
 
-    <style>
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b1020;
-            color: white;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
 
-        nav {
-            background: #111a33;
-            padding: 18px;
-            text-align: center;
-        }
+nav {
+    background: #111a33;
+    padding: 18px;
+    text-align: center;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 7px;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            color: #4da6ff;
-        }
+nav a:hover {
+    color: #4da6ff;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 35px 20px;
-        }
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 35px 20px;
+}
 
-        h1 {
-            text-align: center;
-            color: #4da6ff;
-            font-size: 38px;
-        }
+h1 {
+    text-align: center;
+    color: #4da6ff;
+    font-size: 40px;
+}
 
-        .intro {
-            text-align: center;
-            color: #cccccc;
-            font-size: 18px;
-            margin-bottom: 35px;
-        }
+.intro {
+    text-align: center;
+    color: #bbb;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
 
-        .lesson {
-            background: #111a33;
-            border: 1px solid #26345c;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-        }
 
-        .lesson h2 {
-            color: #4da6ff;
-            margin-top: 8px;
-        }
+/* LESSON */
 
-        .lesson p {
-            color: #dddddd;
-            line-height: 1.7;
-        }
+.lesson {
+    background: #111a33;
+    border: 1px solid #26345c;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
 
-        .lesson-number {
-            color: #78bbff;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+.lesson h2 {
+    color: #78bbff;
+}
 
-        .quiz-section {
-            text-align: center;
-            background: #111a33;
-            border: 1px solid #26345c;
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 35px;
-        }
+.lesson p {
+    color: #ddd;
+    line-height: 1.7;
+}
 
-        .quiz-section h2 {
-            color: #4da6ff;
-        }
+.lesson ul {
+    color: #ccc;
+    line-height: 1.8;
+}
 
-        .quiz-section p {
-            color: #dddddd;
-        }
+.lesson strong {
+    color: white;
+}
 
-        .quiz-button {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #4da6ff;
-            color: #07101f;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
 
-        .quiz-button:hover {
-            background: #78bbff;
-        }
+/* COMPLETE BUTTON */
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-            background: #111a33;
-            color: #999999;
-        }
+.complete {
+    background: #4da6ff;
+    color: #07101f;
 
-    </style>
+    border: none;
+    border-radius: 8px;
+
+    padding: 11px 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.complete:hover {
+    background: #78bbff;
+}
+
+.complete.completed {
+    background: #263b6b;
+    color: #9ecfff;
+    cursor: default;
+}
+
+
+/* XP */
+
+.xp-message {
+    display: none;
+
+    margin-top: 12px;
+
+    color: #78bbff;
+
+    font-weight: bold;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 30px;
+
+    background: #111a33;
+
+    color: #999;
+}
+
+</style>
 
 </head>
 
@@ -128,181 +149,657 @@
 <body>
 
 
-    <!-- Navigation -->
+<!-- NAVIGATION -->
 
-    <nav>
+<nav>
 
-        <a href="index.html">Home</a>
+<a href="index.html">Home</a>
 
-        <a href="lessons.html">Lessons</a>
+<a href="lessons.html">Lessons</a>
 
-        <a href="quiz.html">Quiz</a>
+<a href="labs.html">Labs</a>
 
-    </nav>
+<a href="quiz.html">Quiz</a>
 
+<a href="games.html">Games</a>
 
-    <!-- Main Content -->
+<a href="glossary.html">Glossary</a>
 
-    <div class="container">
+<a href="profile.html">Profile</a>
 
-        <h1>Cybersecurity Lessons</h1>
+<a href="feedback.html">Feedback</a>
 
-        <p class="intro">
-            Learn the fundamentals of cybersecurity one lesson at a time.
-        </p>
+</nav>
 
 
-        <!-- Lesson 1 -->
+<div class="container">
 
-        <div class="lesson">
 
-            <div class="lesson-number">
-                Lesson 1
-            </div>
+<h1>
+📚 Cybersecurity Lessons
+</h1>
 
-            <h2>Introduction to Cybersecurity</h2>
 
-            <p>
-                Cybersecurity is the practice of protecting computers,
-                networks, accounts, systems, and information from
-                unauthorized access and digital threats.
-            </p>
+<p class="intro">
 
-            <p>
-                Cybersecurity is important because people and
-                organizations store large amounts of information
-                digitally.
-            </p>
+Learn the fundamentals of cybersecurity
+through short lessons and practical concepts.
 
-        </div>
+Complete lessons to earn XP and level up.
 
+</p>
 
-        <!-- Lesson 2 -->
 
-        <div class="lesson">
+<!-- LESSON 1 -->
 
-            <div class="lesson-number">
-                Lesson 2
-            </div>
+<div class="lesson">
 
-            <h2>Phishing and Scams</h2>
+<h2>
+🔐 1. Password Security
+</h2>
 
-            <p>
-                Phishing is a type of social engineering attack
-                designed to trick someone into revealing information
-                or taking an unsafe action.
-            </p>
+<p>
 
-            <p>
-                Suspicious messages may contain unusual links,
-                unexpected attachments, urgent requests, or requests
-                for sensitive information.
-            </p>
+Passwords are one of the most common ways
+people protect their online accounts.
 
-        </div>
+A strong password should be difficult for
+someone else to guess.
 
+</p>
 
-        <!-- Lesson 3 -->
+<p>
+<strong>Good practices include:</strong>
+</p>
 
-        <div class="lesson">
+<ul>
 
-            <div class="lesson-number">
-                Lesson 3
-            </div>
+<li>Use long, unique passwords.</li>
 
-            <h2>Passwords and Account Security</h2>
+<li>Avoid easily guessed information.</li>
 
-            <p>
-                Strong, unique passwords can help protect online
-                accounts. Using the same password for many accounts
-                can increase the impact if that password is exposed.
-            </p>
+<li>Don't reuse the same password everywhere.</li>
 
-            <p>
-                Multi-factor authentication adds another layer of
-                protection by requiring an additional verification step.
-            </p>
+<li>Consider using a reputable password manager.</li>
 
-        </div>
+<li>Enable MFA when available.</li>
 
+</ul>
 
-        <!-- Lesson 4 -->
+<button
+class="complete"
+onclick="completeLesson(1, this)">
 
-        <div class="lesson">
+Mark Lesson Complete
 
-            <div class="lesson-number">
-                Lesson 4
-            </div>
+</button>
 
-            <h2>Malware</h2>
+<div
+id="message1"
+class="xp-message">
 
-            <p>
-                Malware is software created to perform harmful or
-                unwanted actions on a computer or other device.
-            </p>
+⭐ +10 XP earned!
 
-            <p>
-                Different types of malware can behave in different
-                ways, which is why keeping software updated and being
-                careful with downloads is important.
-            </p>
+</div>
 
-        </div>
+</div>
 
 
-        <!-- Lesson 5 -->
+<!-- LESSON 2 -->
 
-        <div class="lesson">
+<div class="lesson">
 
-            <div class="lesson-number">
-                Lesson 5
-            </div>
+<h2>
+🎣 2. Phishing
+</h2>
 
-            <h2>Firewalls and Network Security</h2>
+<p>
 
-            <p>
-                A firewall helps control network traffic based on
-                security rules. It can help prevent unauthorized
-                network connections from reaching protected systems.
-            </p>
+Phishing is a type of social engineering
+where attackers attempt to trick people into
+revealing information or performing an action.
 
-            <p>
-                Firewalls are one part of a larger security strategy.
-            </p>
+</p>
 
-        </div>
+<p>
+<strong>Warning signs can include:</strong>
+</p>
 
+<ul>
 
-        <!-- Quiz Section -->
+<li>Unexpected messages.</li>
 
-        <div class="quiz-section">
+<li>Urgent or threatening language.</li>
 
-            <h2>Ready to Test Yourself?</h2>
+<li>Suspicious links.</li>
 
-            <p>
-                After completing the lessons, take the CyberStart
-                quiz to test your knowledge.
-            </p>
+<li>Requests for sensitive information.</li>
 
-            <a class="quiz-button" href="quiz.html">
-                Take the Quiz
-            </a>
+<li>Unexpected attachments.</li>
 
-        </div>
+</ul>
 
+<p>
 
-    </div>
+When something looks suspicious, verify it
+using a trusted method instead of relying on
+the message itself.
 
+</p>
 
-    <!-- Footer -->
+<button
+class="complete"
+onclick="completeLesson(2, this)">
 
-    <footer>
+Mark Lesson Complete
 
-        <p>
-            © 2026 CyberStart | Learn. Explore. Stay Secure.
-        </p>
+</button>
 
-    </footer>
+<div
+id="message2"
+class="xp-message">
+
+⭐ +10 XP earned!
+
+</div>
+
+</div>
+
+
+<!-- LESSON 3 -->
+
+<div class="lesson">
+
+<h2>
+🦠 3. Malware
+</h2>
+
+<p>
+
+Malware is software designed to perform
+harmful or unwanted actions on a computer
+or network.
+
+</p>
+
+<p>
+<strong>Common categories include:</strong>
+</p>
+
+<ul>
+
+<li>Viruses</li>
+
+<li>Worms</li>
+
+<li>Trojans</li>
+
+<li>Ransomware</li>
+
+<li>Spyware</li>
+
+</ul>
+
+<p>
+
+Security updates, careful downloads, and
+reliable security tools can help reduce risk.
+
+</p>
+
+<button
+class="complete"
+onclick="completeLesson(3, this)">
+
+Mark Lesson Complete
+
+</button>
+
+<div
+id="message3"
+class="xp-message">
+
+⭐ +10 XP earned!
+
+</div>
+
+</div>
+
+
+<!-- LESSON 4 -->
+
+<div class="lesson">
+
+<h2>
+🌐 4. Networks & IP Addresses
+</h2>
+
+<p>
+
+A network allows computers and other devices
+to communicate with each other.
+
+An IP address identifies a device or network
+interface so traffic can be directed to the
+correct destination.
+
+</p>
+
+<p>
+<strong>Important concepts:</strong>
+</p>
+
+<ul>
+
+<li>IP addresses</li>
+
+<li>Routers</li>
+
+<li>Switches</li>
+
+<li>Ports</li>
+
+<li>Protocols</li>
+
+</ul>
+
+<button
+class="complete"
+onclick="completeLesson(4, this)">
+
+Mark Lesson Complete
+
+</button>
+
+<div
+id="message4"
+class="xp-message">
+
+⭐ +10 XP earned!
+
+</div>
+
+</div>
+
+
+<!-- LESSON 5 -->
+
+<div class="lesson">
+
+<h2>
+🧱 5. Firewalls
+</h2>
+
+<p>
+
+A firewall helps control network traffic
+based on security rules.
+
+It can help prevent unauthorized connections
+while allowing legitimate traffic.
+
+</p>
+
+<p>
+
+Firewalls can exist on individual computers,
+servers, routers, and larger networks.
+
+</p>
+
+<button
+class="complete"
+onclick="completeLesson(5, this)">
+
+Mark Lesson Complete
+
+</button>
+
+<div
+id="message5"
+class="xp-message">
+
+⭐ +10 XP earned!
+
+</div>
+
+</div>
+
+
+<!-- LESSON 6 -->
+
+<div class="lesson">
+
+<h2>
+🔑 6. Encryption
+</h2>
+
+<p>
+
+Encryption transforms readable information
+into protected data that can only be properly
+understood using the appropriate key or process.
+
+</p>
+
+<p>
+
+Encryption is commonly used when protecting
+data during storage or transmission.
+
+</p>
+
+<button
+class="complete"
+onclick="completeLesson(6, this)">
+
+Mark Lesson Complete
+
+</button>
+
+<div
+id="message6"
+class="xp-message">
+
+⭐ +10 XP earned!
+
+</div>
+
+</div>
+
+
+<!-- LESSON 7 -->
+
+<div class="lesson">
+
+<h2>
+🛡️ 7. Multi-Factor Authentication
+</h2>
+
+<p>
+
+Multi-Factor Authentication, or MFA, requires
+more than one type of verification when
+logging into an account.
+
+</p>
+
+<p>
+Examples can include:
+
+</p>
+
+<ul>
+
+<li>Something you know</li>
+
+<li>Something you have</li>
+
+<li>Something you are</li>
+
+</ul>
+
+<p>
+
+MFA can provide additional protection if a
+password is compromised.
+
+</p>
+
+<button
+class="complete"
+onclick="completeLesson(7, this)">
+
+Mark Lesson Complete
+
+</button>
+
+<div
+id="message7"
+class="xp-message">
+
+⭐ +10 XP earned!
+
+</div>
+
+</div>
+
+
+<!-- LESSON 8 -->
+
+<div class="lesson">
+
+<h2>
+👤 8. Social Engineering
+</h2>
+
+<p>
+
+Social engineering involves manipulating people
+into taking actions or revealing information.
+
+Instead of attacking a technical system
+directly, an attacker may try to influence
+the person using it.
+
+</p>
+
+<p>
+<strong>Common techniques include:</strong>
+</p>
+
+<ul>
+
+<li>Impersonation</li>
+
+<li>Phishing</li>
+
+<li>Pretexting</li>
+
+<li>Manipulation</li>
+
+</ul>
+
+<button
+class="complete"
+onclick="completeLesson(8, this)">
+
+Mark Lesson Complete
+
+</button>
+
+<div
+id="message8"
+class="xp-message">
+
+⭐ +10 XP earned!
+
+</div>
+
+</div>
+
+
+<!-- LESSON 9 -->
+
+<div class="lesson">
+
+<h2>
+☁️ 9. Cloud Security
+</h2>
+
+<p>
+
+Cloud security focuses on protecting data,
+applications, and systems hosted through
+cloud services.
+
+</p>
+
+<p>
+
+Important areas include account security,
+access controls, encryption, monitoring,
+and secure configuration.
+
+</p>
+
+<button
+class="complete"
+onclick="completeLesson(9, this)">
+
+Mark Lesson Complete
+
+</button>
+
+<div
+id="message9"
+class="xp-message">
+
+⭐ +10 XP earned!
+
+</div>
+
+</div>
+
+
+<!-- LESSON 10 -->
+
+<div class="lesson">
+
+<h2>
+🚨 10. Incident Response
+</h2>
+
+<p>
+
+Incident response is the process organizations
+use to identify, investigate, contain, and
+recover from cybersecurity incidents.
+
+</p>
+
+<p>
+
+A good response process helps organizations
+reduce damage and learn from security events.
+
+</p>
+
+<button
+class="complete"
+onclick="completeLesson(10, this)">
+
+Mark Lesson Complete
+
+</button>
+
+<div
+id="message10"
+class="xp-message">
+
+⭐ +10 XP earned!
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+<p>
+© 2026 CyberStart | Learn. Explore. Stay Secure.
+</p>
+
+</footer>
+
+
+<script>
+
+
+function completeLesson(
+lessonNumber,
+button
+) {
+
+
+const key =
+"cyberstartLesson" +
+lessonNumber +
+"Completed";
+
+
+/* CHECK IF ALREADY COMPLETED */
+
+if (
+localStorage.getItem(key)
+=== "true"
+) {
+
+return;
+
+}
+
+
+/* GET CURRENT XP */
+
+let xp =
+Number(
+localStorage.getItem(
+"cyberstartXP"
+)
+) || 0;
+
+
+/* ADD 10 XP */
+
+xp += 10;
+
+
+/* SAVE XP */
+
+localStorage.setItem(
+"cyberstartXP",
+xp
+);
+
+
+/* SAVE LESSON */
+
+localStorage.setItem(
+key,
+"true"
+);
+
+
+/* CHANGE BUTTON */
+
+button.textContent =
+"✓ Completed";
+
+button.classList.add(
+"completed"
+);
+
+button.disabled = true;
+
+
+/* SHOW MESSAGE */
+
+const message =
+document.getElementById(
+"message" + lessonNumber
+);
+
+message.style.display =
+"block";
+
+}
+
+
+</script>
 
 
 </body>
