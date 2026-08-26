@@ -19,11 +19,6 @@ body {
     color: white;
 }
 
-
-/* =========================
-   NAVIGATION
-========================= */
-
 nav {
     background: #111a33;
     padding: 18px;
@@ -41,21 +36,11 @@ nav a:hover {
     color: #4da6ff;
 }
 
-
-/* =========================
-   CONTAINER
-========================= */
-
 .container {
-    max-width: 850px;
+    max-width: 1000px;
     margin: auto;
     padding: 35px 20px;
 }
-
-
-/* =========================
-   HEADINGS
-========================= */
 
 h1 {
     text-align: center;
@@ -71,9 +56,7 @@ h1 {
 }
 
 
-/* =========================
-   GAME CARD
-========================= */
+/* GAME CARD */
 
 .game {
     background: #111a33;
@@ -90,9 +73,8 @@ h1 {
 }
 
 .game h2 {
-    font-size: 22px;
     color: #4da6ff;
-    margin-top: 8px;
+    font-size: 24px;
 }
 
 .game p {
@@ -101,11 +83,9 @@ h1 {
 }
 
 
-/* =========================
-   ANSWERS
-========================= */
+/* GAME BUTTONS */
 
-.answer {
+.game-button {
     width: 100%;
     padding: 14px;
     margin: 8px 0;
@@ -117,36 +97,32 @@ h1 {
     border-radius: 8px;
 
     cursor: pointer;
-
     text-align: left;
-
     font-size: 15px;
 }
 
-.answer:hover {
+.game-button:hover {
     background: #263b6b;
 }
 
-.answer.correct {
+.game-button.correct {
     background: #176b3a;
     border-color: #35c978;
 }
 
-.answer.wrong {
+.game-button.wrong {
     background: #8b2525;
     border-color: #ff6666;
 }
 
-.answer:disabled {
+.game-button:disabled {
     cursor: default;
 }
 
 
-/* =========================
-   EXPLANATION
-========================= */
+/* RESULT */
 
-.explanation {
+.result {
     display: none;
 
     margin-top: 15px;
@@ -156,82 +132,43 @@ h1 {
 
     border-radius: 8px;
 
-    color: #cccccc;
-
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-
-/* =========================
-   RESULT
-========================= */
-
-.result {
-    display: none;
-
-    background: #111a33;
-
-    border: 1px solid #26345c;
-
-    border-radius: 12px;
-
-    padding: 30px;
-
-    text-align: center;
-
-    margin-top: 30px;
-}
-
-.result h2 {
-    color: #4da6ff;
-}
-
-#score {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.xp-earned {
+.xp {
     color: #78bbff;
-    font-size: 20px;
     font-weight: bold;
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* RESET BUTTON */
 
-.button {
-    display: inline-block;
+.reset-button {
+    display: block;
+
+    margin: 30px auto;
 
     padding: 12px 25px;
-
-    margin: 8px;
 
     background: #4da6ff;
 
     color: #07101f;
 
-    text-decoration: none;
+    border: none;
 
     border-radius: 8px;
 
     font-weight: bold;
 
-    border: none;
-
     cursor: pointer;
 }
 
-.button:hover {
+.reset-button:hover {
     background: #78bbff;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     text-align: center;
@@ -246,16 +183,25 @@ footer {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
+    nav {
+        line-height: 2;
+    }
+
     nav a {
-        display: inline-block;
-        margin: 6px;
+        margin: 0 5px;
         font-size: 13px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .game {
+        padding: 20px;
     }
 
 }
@@ -268,9 +214,7 @@ footer {
 <body>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -297,28 +241,26 @@ footer {
 
 
 <h1>
-🎮 Cybersecurity Games
+🎮 CyberStart Games
 </h1>
 
 
 <p class="intro">
 
-Test your cybersecurity instincts with
-short interactive challenges.
+Practice your cybersecurity skills through
+quick and safe interactive games.
 
-Choose the best answer and earn XP!
+Earn XP while you play!
 
 </p>
 
 
-<!-- =========================
-     GAME 1
-========================= -->
+<!-- GAME 1 -->
 
 <div class="game">
 
 <div class="game-number">
-GAME 1 OF 3
+GAME 1 OF 5
 </div>
 
 <h2>
@@ -334,77 +276,49 @@ You receive this message:
 <p>
 
 <strong>
-"URGENT! Congratulations! You won a free
-phone. Click the link now to claim your prize!"
+"Congratulations! You won a free phone!
+Click this link now to claim your prize!"
 </strong>
 
 </p>
 
 <p>
-
 What should you do?
-
 </p>
 
 
 <button
-class="answer"
-onclick="checkGame(this, true, 1)">
+class="game-button"
+onclick="answerGame(this, true, 'result1')">
 
-A. Treat the message as suspicious and verify
-the offer through an official source
-
-</button>
-
-
-<button
-class="answer"
-onclick="checkGame(this, false, 1)">
-
-B. Click the link immediately
+🚨 Treat it as suspicious
 
 </button>
 
 
 <button
-class="answer"
-onclick="checkGame(this, false, 1)">
+class="game-button"
+onclick="answerGame(this, false, 'result1')">
 
-C. Enter your account information
-
-</button>
-
-
-<button
-class="answer"
-onclick="checkGame(this, false, 1)">
-
-D. Forward the message to everyone
+✅ Click the link
 
 </button>
 
 
-<div class="explanation">
-
-<strong>Why?</strong><br><br>
-
-Unexpected prizes, urgency, and links are
-common warning signs of phishing. Verify
-unexpected messages using a trusted source.
-
+<div
+id="result1"
+class="result">
 </div>
 
 </div>
 
 
-<!-- =========================
-     GAME 2
-========================= -->
+<!-- GAME 2 -->
 
 <div class="game">
 
 <div class="game-number">
-GAME 2 OF 3
+GAME 2 OF 5
 </div>
 
 <h2>
@@ -412,196 +326,195 @@ GAME 2 OF 3
 </h2>
 
 <p>
-
-Which example has characteristics that
-generally make it a stronger password?
-
+Which example demonstrates stronger
+password characteristics?
 </p>
 
 
 <button
-class="answer"
-onclick="checkGame(this, false, 2)">
+class="game-button"
+onclick="answerGame(this, false, 'result2')">
 
-A. password123
-
-</button>
-
-
-<button
-class="answer"
-onclick="checkGame(this, true, 2)">
-
-B. T!9q#L2@vX7$k
+password123
 
 </button>
 
 
 <button
-class="answer"
-onclick="checkGame(this, false, 2)">
+class="game-button"
+onclick="answerGame(this, true, 'result2')">
 
-C. 123456789
-
-</button>
-
-
-<button
-class="answer"
-onclick="checkGame(this, false, 2)">
-
-D. mypassword
+T!9q#L2@vX7$k
 
 </button>
 
 
-<div class="explanation">
-
-<strong>Why?</strong><br><br>
-
-Longer passwords with varied characters can
-be harder to guess. In real life, use unique
-passwords and never use passwords shown in
-public examples.
-
+<div
+id="result2"
+class="result">
 </div>
 
 </div>
 
 
-<!-- =========================
-     GAME 3
-========================= -->
+<!-- GAME 3 -->
 
 <div class="game">
 
 <div class="game-number">
-GAME 3 OF 3
+GAME 3 OF 5
 </div>
 
 <h2>
-🕵️ Cyber Mystery
+🕵️ Verification Code Mystery
 </h2>
 
 <p>
 
-Someone contacts you and says:
+Someone contacts you and asks for the
+verification code sent to your account.
 
 </p>
 
 <p>
-
-<strong>
-"Hey! I need the verification code that was
-just sent to your phone. Give it to me."
-</strong>
-
-</p>
-
-<p>
-
-What is the safest response?
-
+What should you do?
 </p>
 
 
 <button
-class="answer"
-onclick="checkGame(this, true, 3)">
+class="game-button"
+onclick="answerGame(this, true, 'result3')">
 
-A. Don't give them the code and verify
-the request through a trusted method
-
-</button>
-
-
-<button
-class="answer"
-onclick="checkGame(this, false, 3)">
-
-B. Give them the code
+🛡️ Don't give them the code
 
 </button>
 
 
 <button
-class="answer"
-onclick="checkGame(this, false, 3)">
+class="game-button"
+onclick="answerGame(this, false, 'result3')">
 
-C. Post the code online
-
-</button>
-
-
-<button
-class="answer"
-onclick="checkGame(this, false, 3)">
-
-D. Send them your password too
+📱 Give them the code
 
 </button>
 
-
-<div class="explanation">
-
-<strong>Why?</strong><br><br>
-
-Login verification codes are meant to help
-verify access. Don't share them with someone
-who unexpectedly asks for them.
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     RESULT
-========================= -->
 
 <div
-id="result"
+id="result3"
 class="result">
+</div>
+
+</div>
+
+
+<!-- GAME 4 -->
+
+<div class="game">
+
+<div class="game-number">
+GAME 4 OF 5
+</div>
 
 <h2>
-🏆 Games Complete!
+🌐 Network Detective
 </h2>
 
-<p id="score">
+<p>
+
+A website asks you to log in.
+Before entering your information,
+what should you check?
+
 </p>
 
-<p id="message">
-</p>
-
-<p class="xp-earned">
-⭐ +30 XP Earned!
-</p>
 
 <button
-class="button"
-onclick="restartGames()">
+class="game-button"
+onclick="answerGame(this, true, 'result4')">
 
-🔄 Play Again
+🔎 Check that you're using the legitimate website
 
 </button>
 
-<a
-class="button"
-href="profile.html">
 
-View Profile
+<button
+class="game-button"
+onclick="answerGame(this, false, 'result4')">
 
-</a>
+⚡ Enter your password as quickly as possible
+
+</button>
+
+
+<div
+id="result4"
+class="result">
+</div>
 
 </div>
 
 
+<!-- GAME 5 -->
+
+<div class="game">
+
+<div class="game-number">
+GAME 5 OF 5
+</div>
+
+<h2>
+🦠 Malware Detector
+</h2>
+
+<p>
+
+You receive an unexpected email attachment
+from someone you don't recognize.
+
+What is the safer choice?
+
+</p>
+
+
+<button
+class="game-button"
+onclick="answerGame(this, true, 'result5')">
+
+🛡️ Don't open it and verify the message
+
+</button>
+
+
+<button
+class="game-button"
+onclick="answerGame(this, false, 'result5')">
+
+📂 Open the attachment immediately
+
+</button>
+
+
+<div
+id="result5"
+class="result">
+</div>
+
 </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<button
+class="reset-button"
+onclick="resetGames()">
+
+🔄 Reset Games
+
+</button>
+
+
+</div>
+
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -624,50 +537,59 @@ Learn. Practice. Stay Secure.
 
 
 /* =========================
-   GAME SYSTEM
+   XP SYSTEM
 ========================= */
 
-let score = 0;
+function addXP(amount) {
 
-let answered = 0;
+let xp =
+Number(
+localStorage.getItem("cyberstartXP")
+) || 0;
 
-const totalGames = 3;
+xp += amount;
+
+localStorage.setItem(
+"cyberstartXP",
+xp
+);
+
+}
 
 
 /* =========================
-   CHECK ANSWER
+   GAME ANSWER
 ========================= */
 
-function checkGame(button, correct, gameNumber) {
+function answerGame(
+button,
+correct,
+resultID
+) {
 
 
 const game =
 button.parentElement;
 
 
-/* Prevent answering twice */
+/* Prevent multiple answers */
 
 if (
-game.dataset.answered === "true"
+game.dataset.completed === "true"
 ) {
 
 return;
 
 }
 
-
-game.dataset.answered = "true";
-
-answered++;
-
-
-/* Get all answers */
-
-const buttons =
-game.querySelectorAll(".answer");
+game.dataset.completed = "true";
 
 
 /* Disable buttons */
+
+const buttons =
+game.querySelectorAll(".game-button");
+
 
 buttons.forEach(function(btn) {
 
@@ -676,13 +598,62 @@ btn.disabled = true;
 });
 
 
+const result =
+document.getElementById(resultID);
+
+
+result.style.display =
+"block";
+
+
 /* Correct answer */
 
 if (correct) {
 
+
 button.classList.add("correct");
 
-score++;
+
+result.innerHTML =
+
+"<strong>🎯 Correct!</strong><br>" +
+
+"Great cybersecurity thinking. " +
+
+"Recognizing suspicious behavior and " +
+
+"verifying information can help keep " +
+
+"accounts and devices safer." +
+
+"<br><br>" +
+
+"<span class='xp'>⭐ +10 XP!</span>";
+
+
+/* Award XP */
+
+const gameKey =
+"cyberstartGame" +
+resultID +
+"Completed";
+
+
+if (
+localStorage.getItem(gameKey)
+!== "true"
+) {
+
+
+addXP(10);
+
+
+localStorage.setItem(
+gameKey,
+"true"
+);
+
+}
 
 }
 
@@ -691,45 +662,17 @@ score++;
 
 else {
 
+
 button.classList.add("wrong");
 
 
-/*
-Show the correct answer
-*/
+result.innerHTML =
 
-buttons.forEach(function(btn) {
+"<strong>❌ Not quite.</strong><br>" +
 
-if (
-btn.getAttribute("onclick")
-.includes("true")
-) {
+"Look for warning signs and choose " +
 
-btn.classList.add("correct");
-
-}
-
-});
-
-}
-
-
-/* Show explanation */
-
-const explanation =
-game.querySelector(".explanation");
-
-explanation.style.display =
-"block";
-
-
-/* Check if all games are finished */
-
-if (
-answered === totalGames
-) {
-
-showResult();
+"the safer cybersecurity action.";
 
 }
 
@@ -737,128 +680,51 @@ showResult();
 
 
 /* =========================
-   SHOW RESULT
+   RESET GAMES
 ========================= */
 
-function showResult() {
+function resetGames() {
+
+
+const games =
+document.querySelectorAll(".game");
+
+
+games.forEach(function(game) {
+
+game.dataset.completed =
+"false";
+
+
+const buttons =
+game.querySelectorAll(
+".game-button"
+);
+
+
+buttons.forEach(function(button) {
+
+button.disabled = false;
+
+button.classList.remove(
+"correct",
+"wrong"
+);
+
+});
 
 
 const result =
-document.getElementById("result");
-
-
-const scoreText =
-document.getElementById("score");
-
-
-const message =
-document.getElementById("message");
+game.querySelector(".result");
 
 
 result.style.display =
-"block";
+"none";
 
+result.innerHTML = "";
 
-scoreText.textContent =
-"Your Score: " +
-score +
-" / " +
-totalGames;
-
-
-/* =========================
-   XP
-========================= */
-
-let gamesCompleted =
-localStorage.getItem(
-"cyberstartGamesCompleted"
-);
-
-
-/*
-Only award the 30 XP once.
-*/
-
-if (
-gamesCompleted !== "true"
-) {
-
-
-let currentXP =
-Number(
-localStorage.getItem(
-"cyberstartXP"
-)
-) || 0;
-
-
-currentXP += 30;
-
-
-localStorage.setItem(
-"cyberstartXP",
-currentXP
-);
-
-
-localStorage.setItem(
-"cyberstartGamesCompleted",
-"true"
-);
-
-}
-
-
-/* =========================
-   MESSAGE
-========================= */
-
-if (score === 3) {
-
-message.textContent =
-"🏆 Perfect score! Excellent cybersecurity instincts.";
-
-}
-
-else if (score === 2) {
-
-message.textContent =
-"🔥 Great job! You spotted most of the threats.";
-
-}
-
-else if (score === 1) {
-
-message.textContent =
-"👍 Good start! Keep practicing your cybersecurity skills.";
-
-}
-
-else {
-
-message.textContent =
-"💻 Keep learning! Try the games again after reviewing your lessons.";
-
-}
-
-
-/* Scroll to result */
-
-result.scrollIntoView({
-behavior: "smooth"
 });
 
-}
-
-
-/* =========================
-   RESTART
-========================= */
-
-function restartGames() {
-
-location.reload();
 
 }
 
