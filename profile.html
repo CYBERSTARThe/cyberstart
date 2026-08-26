@@ -8,7 +8,7 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>CyberStart - Dashboard</title>
+<title>CyberStart - Games</title>
 
 <style>
 
@@ -28,7 +28,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 7px;
+    margin: 0 8px;
     font-weight: bold;
 }
 
@@ -48,212 +48,160 @@ h1 {
     font-size: 38px;
 }
 
-.subtitle {
+.intro {
     text-align: center;
-    color: #aaa;
-    margin-bottom: 30px;
+    color: #cccccc;
+    margin-bottom: 35px;
+    line-height: 1.6;
 }
 
 
-/* PROFILE */
+/* GAME CARD */
 
-.profile {
+.game {
     background: #111a33;
     border: 1px solid #26345c;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.avatar {
-    font-size: 70px;
-}
-
-.profile h2 {
-    color: #78bbff;
-    margin-bottom: 5px;
-}
-
-.profile p {
-    color: #bbb;
-}
-
-
-/* XP */
-
-.xp-card {
-    background: #111a33;
-    border: 1px solid #26345c;
-    border-radius: 15px;
+    border-radius: 12px;
     padding: 25px;
     margin-bottom: 25px;
 }
 
-.xp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.xp-header h2 {
-    color: #4da6ff;
-}
-
-.xp-number {
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.xp-background {
-    width: 100%;
-    height: 25px;
-    background: #202c4a;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.xp-bar {
-    height: 100%;
-    width: 0%;
-    background: #4da6ff;
-    transition: width 0.5s;
-}
-
-.xp-message {
-    text-align: center;
-    color: #aaa;
-}
-
-
-/* STATS */
-
-.stats {
-    display: grid;
-    grid-template-columns:
-    repeat(auto-fit, minmax(180px, 1fr));
-
-    gap: 15px;
-
-    margin-bottom: 25px;
-}
-
-.stat {
-    background: #111a33;
-    border: 1px solid #26345c;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-}
-
-.stat-icon {
-    font-size: 32px;
-}
-
-.stat-number {
-    font-size: 25px;
+.game-number {
     color: #78bbff;
-    font-weight: bold;
-    margin: 8px;
-}
-
-
-/* ACHIEVEMENTS */
-
-.achievement-section {
-    background: #111a33;
-    border: 1px solid #26345c;
-    border-radius: 15px;
-    padding: 25px;
-}
-
-.achievement-section h2 {
-    color: #4da6ff;
-}
-
-.achievement-grid {
-    display: grid;
-
-    grid-template-columns:
-    repeat(auto-fit, minmax(190px, 1fr));
-
-    gap: 15px;
-}
-
-.achievement {
-    background: #182544;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-
-    opacity: 0.3;
-
-    transition: 0.3s;
-}
-
-.achievement.unlocked {
-    opacity: 1;
-    border: 1px solid #4da6ff;
-}
-
-.achievement-icon {
-    font-size: 40px;
-}
-
-.achievement h3 {
-    color: #78bbff;
-    margin: 8px 0;
-}
-
-.achievement p {
-    color: #aaa;
     font-size: 14px;
+    font-weight: bold;
+}
+
+.game h2 {
+    color: #4da6ff;
+    font-size: 24px;
+}
+
+.game p {
+    color: #dddddd;
+    line-height: 1.6;
 }
 
 
-/* BUTTONS */
+/* GAME BUTTONS */
 
-.buttons {
-    text-align: center;
-    margin: 30px 0;
+.game-button {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0;
+
+    background: #182544;
+    color: white;
+
+    border: 1px solid #354878;
+    border-radius: 8px;
+
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
 }
 
-.button {
-    display: inline-block;
+.game-button:hover {
+    background: #263b6b;
+}
 
-    background: #4da6ff;
-    color: #07101f;
+.game-button.correct {
+    background: #176b3a;
+    border-color: #35c978;
+}
 
-    padding: 12px 22px;
+.game-button.wrong {
+    background: #8b2525;
+    border-color: #ff6666;
+}
 
-    margin: 6px;
+.game-button:disabled {
+    cursor: default;
+}
+
+
+/* RESULT */
+
+.result {
+    display: none;
+
+    margin-top: 15px;
+    padding: 15px;
+
+    background: #0d162d;
 
     border-radius: 8px;
 
-    text-decoration: none;
+    line-height: 1.6;
+}
 
+.xp {
+    color: #78bbff;
     font-weight: bold;
 }
 
-.button:hover {
+
+/* RESET BUTTON */
+
+.reset-button {
+    display: block;
+
+    margin: 30px auto;
+
+    padding: 12px 25px;
+
+    background: #4da6ff;
+
+    color: #07101f;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.reset-button:hover {
     background: #78bbff;
 }
 
 
+/* FOOTER */
+
 footer {
     text-align: center;
+
     padding: 25px;
+
     margin-top: 30px;
+
     background: #111a33;
-    color: #999;
+
+    color: #999999;
 }
 
 
-@media (max-width: 600px) {
+/* MOBILE */
 
-    .xp-header {
-        flex-direction: column;
-        gap: 5px;
+@media (max-width: 700px) {
+
+    nav {
+        line-height: 2;
+    }
+
+    nav a {
+        margin: 0 5px;
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .game {
+        padding: 20px;
     }
 
 }
@@ -265,6 +213,8 @@ footer {
 
 <body>
 
+
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -291,427 +241,293 @@ footer {
 
 
 <h1>
-📊 CyberStart Dashboard
+🎮 CyberStart Games
 </h1>
 
-<p class="subtitle">
-Track your progress and unlock achievements.
+
+<p class="intro">
+
+Practice your cybersecurity skills through
+quick and safe interactive games.
+
+Earn XP while you play!
+
 </p>
 
 
-<!-- PROFILE -->
+<!-- GAME 1 -->
 
-<div class="profile">
+<div class="game">
 
-<div
-id="avatar"
-class="avatar">
-
-🤖
-
+<div class="game-number">
+GAME 1 OF 5
 </div>
-
-<h2 id="nickname">
-CyberStudent
-</h2>
-
-<p>
-Level <strong id="level">1</strong>
-</p>
-
-<p>
-⭐ <span id="totalXP">0</span> Total XP
-</p>
-
-</div>
-
-
-<!-- XP -->
-
-<div class="xp-card">
-
-<div class="xp-header">
 
 <h2>
-⭐ Level Progress
+🎣 Phishing Spotter
 </h2>
 
-<div
-id="xpNumber"
-class="xp-number">
+<p>
 
-0 / 100 XP
-
-</div>
-
-</div>
-
-
-<div class="xp-background">
-
-<div
-id="xpBar"
-class="xp-bar">
-</div>
-
-</div>
-
-
-<p
-id="xpMessage"
-class="xp-message">
-
-100 XP until Level 2
+You receive this message:
 
 </p>
-
-</div>
-
-
-<!-- STATS -->
-
-<div class="stats">
-
-
-<div class="stat">
-
-<div class="stat-icon">
-🧠
-</div>
-
-<div
-id="quizScore"
-class="stat-number">
-
-0 / 10
-
-</div>
 
 <p>
-Best Quiz Score
+
+<strong>
+"Congratulations! You won a free phone!
+Click this link now to claim your prize!"
+</strong>
+
 </p>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-icon">
-🧪
-</div>
-
-<div
-id="labs"
-class="stat-number">
-
-0 / 3
-
-</div>
 
 <p>
-Labs Completed
+What should you do?
 </p>
 
-</div>
+
+<button
+class="game-button"
+onclick="answerGame(this, true, 'result1')">
+
+🚨 Treat it as suspicious
+
+</button>
 
 
-<div class="stat">
+<button
+class="game-button"
+onclick="answerGame(this, false, 'result1')">
 
-<div class="stat-icon">
-🎮
-</div>
+✅ Click the link
+
+</button>
+
 
 <div
-id="games"
-class="stat-number">
-
-0 / 4
-
+id="result1"
+class="result">
 </div>
-
-<p>
-Games Completed
-</p>
 
 </div>
 
 
-<div class="stat">
+<!-- GAME 2 -->
 
-<div class="stat-icon">
-🏆
+<div class="game">
+
+<div class="game-number">
+GAME 2 OF 5
 </div>
-
-<div
-id="achievementCount"
-class="stat-number">
-
-0
-
-</div>
-
-<p>
-Achievements
-</p>
-
-</div>
-
-
-</div>
-
-
-<!-- ACHIEVEMENTS -->
-
-<div class="achievement-section">
 
 <h2>
-🏆 Achievements
+🔐 Password Defender
 </h2>
 
-
-<div class="achievement-grid">
-
-
-<!-- FIRST QUIZ -->
-
-<div
-id="firstQuiz"
-class="achievement">
-
-<div class="achievement-icon">
-🧠
-</div>
-
-<h3>
-Quiz Starter
-</h3>
-
 <p>
-Complete your first quiz.
+Which example demonstrates stronger
+password characteristics?
 </p>
 
-</div>
+
+<button
+class="game-button"
+onclick="answerGame(this, false, 'result2')">
+
+password123
+
+</button>
 
 
-<!-- FIRST LAB -->
+<button
+class="game-button"
+onclick="answerGame(this, true, 'result2')">
+
+T!9q#L2@vX7$k
+
+</button>
+
 
 <div
-id="firstLab"
-class="achievement">
-
-<div class="achievement-icon">
-🧪
+id="result2"
+class="result">
 </div>
 
-<h3>
-Lab Explorer
-</h3>
+</div>
+
+
+<!-- GAME 3 -->
+
+<div class="game">
+
+<div class="game-number">
+GAME 3 OF 5
+</div>
+
+<h2>
+🕵️ Verification Code Mystery
+</h2>
 
 <p>
-Complete your first lab.
+
+Someone contacts you and asks for the
+verification code sent to your account.
+
 </p>
 
-</div>
+<p>
+What should you do?
+</p>
 
 
-<!-- FIRST GAME -->
+<button
+class="game-button"
+onclick="answerGame(this, true, 'result3')">
+
+🛡️ Don't give them the code
+
+</button>
+
+
+<button
+class="game-button"
+onclick="answerGame(this, false, 'result3')">
+
+📱 Give them the code
+
+</button>
+
 
 <div
-id="firstGame"
-class="achievement">
-
-<div class="achievement-icon">
-🎮
+id="result3"
+class="result">
 </div>
 
-<h3>
-Game On
-</h3>
+</div>
+
+
+<!-- GAME 4 -->
+
+<div class="game">
+
+<div class="game-number">
+GAME 4 OF 5
+</div>
+
+<h2>
+🌐 Network Detective
+</h2>
 
 <p>
-Complete your first game.
+
+A website asks you to log in.
+Before entering your information,
+what should you check?
+
 </p>
 
-</div>
+
+<button
+class="game-button"
+onclick="answerGame(this, true, 'result4')">
+
+🔎 Check that you're using the legitimate website
+
+</button>
 
 
-<!-- 100 XP -->
+<button
+class="game-button"
+onclick="answerGame(this, false, 'result4')">
+
+⚡ Enter your password as quickly as possible
+
+</button>
+
 
 <div
-id="xp100"
-class="achievement">
-
-<div class="achievement-icon">
-⭐
+id="result4"
+class="result">
 </div>
 
-<h3>
-100 XP
-</h3>
+</div>
+
+
+<!-- GAME 5 -->
+
+<div class="game">
+
+<div class="game-number">
+GAME 5 OF 5
+</div>
+
+<h2>
+🦠 Malware Detector
+</h2>
 
 <p>
-Earn 100 XP.
+
+You receive an unexpected email attachment
+from someone you don't recognize.
+
+What is the safer choice?
+
 </p>
 
-</div>
+
+<button
+class="game-button"
+onclick="answerGame(this, true, 'result5')">
+
+🛡️ Don't open it and verify the message
+
+</button>
 
 
-<!-- 250 XP -->
+<button
+class="game-button"
+onclick="answerGame(this, false, 'result5')">
+
+📂 Open the attachment immediately
+
+</button>
+
 
 <div
-id="xp250"
-class="achievement">
-
-<div class="achievement-icon">
-💎
-</div>
-
-<h3>
-250 XP
-</h3>
-
-<p>
-Earn 250 XP.
-</p>
-
-</div>
-
-
-<!-- LEVEL 2 -->
-
-<div
-id="level2"
-class="achievement">
-
-<div class="achievement-icon">
-🚀
-</div>
-
-<h3>
-Level 2
-</h3>
-
-<p>
-Reach Level 2.
-</p>
-
-</div>
-
-
-<!-- LEVEL 5 -->
-
-<div
-id="level5"
-class="achievement">
-
-<div class="achievement-icon">
-🔥
-</div>
-
-<h3>
-Level 5
-</h3>
-
-<p>
-Reach Level 5.
-</p>
-
-</div>
-
-
-<!-- ALL LABS -->
-
-<div
-id="allLabs"
-class="achievement">
-
-<div class="achievement-icon">
-🔬
-</div>
-
-<h3>
-Lab Master
-</h3>
-
-<p>
-Complete all 3 labs.
-</p>
-
-</div>
-
-
-<!-- ALL GAMES -->
-
-<div
-id="allGames"
-class="achievement">
-
-<div class="achievement-icon">
-🎯
-</div>
-
-<h3>
-Game Master
-</h3>
-
-<p>
-Complete all 4 games.
-</p>
-
-</div>
-
-
+id="result5"
+class="result">
 </div>
 
 </div>
 
 
-<!-- BUTTONS -->
+<button
+class="reset-button"
+onclick="resetGames()">
 
-<div class="buttons">
+🔄 Reset Games
 
-<a
-class="button"
-href="quiz.html">
-
-🧠 Quiz
-
-</a>
-
-<a
-class="button"
-href="labs.html">
-
-🧪 Labs
-
-</a>
-
-<a
-class="button"
-href="games.html">
-
-🎮 Games
-
-</a>
-
-<a
-class="button"
-href="index.html">
-
-🏠 Home
-
-</a>
-
-</div>
+</button>
 
 
 </div>
 
+
+<!-- FOOTER -->
 
 <footer>
 
 <p>
-© 2026 CyberStart | Learn. Explore. Stay Secure.
+🛡️ CyberStart
+</p>
+
+<p>
+Learn. Practice. Stay Secure.
+</p>
+
+<p>
+© 2026 CyberStart
 </p>
 
 </footer>
@@ -720,327 +536,197 @@ href="index.html">
 <script>
 
 
-/* PROFILE */
+/* =========================
+   XP SYSTEM
+========================= */
 
-function loadProfile() {
-
-
-const nickname =
-localStorage.getItem(
-"cyberstartNickname"
-);
-
-const avatar =
-localStorage.getItem(
-"cyberstartAvatar"
-);
-
-
-if (nickname) {
-
-document
-.getElementById("nickname")
-.textContent =
-nickname;
-
-}
-
-
-if (avatar) {
-
-document
-.getElementById("avatar")
-.textContent =
-avatar;
-
-}
-
-}
-
-
-/* DASHBOARD */
-
-function loadDashboard() {
-
+function addXP(amount) {
 
 let xp =
 Number(
-localStorage.getItem(
-"cyberstartXP"
-)
+localStorage.getItem("cyberstartXP")
 ) || 0;
 
+xp += amount;
 
-let quiz =
-Number(
-localStorage.getItem(
-"cyberstartBestScore"
-)
-) || 0;
-
-
-/* LEVEL */
-
-let level =
-Math.floor(xp / 100) + 1;
-
-
-let currentXP =
-xp % 100;
-
-
-document
-.getElementById("level")
-.textContent =
-level;
-
-
-document
-.getElementById("totalXP")
-.textContent =
-xp;
-
-
-document
-.getElementById("xpNumber")
-.textContent =
-currentXP + " / 100 XP";
-
-
-document
-.getElementById("xpBar")
-.style.width =
-currentXP + "%";
-
-
-if (currentXP === 0) {
-
-document
-.getElementById("xpMessage")
-.textContent =
-"100 XP until Level " +
-(level + 1);
-
-}
-
-else {
-
-document
-.getElementById("xpMessage")
-.textContent =
-(100 - currentXP) +
-" XP until Level " +
-(level + 1);
+localStorage.setItem(
+"cyberstartXP",
+xp
+);
 
 }
 
 
-/* QUIZ */
+/* =========================
+   GAME ANSWER
+========================= */
 
-document
-.getElementById("quizScore")
-.textContent =
-quiz + " / 10";
-
-
-/* LABS */
-
-let labs = 0;
-
-
-for (
-let i = 1;
-i <= 3;
-i++
+function answerGame(
+button,
+correct,
+resultID
 ) {
+
+
+const game =
+button.parentElement;
+
+
+/* Prevent multiple answers */
 
 if (
-localStorage.getItem(
-"cyberstartLab" +
-i +
-"Completed"
-) === "true"
+game.dataset.completed === "true"
 ) {
 
-labs++;
+return;
 
 }
 
-}
+game.dataset.completed = "true";
 
 
-document
-.getElementById("labs")
-.textContent =
-labs + " / 3";
+/* Disable buttons */
+
+const buttons =
+game.querySelectorAll(".game-button");
 
 
-/* GAMES */
+buttons.forEach(function(btn) {
 
-const gameNames = [
-"phishing",
-"password",
-"mfa",
-"cia"
-];
-
-
-let games = 0;
-
-
-gameNames.forEach(
-function(game) {
-
-if (
-localStorage.getItem(
-"cyberstartGame_" +
-game
-) === "true"
-) {
-
-games++;
-
-}
+btn.disabled = true;
 
 });
 
 
-document
-.getElementById("games")
-.textContent =
-games + " / 4";
+const result =
+document.getElementById(resultID);
 
 
-/* ACHIEVEMENTS */
+result.style.display =
+"block";
 
-let achievements = 0;
+
+/* Correct answer */
+
+if (correct) {
 
 
-/* FIRST QUIZ */
+button.classList.add("correct");
 
-if (quiz > 0) {
 
-unlock("firstQuiz");
+result.innerHTML =
 
-achievements++;
+"<strong>🎯 Correct!</strong><br>" +
+
+"Great cybersecurity thinking. " +
+
+"Recognizing suspicious behavior and " +
+
+"verifying information can help keep " +
+
+"accounts and devices safer." +
+
+"<br><br>" +
+
+"<span class='xp'>⭐ +10 XP!</span>";
+
+
+/* Award XP */
+
+const gameKey =
+"cyberstartGame" +
+resultID +
+"Completed";
+
+
+if (
+localStorage.getItem(gameKey)
+!== "true"
+) {
+
+
+addXP(10);
+
+
+localStorage.setItem(
+gameKey,
+"true"
+);
+
+}
 
 }
 
 
-/* FIRST LAB */
+/* Wrong answer */
 
-if (labs >= 1) {
+else {
 
-unlock("firstLab");
 
-achievements++;
+button.classList.add("wrong");
+
+
+result.innerHTML =
+
+"<strong>❌ Not quite.</strong><br>" +
+
+"Look for warning signs and choose " +
+
+"the safer cybersecurity action.";
+
+}
 
 }
 
 
-/* FIRST GAME */
+/* =========================
+   RESET GAMES
+========================= */
 
-if (games >= 1) {
+function resetGames() {
 
-unlock("firstGame");
 
-achievements++;
+const games =
+document.querySelectorAll(".game");
+
+
+games.forEach(function(game) {
+
+game.dataset.completed =
+"false";
+
+
+const buttons =
+game.querySelectorAll(
+".game-button"
+);
+
+
+buttons.forEach(function(button) {
+
+button.disabled = false;
+
+button.classList.remove(
+"correct",
+"wrong"
+);
+
+});
+
+
+const result =
+game.querySelector(".result");
+
+
+result.style.display =
+"none";
+
+result.innerHTML = "";
+
+});
+
 
 }
-
-
-/* 100 XP */
-
-if (xp >= 100) {
-
-unlock("xp100");
-
-achievements++;
-
-}
-
-
-/* 250 XP */
-
-if (xp >= 250) {
-
-unlock("xp250");
-
-achievements++;
-
-}
-
-
-/* LEVEL 2 */
-
-if (level >= 2) {
-
-unlock("level2");
-
-achievements++;
-
-}
-
-
-/* LEVEL 5 */
-
-if (level >= 5) {
-
-unlock("level5");
-
-achievements++;
-
-}
-
-
-/* ALL LABS */
-
-if (labs === 3) {
-
-unlock("allLabs");
-
-achievements++;
-
-}
-
-
-/* ALL GAMES */
-
-if (games === 4) {
-
-unlock("allGames");
-
-achievements++;
-
-}
-
-
-/* TOTAL */
-
-document
-.getElementById("achievementCount")
-.textContent =
-achievements;
-
-}
-
-
-/* UNLOCK */
-
-function unlock(id) {
-
-document
-.getElementById(id)
-.classList.add("unlocked");
-
-}
-
-
-/* START */
-
-loadProfile();
-
-loadDashboard();
 
 </script>
 
