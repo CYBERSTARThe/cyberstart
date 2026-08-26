@@ -77,7 +77,6 @@
                 repeat(auto-fit, minmax(80px, 1fr));
 
             gap: 12px;
-
             margin: 25px 0;
         }
 
@@ -153,6 +152,13 @@
 
         .stats p {
             color: #cccccc;
+            line-height: 1.6;
+        }
+
+        .level {
+            font-size: 20px;
+            color: #78bbff;
+            font-weight: bold;
         }
 
         footer {
@@ -206,6 +212,8 @@
             </div>
 
 
+            <!-- Nickname -->
+
             <div id="currentNickname"
                  class="nickname">
                 CyberStudent
@@ -217,11 +225,10 @@
             </p>
 
 
-            <!-- Nickname -->
-
             <label for="nickname">
                 Choose a nickname
             </label>
+
 
             <input
                 type="text"
@@ -315,30 +322,46 @@
             </div>
 
 
-            <!-- Future Stats -->
+            <!-- Progress -->
 
             <div class="stats">
 
                 <h2>Your Progress</h2>
+
 
                 <p>
                     📚 Lessons Completed:
                     <strong>0</strong>
                 </p>
 
+
                 <p>
                     🧪 Labs Completed:
                     <strong>0</strong>
                 </p>
 
-                <p>
-                    🧠 Best Quiz Score:
-                    <strong>Not completed</strong>
-                </p>
 
                 <p>
-                    🏆 Level:
-                    <strong>Cyber Beginner</strong>
+                    🧠 Last Quiz Score:
+                    <strong id="lastScore">
+                        Not completed
+                    </strong>
+                </p>
+
+
+                <p>
+                    🏆 Best Quiz Score:
+                    <strong id="bestScore">
+                        Not completed
+                    </strong>
+                </p>
+
+
+                <p class="level">
+                    🎯 CyberStart Level:
+                    <span id="level">
+                        Beginner
+                    </span>
                 </p>
 
             </div>
@@ -451,6 +474,7 @@
                     .getElementById("nickname")
                     .value = savedNickname;
 
+
                 document
                     .getElementById("currentNickname")
                     .textContent = savedNickname;
@@ -462,6 +486,7 @@
 
                 selectedAvatar = savedAvatar;
 
+
                 document
                     .getElementById("currentAvatar")
                     .textContent = savedAvatar;
@@ -471,7 +496,95 @@
         }
 
 
+        function loadQuizScores() {
+
+            const lastScore =
+                localStorage.getItem(
+                    "cyberstartLastScore"
+                );
+
+
+            const bestScore =
+                localStorage.getItem(
+                    "cyberstartBestScore"
+                );
+
+
+            const lastScoreElement =
+                document.getElementById(
+                    "lastScore"
+                );
+
+
+            const bestScoreElement =
+                document.getElementById(
+                    "bestScore"
+                );
+
+
+            if (lastScore !== null) {
+
+                lastScoreElement.textContent =
+                    lastScore + " / 10";
+
+            }
+
+
+            if (bestScore !== null) {
+
+                bestScoreElement.textContent =
+                    bestScore + " / 10";
+
+
+                updateLevel(
+                    Number(bestScore)
+                );
+
+            }
+
+        }
+
+
+        function updateLevel(score) {
+
+            const level =
+                document.getElementById("level");
+
+
+            if (score >= 10) {
+
+                level.textContent =
+                    "Cyber Expert";
+
+            }
+
+            else if (score >= 8) {
+
+                level.textContent =
+                    "Cyber Defender";
+
+            }
+
+            else if (score >= 6) {
+
+                level.textContent =
+                    "Cyber Apprentice";
+
+            }
+
+            else {
+
+                level.textContent =
+                    "Beginner";
+
+            }
+
+        }
+
+
         loadProfile();
+
+        loadQuizScores();
 
 
     </script>
