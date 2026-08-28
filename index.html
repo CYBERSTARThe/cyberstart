@@ -57,6 +57,7 @@ body {
     background-attachment: fixed;
 }
 
+
 /* =========================
    NAVIGATION
 ========================= */
@@ -108,6 +109,7 @@ nav a:hover {
     color: #38bdf8;
 }
 
+
 /* =========================
    HERO
 ========================= */
@@ -124,13 +126,128 @@ nav a:hover {
 
     padding: 90px 20px;
 
+    position: relative;
+
+    overflow: hidden;
+
     background:
         radial-gradient(
-            circle at center,
-            rgba(30, 64, 175, 0.18),
+            circle at 50% 40%,
+            rgba(30, 64, 175, 0.20),
             transparent 55%
         );
 }
+
+
+/* MOVING BLUE GLOW #1 */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    top: -450px;
+    left: -200px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(56, 189, 248, 0.20),
+            transparent 65%
+        );
+
+    filter: blur(25px);
+
+    animation:
+        cyberGlow 8s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+
+/* MOVING BLUE GLOW #2 */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -300px;
+    right: -150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59, 130, 246, 0.15),
+            transparent 65%
+        );
+
+    filter: blur(30px);
+
+    animation:
+        cyberGlow2 10s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+
+/* GLOW ANIMATION #1 */
+
+@keyframes cyberGlow {
+
+    0% {
+        transform:
+            translateX(0)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateX(350px)
+            translateY(100px);
+    }
+
+    100% {
+        transform:
+            translateX(700px)
+            translateY(0);
+    }
+
+}
+
+
+/* GLOW ANIMATION #2 */
+
+@keyframes cyberGlow2 {
+
+    0% {
+        transform:
+            translateX(0)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateX(-250px)
+            translateY(120px);
+    }
+
+    100% {
+        transform:
+            translateX(-500px)
+            translateY(0);
+    }
+
+}
+
+
+/* HERO TITLE */
 
 .hero h1 {
     font-size: 62px;
@@ -141,7 +258,14 @@ nav a:hover {
 
     text-shadow:
         0 0 25px rgba(56, 189, 248, 0.25);
+
+    position: relative;
+
+    z-index: 2;
 }
+
+
+/* HERO TEXT */
 
 .hero p {
     max-width: 700px;
@@ -153,7 +277,14 @@ nav a:hover {
     line-height: 1.7;
 
     color: #e5e7eb;
+
+    position: relative;
+
+    z-index: 2;
 }
+
+
+/* HERO BUTTON */
 
 .hero-button {
     display: inline-block;
@@ -178,14 +309,21 @@ nav a:hover {
         0 8px 25px rgba(56, 189, 248, 0.18);
 
     transition: 0.2s;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 .hero-button:hover {
-    transform: translateY(-3px);
+
+    transform:
+        translateY(-3px);
 
     box-shadow:
         0 12px 30px rgba(56, 189, 248, 0.28);
 }
+
 
 /* =========================
    SECTIONS
@@ -200,6 +338,7 @@ section {
 }
 
 section h2 {
+
     text-align: center;
 
     color: #38bdf8;
@@ -209,11 +348,13 @@ section h2 {
     margin-bottom: 45px;
 }
 
+
 /* =========================
    CARDS
 ========================= */
 
 .cards {
+
     display: grid;
 
     grid-template-columns:
@@ -223,6 +364,7 @@ section h2 {
 }
 
 .card {
+
     background:
         linear-gradient(
             145deg,
@@ -236,7 +378,9 @@ section h2 {
 
     text-align: center;
 
-    border: 1px solid rgba(96, 165, 250, 0.2);
+    border:
+        1px solid
+        rgba(96, 165, 250, 0.2);
 
     min-height: 260px;
 
@@ -247,15 +391,19 @@ section h2 {
 }
 
 .card:hover {
-    transform: translateY(-6px);
 
-    border-color: rgba(56, 189, 248, 0.55);
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(56, 189, 248, 0.55);
 
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 .card h3 {
+
     color: #7dd3fc;
 
     font-size: 24px;
@@ -264,6 +412,7 @@ section h2 {
 }
 
 .card p {
+
     color: #d1d5db;
 
     line-height: 1.7;
@@ -271,7 +420,11 @@ section h2 {
     min-height: 85px;
 }
 
+
+/* CARD BUTTONS */
+
 .card-button {
+
     display: inline-block;
 
     margin-top: 12px;
@@ -292,17 +445,24 @@ section h2 {
 }
 
 .card-button:hover {
-    transform: scale(1.04);
+
+    transform:
+        scale(1.04);
 }
+
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-    background: rgba(11, 16, 32, 0.95);
 
-    border-top: 1px solid rgba(96, 165, 250, 0.15);
+    background:
+        rgba(11, 16, 32, 0.95);
+
+    border-top:
+        1px solid
+        rgba(96, 165, 250, 0.15);
 
     text-align: center;
 
@@ -314,12 +474,14 @@ footer {
 }
 
 footer p:first-child {
+
     color: #38bdf8;
 
     font-size: 20px;
 
     font-weight: bold;
 }
+
 
 /* =========================
    MOBILE
@@ -328,6 +490,7 @@ footer p:first-child {
 @media (max-width: 700px) {
 
     nav {
+
         flex-direction: column;
 
         gap: 16px;
@@ -336,46 +499,56 @@ footer p:first-child {
     }
 
     nav div:last-child {
+
         gap: 12px 16px;
     }
 
     nav a {
+
         font-size: 14px;
     }
 
     .hero {
+
         min-height: 550px;
 
         padding: 70px 20px;
     }
 
     .hero h1 {
+
         font-size: 45px;
     }
 
     .hero p {
+
         font-size: 18px;
     }
 
     .hero-button {
+
         font-size: 17px;
 
         padding: 15px 24px;
     }
 
     section {
+
         padding: 55px 15px;
     }
 
     section h2 {
+
         font-size: 30px;
     }
 
     .cards {
+
         grid-template-columns: 1fr;
     }
 
 }
+
 
 /* =========================
    EXTRA SMALL PHONES
@@ -384,22 +557,27 @@ footer p:first-child {
 @media (max-width: 430px) {
 
     .logo {
+
         font-size: 22px;
     }
 
     nav div:last-child {
+
         gap: 10px 13px;
     }
 
     nav a {
+
         font-size: 13px;
     }
 
     .hero h1 {
+
         font-size: 39px;
     }
 
     .hero p {
+
         font-size: 17px;
     }
 
@@ -408,6 +586,7 @@ footer p:first-child {
 </style>
 
 </head>
+
 
 <body>
 
@@ -424,19 +603,33 @@ footer p:first-child {
 
     <div>
 
-        <a href="index.html">Home</a>
+        <a href="index.html">
+            Home
+        </a>
 
-        <a href="lessons.html">Lessons</a>
+        <a href="lessons.html">
+            Lessons
+        </a>
 
-        <a href="labs.html">Labs</a>
+        <a href="labs.html">
+            Labs
+        </a>
 
-        <a href="quiz.html">Quiz</a>
+        <a href="quiz.html">
+            Quiz
+        </a>
 
-        <a href="games.html">Games</a>
+        <a href="games.html">
+            Games
+        </a>
 
-        <a href="glossary.html">Glossary</a>
+        <a href="glossary.html">
+            Glossary
+        </a>
 
-        <a href="challenge.html">Challenge</a>
+        <a href="challenge.html">
+            Challenge
+        </a>
 
     </div>
 
@@ -454,17 +647,24 @@ footer p:first-child {
     </h1>
 
     <p>
+
         Learn cybersecurity.<br>
+
         Practice your skills.<br>
+
         Complete challenges.<br>
+
         Build your knowledge.
+
     </p>
 
     <a
         class="hero-button"
         href="challenge.html"
     >
+
         🚀 Start CyberStart Challenge
+
     </a>
 
 </header>
@@ -492,16 +692,21 @@ footer p:first-child {
             </h3>
 
             <p>
-                Learn the fundamentals of cybersecurity,
-                including phishing, malware, passwords,
-                MFA, and network security.
+
+                Learn the fundamentals of
+                cybersecurity, including phishing,
+                malware, passwords, MFA, and
+                network security.
+
             </p>
 
             <a
                 class="card-button"
                 href="lessons.html"
             >
+
                 Start Learning
+
             </a>
 
         </div>
@@ -516,16 +721,20 @@ footer p:first-child {
             </h3>
 
             <p>
+
                 Experiment with safe cybersecurity
                 simulations and learn how security
                 concepts work.
+
             </p>
 
             <a
                 class="card-button"
                 href="labs.html"
             >
+
                 Enter Labs
+
             </a>
 
         </div>
@@ -540,15 +749,19 @@ footer p:first-child {
             </h3>
 
             <p>
+
                 Test your cybersecurity knowledge
                 with interactive questions.
+
             </p>
 
             <a
                 class="card-button"
                 href="quiz.html"
             >
+
                 Take Quiz
+
             </a>
 
         </div>
@@ -563,15 +776,19 @@ footer p:first-child {
             </h3>
 
             <p>
+
                 Learn cybersecurity while playing
                 interactive security games.
+
             </p>
 
             <a
                 class="card-button"
                 href="games.html"
             >
+
                 Play Games
+
             </a>
 
         </div>
@@ -586,15 +803,19 @@ footer p:first-child {
             </h3>
 
             <p>
+
                 Learn important cybersecurity
                 terms and concepts.
+
             </p>
 
             <a
                 class="card-button"
                 href="glossary.html"
             >
+
                 Open Glossary
+
             </a>
 
         </div>
@@ -609,15 +830,20 @@ footer p:first-child {
             </h3>
 
             <p>
+
                 Think you have what it takes?
-                Test yourself with the CyberStart Challenge.
+                Test yourself with the
+                CyberStart Challenge.
+
             </p>
 
             <a
                 class="card-button"
                 href="challenge.html"
             >
+
                 Start Challenge
+
             </a>
 
         </div>
