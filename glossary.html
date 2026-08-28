@@ -1,1058 +1,640 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CyberStart - Glossary</title>
-
-<style>
-
-/* =========================
-   GLOBAL
-========================= */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-
-    background-color: #070b16;
-
-    background-image:
-        radial-gradient(
-            circle at 50% -10%,
-            rgba(56, 189, 248, 0.18),
-            transparent 45%
-        ),
-        linear-gradient(
-            rgba(56, 189, 248, 0.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(56, 189, 248, 0.035) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        100% 100%,
-        45px 45px,
-        45px 45px;
-
-    background-attachment: fixed;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav {
-    background: rgba(11, 16, 32, 0.94);
-
-    border-bottom: 1px solid rgba(96, 165, 250, 0.15);
-
-    padding: 18px 25px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    position: sticky;
-    top: 0;
-
-    z-index: 1000;
-
-    backdrop-filter: blur(12px);
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: #38bdf8;
-    white-space: nowrap;
-}
-
-nav div:last-child {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-
-    font-weight: bold;
-    font-size: 16px;
-
-    transition: 0.2s;
-}
-
-nav a:hover {
-    color: #38bdf8;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    text-align: center;
-
-    padding: 80px 20px 50px;
-
-    position: relative;
-}
-
-.hero h1 {
-    font-size: 55px;
-
-    margin: 0 0 15px;
-
-    color: #38bdf8;
-
-    text-shadow:
-        0 0 25px rgba(56, 189, 248, 0.25);
-}
-
-.hero p {
-    max-width: 700px;
-
-    margin: auto;
-
-    color: #d1d5db;
-
-    font-size: 19px;
-
-    line-height: 1.6;
-}
-
-
-/* =========================
-   SEARCH
-========================= */
-
-.search-container {
-    max-width: 700px;
-
-    margin: 35px auto 20px;
-
-    padding: 0 20px;
-}
-
-#searchBox {
-
-    width: 100%;
-
-    padding: 17px 20px;
-
-    font-size: 17px;
-
-    color: white;
-
-    background: #111a33;
-
-    border:
-        1px solid
-        rgba(96, 165, 250, 0.3);
-
-    border-radius: 12px;
-
-    outline: none;
-
-    transition: 0.2s;
-}
-
-#searchBox:focus {
-
-    border-color: #38bdf8;
-
-    box-shadow:
-        0 0 20px rgba(56, 189, 248, 0.12);
-}
-
-#searchBox::placeholder {
-
-    color: #94a3b8;
-}
-
-
-/* =========================
-   GLOSSARY
-========================= */
-
-.glossary {
-
-    max-width: 1100px;
-
-    margin: auto;
-
-    padding: 30px 20px 80px;
-}
-
-.term-count {
-
-    text-align: center;
-
-    color: #94a3b8;
-
-    margin-bottom: 30px;
-}
-
-.terms {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(260px, 1fr));
-
-    gap: 20px;
-}
-
-
-/* =========================
-   TERM CARDS
-========================= */
-
-.term-card {
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(17, 26, 51, 0.96),
-            rgba(10, 17, 35, 0.96)
-        );
-
-    padding: 24px;
-
-    border-radius: 16px;
-
-    border:
-        1px solid
-        rgba(96, 165, 250, 0.2);
-
-    transition:
-        transform 0.2s,
-        border-color 0.2s,
-        box-shadow 0.2s;
-}
-
-.term-card:hover {
-
-    transform:
-        translateY(-5px);
-
-    border-color:
-        rgba(56, 189, 248, 0.55);
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.25);
-}
-
-.term-card h3 {
-
-    margin-top: 0;
-
-    color: #7dd3fc;
-
-    font-size: 21px;
-}
-
-.term-card p {
-
-    color: #d1d5db;
-
-    line-height: 1.6;
-
-    margin-bottom: 0;
-}
-
-
-/* =========================
-   NO RESULTS
-========================= */
-
-#noResults {
-
-    display: none;
-
-    text-align: center;
-
-    color: #94a3b8;
-
-    font-size: 18px;
-
-    padding: 40px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    background:
-        rgba(11, 16, 32, 0.95);
-
-    border-top:
-        1px solid
-        rgba(96, 165, 250, 0.15);
-
-    text-align: center;
-
-    padding: 35px 20px;
-
-    color: #94a3b8;
-}
-
-footer p:first-child {
-
-    color: #38bdf8;
-
-    font-size: 20px;
-
-    font-weight: bold;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    nav {
-
-        flex-direction: column;
-
-        gap: 16px;
-
-        padding: 18px 12px;
-    }
-
-    nav div:last-child {
-
-        gap: 12px 16px;
-    }
-
-    nav a {
-
-        font-size: 14px;
-    }
-
-    .hero h1 {
-
-        font-size: 42px;
-    }
-
-    .hero p {
-
-        font-size: 17px;
-    }
-
-    .terms {
-
-        grid-template-columns: 1fr;
-    }
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberStart | Cybersecurity Glossary</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1220;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111c31;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #263653;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #aab7cc;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #58a6ff;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px 30px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #aab7cc;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .search-container {
+            max-width: 700px;
+            margin: 25px auto 40px;
+            padding: 0 20px;
+        }
+
+        #searchBox {
+            width: 100%;
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid #344563;
+            background: #111c31;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        #searchBox:focus {
+            border-color: #58a6ff;
+        }
+
+        .categories {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+
+        .category-btn {
+            background: #17243a;
+            color: white;
+            border: 1px solid #344563;
+            padding: 9px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .category-btn:hover {
+            background: #243653;
+        }
+
+        .glossary-grid {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #111c31;
+            border: 1px solid #263653;
+            border-radius: 14px;
+            padding: 22px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #58a6ff;
+        }
+
+        .card h3 {
+            color: #58a6ff;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #c5cfdd;
+            font-size: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 4px 9px;
+            border-radius: 6px;
+            background: #1c2d48;
+            color: #9fc8ff;
+            font-size: 12px;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            color: #aab7cc;
+            padding: 40px;
+            font-size: 18px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            text-align: center;
+            background: #111c31;
+            color: #8998ae;
+            border-top: 1px solid #263653;
+        }
+    </style>
 </head>
-
 
 <body>
 
+<header>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+    <h1>🛡️ CyberStart</h1>
 
-<nav>
+    <p>Learn. Explore. Defend.</p>
 
-    <div class="logo">
-        🛡️ CyberStart
-    </div>
-
-    <div>
-
+    <nav>
         <a href="index.html">Home</a>
-
         <a href="lessons.html">Lessons</a>
-
         <a href="labs.html">Labs</a>
-
         <a href="quiz.html">Quiz</a>
-
         <a href="games.html">Games</a>
-
         <a href="glossary.html">Glossary</a>
-
         <a href="challenge.html">Challenge</a>
-
-    </div>
-
-</nav>
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header class="hero">
-
-    <h1>
-        📖 Cybersecurity Glossary
-    </h1>
-
-    <p>
-        Explore important cybersecurity terms
-        and learn what they mean.
-    </p>
-
-    <div class="search-container">
-
-        <input
-            type="text"
-            id="searchBox"
-            placeholder="🔎 Search cybersecurity terms..."
-        >
-
-    </div>
+    </nav>
 
 </header>
 
 
-<!-- =========================
-     GLOSSARY
-========================= -->
+<section class="hero">
 
-<main class="glossary">
+    <h2>Cybersecurity Glossary</h2>
 
-    <div class="term-count" id="termCount">
-        Showing 100 cybersecurity terms
-    </div>
+    <p>
+        Learn the important terms, technologies, attacks, and
+        concepts used in cybersecurity.
+    </p>
 
-    <div class="terms" id="terms">
+</section>
 
 
-        <div class="term-card">
-            <h3>1. Authentication</h3>
-            <p>The process of verifying that someone or something is who they claim to be.</p>
-        </div>
+<div class="search-container">
 
-        <div class="term-card">
-            <h3>2. Authorization</h3>
-            <p>The process of deciding what an authenticated user is allowed to access or do.</p>
-        </div>
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="🔎 Search cybersecurity terms..."
+    >
 
-        <div class="term-card">
-            <h3>3. Antivirus</h3>
-            <p>Software designed to detect, prevent, and remove malicious software.</p>
-        </div>
+</div>
 
-        <div class="term-card">
-            <h3>4. Backup</h3>
-            <p>A copy of important data stored separately so it can be recovered if the original is lost.</p>
-        </div>
 
-        <div class="term-card">
-            <h3>5. Botnet</h3>
-            <p>A network of compromised devices controlled by an attacker.</p>
-        </div>
+<div class="categories">
 
-        <div class="term-card">
-            <h3>6. Brute Force</h3>
-            <p>An attack that repeatedly tries different passwords or keys until one works.</p>
-        </div>
+    <button class="category-btn" onclick="filterCategory('all')">
+        All
+    </button>
 
-        <div class="term-card">
-            <h3>7. CAPTCHA</h3>
-            <p>A test designed to help determine whether a user is human rather than an automated program.</p>
-        </div>
+    <button class="category-btn" onclick="filterCategory('attacks')">
+        Attacks
+    </button>
 
-        <div class="term-card">
-            <h3>8. Certificate</h3>
-            <p>A digital document used to help verify the identity of a website or other system.</p>
-        </div>
+    <button class="category-btn" onclick="filterCategory('security')">
+        Security
+    </button>
 
-        <div class="term-card">
-            <h3>9. Cipher</h3>
-            <p>An algorithm used to transform readable information into an encoded form.</p>
-        </div>
+    <button class="category-btn" onclick="filterCategory('network')">
+        Network
+    </button>
 
-        <div class="term-card">
-            <h3>10. Cloud Security</h3>
-            <p>Practices used to protect data, applications, and systems hosted in cloud environments.</p>
-        </div>
+    <button class="category-btn" onclick="filterCategory('identity')">
+        Identity
+    </button>
 
-        <div class="term-card">
-            <h3>11. Cookie</h3>
-            <p>A small piece of data stored by a website in a user's browser.</p>
-        </div>
+    <button class="category-btn" onclick="filterCategory('malware')">
+        Malware
+    </button>
 
-        <div class="term-card">
-            <h3>12. Cryptography</h3>
-            <p>The use of mathematical techniques to protect information.</p>
-        </div>
+</div>
 
-        <div class="term-card">
-            <h3>13. DDoS</h3>
-            <p>A distributed denial-of-service attack attempts to overwhelm a service with large amounts of traffic.</p>
-        </div>
 
-        <div class="term-card">
-            <h3>14. Data Breach</h3>
-            <p>An incident where protected or private information is accessed or exposed without authorization.</p>
-        </div>
+<section class="glossary-grid" id="glossaryGrid">
 
-        <div class="term-card">
-            <h3>15. Data Encryption</h3>
-            <p>Converting readable information into an encoded form to help protect it.</p>
-        </div>
 
-        <div class="term-card">
-            <h3>16. Digital Certificate</h3>
-            <p>A credential used to help establish the identity of a digital service.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>17. Digital Forensics</h3>
-            <p>The examination of digital devices and data to investigate security incidents.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>18. DNS</h3>
-            <p>The Domain Name System translates domain names into network addresses.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>19. Domain</h3>
-            <p>A human-readable name used to identify a website or other internet service.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>20. Endpoint</h3>
-            <p>A device such as a computer, phone, or tablet connected to a network.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>21. Exploit</h3>
-            <p>A technique or code that takes advantage of a vulnerability in a system.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>22. Firewall</h3>
-            <p>A security system that monitors and controls network traffic according to rules.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>23. Hash</h3>
-            <p>A fixed-length value created from data using a hashing algorithm.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>24. Hashing</h3>
-            <p>The process of converting data into a fixed-length hash value.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>25. HTTPS</h3>
-            <p>A secure version of HTTP that uses encryption to protect web traffic.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>26. Identity</h3>
-            <p>Information that represents a person, device, or system in a digital environment.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>27. Incident Response</h3>
-            <p>The process of detecting, responding to, and recovering from cybersecurity incidents.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>28. Insider Threat</h3>
-            <p>A security risk caused by someone with authorized access to an organization's systems or information.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>29. IP Address</h3>
-            <p>A numerical address used to identify a device on a network.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>30. Key</h3>
-            <p>Information used by cryptographic algorithms to encrypt or decrypt data.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>31. Keylogger</h3>
-            <p>Software or hardware designed to record keystrokes.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>32. Least Privilege</h3>
-            <p>A security principle where users and systems receive only the access they need.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>33. Malware</h3>
-            <p>Software designed to harm systems, steal information, or perform unwanted actions.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>34. MFA</h3>
-            <p>Multi-factor authentication requires two or more types of verification.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>35. Network</h3>
-            <p>A group of connected devices that can communicate with one another.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>36. Network Security</h3>
-            <p>Methods used to protect networks and the information moving through them.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>37. OAuth</h3>
-            <p>A framework that allows applications to receive limited access to resources without receiving a user's password.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>38. Operating System</h3>
-            <p>Software that manages a computer's hardware and provides services for applications.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>39. Patch</h3>
-            <p>A software update designed to fix bugs or security vulnerabilities.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>40. Password Manager</h3>
-            <p>A tool that securely stores and helps manage passwords.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>41. Penetration Testing</h3>
-            <p>Authorized security testing designed to identify weaknesses in systems.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>42. Phishing</h3>
-            <p>A scam that attempts to trick people into revealing information or taking an unsafe action.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>43. Port</h3>
-            <p>A numbered communication endpoint used by network services.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>44. Ransomware</h3>
-            <p>Malware that can prevent access to data or systems and demand payment.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>45. Risk</h3>
-            <p>The possibility that a threat could take advantage of a vulnerability and cause harm.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>46. Router</h3>
-            <p>A device that directs network traffic between different networks.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>47. Rootkit</h3>
-            <p>Malicious software designed to maintain unauthorized access while hiding its presence.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>48. Sandbox</h3>
-            <p>An isolated environment used to safely run or test software.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>49. Security Policy</h3>
-            <p>A set of rules and guidelines for protecting systems and information.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>50. Social Engineering</h3>
-            <p>The use of manipulation or deception to influence people into taking an action.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>51. Spam</h3>
-            <p>Unwanted messages, often sent in large quantities.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>52. Spyware</h3>
-            <p>Software that secretly collects information about a user or device.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>53. SSL</h3>
-            <p>An older security protocol that helped protect internet communications and was replaced by TLS.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>54. Threat</h3>
-            <p>Something capable of causing harm to a system, network, or information.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>55. Threat Intelligence</h3>
-            <p>Information about threats that helps organizations understand and respond to attacks.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>56. TLS</h3>
-            <p>A cryptographic protocol used to protect communications over networks.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>57. Trojan</h3>
-            <p>Malware that disguises itself as legitimate software or files.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>58. Two-Factor Authentication</h3>
-            <p>A type of MFA that uses two different verification factors.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>59. URL</h3>
-            <p>A web address used to locate a resource on the internet.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>60. VPN</h3>
-            <p>A virtual private network that can create an encrypted connection between a device and a network service.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>61. Vulnerability</h3>
-            <p>A weakness that could potentially be exploited to compromise a system.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>62. Worm</h3>
-            <p>Malware capable of spreading between systems without requiring the same type of user action as many other infections.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>63. Zero-Day</h3>
-            <p>A vulnerability that is unknown or has not yet received an available security fix.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>64. Access Control</h3>
-            <p>Security measures that determine who or what can access resources.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>65. Adware</h3>
-            <p>Software that displays unwanted advertisements and may sometimes track user activity.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>66. Air Gap</h3>
-            <p>A security measure that physically or logically separates a system from other networks.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>67. Attack Surface</h3>
-            <p>The collection of possible points where an attacker could attempt to enter or affect a system.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>68. Availability</h3>
-            <p>The principle that authorized users should be able to access information and systems when needed.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>69. CIA Triad</h3>
-            <p>A cybersecurity model based on confidentiality, integrity, and availability.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>70. Confidentiality</h3>
-            <p>The principle of keeping information accessible only to authorized people or systems.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>71. Integrity</h3>
-            <p>The principle of keeping information accurate and protected from unauthorized changes.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>72. Credential</h3>
-            <p>Information used to prove identity or gain access to a system.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>73. Credential Stuffing</h3>
-            <p>An attack that attempts to use stolen username and password combinations on other services.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>74. Decryption</h3>
-            <p>The process of converting encrypted information back into readable form.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>75. Encryption</h3>
-            <p>The process of converting readable information into an encoded form.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>76. Honeypot</h3>
-            <p>A system designed to attract and monitor suspicious activity.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>77. IDS</h3>
-            <p>An intrusion detection system monitors activity for possible security threats.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>78. IPS</h3>
-            <p>An intrusion prevention system can detect and help block suspicious network activity.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>79. Log</h3>
-            <p>A record of events or activities generated by a computer system or application.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>80. Logging</h3>
-            <p>The process of recording events and activities for monitoring or investigation.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>81. MITM</h3>
-            <p>A man-in-the-middle attack occurs when an attacker secretly interferes with communication between parties.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>82. Packet</h3>
-            <p>A small unit of data transmitted across a network.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>83. Password Spraying</h3>
-            <p>An attack that tries a small number of common passwords against many accounts.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>84. Payload</h3>
-            <p>The part of malicious code or an exploit responsible for performing an intended action.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>85. Privilege Escalation</h3>
-            <p>An attempt to gain higher levels of access than originally authorized.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>86. Proxy</h3>
-            <p>A service that acts as an intermediary between a user or device and another service.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>87. SIEM</h3>
-            <p>A security information and event management system collects and analyzes security-related data.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>88. SOC</h3>
-            <p>A security operations center monitors and responds to cybersecurity events.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>89. Token</h3>
-            <p>A piece of digital information used to represent authorization or identity.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>90. Vulnerability Scan</h3>
-            <p>An authorized scan designed to identify potential weaknesses in systems.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>91. Whitelist</h3>
-            <p>A list of approved users, applications, devices, or other items.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>92. Blacklist</h3>
-            <p>A list of blocked or untrusted users, applications, devices, or other items.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>93. Bot</h3>
-            <p>An automated program that performs tasks over a network or computer system.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>94. MAC Address</h3>
-            <p>A hardware identifier associated with a network interface.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>95. Subnet</h3>
-            <p>A smaller logical section of an IP network.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>96. TCP</h3>
-            <p>A networking protocol designed to provide reliable delivery of data.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>97. UDP</h3>
-            <p>A networking protocol that sends data without establishing the same type of connection used by TCP.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>98. SQL Injection</h3>
-            <p>A vulnerability where untrusted input can interfere with database queries.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>99. Cross-Site Scripting</h3>
-            <p>A web security vulnerability involving untrusted content being executed in another user's browser.</p>
-        </div>
-
-        <div class="term-card">
-            <h3>100. Zero Trust</h3>
-            <p>A security approach that continuously verifies access rather than automatically trusting users or devices.</p>
-        </div>
-
-
+    <div class="card" data-category="security">
+        <h3>Authentication</h3>
+        <p>
+            The process of verifying that someone or something
+            is really who or what it claims to be.
+        </p>
+        <span class="tag">Security</span>
     </div>
 
 
-    <div id="noResults">
-        🔎 No cybersecurity terms found.
+    <div class="card" data-category="identity">
+        <h3>Authorization</h3>
+        <p>
+            Determines what an authenticated user or system
+            is allowed to access or do.
+        </p>
+        <span class="tag">Identity</span>
     </div>
 
-</main>
+
+    <div class="card" data-category="security">
+        <h3>MFA</h3>
+        <p>
+            Multi-Factor Authentication requires two or more
+            verification methods to access an account.
+        </p>
+        <span class="tag">Security</span>
+    </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+    <div class="card" data-category="security">
+        <h3>Encryption</h3>
+        <p>
+            Converts readable information into protected data
+            that requires a key or method to decrypt.
+        </p>
+        <span class="tag">Security</span>
+    </div>
+
+
+    <div class="card" data-category="security">
+        <h3>Hashing</h3>
+        <p>
+            Converts data into a fixed-length value called a hash.
+            Hashing is commonly used to protect passwords and verify data.
+        </p>
+        <span class="tag">Security</span>
+    </div>
+
+
+    <div class="card" data-category="security">
+        <h3>Firewall</h3>
+        <p>
+            A security system that monitors and controls network
+            traffic based on defined rules.
+        </p>
+        <span class="tag">Security</span>
+    </div>
+
+
+    <div class="card" data-category="network">
+        <h3>IP Address</h3>
+        <p>
+            A numerical address used to identify a device or
+            network interface on a network.
+        </p>
+        <span class="tag">Network</span>
+    </div>
+
+
+    <div class="card" data-category="network">
+        <h3>VPN</h3>
+        <p>
+            A Virtual Private Network creates an encrypted
+            connection between a device and a network service.
+        </p>
+        <span class="tag">Network</span>
+    </div>
+
+
+    <div class="card" data-category="network">
+        <h3>DNS</h3>
+        <p>
+            The Domain Name System translates domain names such
+            as example.com into IP addresses.
+        </p>
+        <span class="tag">Network</span>
+    </div>
+
+
+    <div class="card" data-category="network">
+        <h3>Packet</h3>
+        <p>
+            A small unit of data sent across a computer network.
+        </p>
+        <span class="tag">Network</span>
+    </div>
+
+
+    <div class="card" data-category="attacks">
+        <h3>Phishing</h3>
+        <p>
+            A scam that attempts to trick people into revealing
+            information or interacting with something unsafe.
+        </p>
+        <span class="tag">Attack</span>
+    </div>
+
+
+    <div class="card" data-category="attacks">
+        <h3>Spear Phishing</h3>
+        <p>
+            A targeted phishing attack designed for a specific
+            person or organization.
+        </p>
+        <span class="tag">Attack</span>
+    </div>
+
+
+    <div class="card" data-category="attacks">
+        <h3>Social Engineering</h3>
+        <p>
+            Manipulating people into revealing information or
+            taking actions that could create a security risk.
+        </p>
+        <span class="tag">Attack</span>
+    </div>
+
+
+    <div class="card" data-category="attacks">
+        <h3>Brute Force Attack</h3>
+        <p>
+            An attack that repeatedly attempts possible passwords
+            or authentication values until one works.
+        </p>
+        <span class="tag">Attack</span>
+    </div>
+
+
+    <div class="card" data-category="attacks">
+        <h3>DDoS</h3>
+        <p>
+            A Distributed Denial-of-Service attack attempts to
+            overwhelm a service with large amounts of traffic.
+        </p>
+        <span class="tag">Attack</span>
+    </div>
+
+
+    <div class="card" data-category="attacks">
+        <h3>Spoofing</h3>
+        <p>
+            An attacker disguises information or identity to make
+            something appear trustworthy or legitimate.
+        </p>
+        <span class="tag">Attack</span>
+    </div>
+
+
+    <div class="card" data-category="attacks">
+        <h3>Man-in-the-Middle</h3>
+        <p>
+            An attacker secretly interferes with communication
+            between two parties.
+        </p>
+        <span class="tag">Attack</span>
+    </div>
+
+
+    <div class="card" data-category="malware">
+        <h3>Malware</h3>
+        <p>
+            Malicious software designed to disrupt systems,
+            steal information, or perform unwanted actions.
+        </p>
+        <span class="tag">Malware</span>
+    </div>
+
+
+    <div class="card" data-category="malware">
+        <h3>Ransomware</h3>
+        <p>
+            Malware that prevents access to data or systems and
+            attempts to pressure victims into paying money.
+        </p>
+        <span class="tag">Malware</span>
+    </div>
+
+
+    <div class="card" data-category="malware">
+        <h3>Spyware</h3>
+        <p>
+            Software designed to secretly collect information
+            about a person or system.
+        </p>
+        <span class="tag">Malware</span>
+    </div>
+
+
+    <div class="card" data-category="malware">
+        <h3>Trojan</h3>
+        <p>
+            Malware that disguises itself as legitimate software
+            or files to trick someone into running it.
+        </p>
+        <span class="tag">Malware</span>
+    </div>
+
+
+    <div class="card" data-category="malware">
+        <h3>Worm</h3>
+        <p>
+            Malware capable of spreading between systems,
+            often without requiring the user to manually install it.
+        </p>
+        <span class="tag">Malware</span>
+    </div>
+
+
+    <div class="card" data-category="malware">
+        <h3>Botnet</h3>
+        <p>
+            A collection of compromised devices that can be
+            controlled by an attacker.
+        </p>
+        <span class="tag">Malware</span>
+    </div>
+
+
+    <div class="card" data-category="security">
+        <h3>Antivirus</h3>
+        <p>
+            Security software designed to detect, block, and
+            remove certain types of malicious software.
+        </p>
+        <span class="tag">Security</span>
+    </div>
+
+
+    <div class="card" data-category="security">
+        <h3>Zero-Day</h3>
+        <p>
+            A previously unknown or unpatched security vulnerability
+            that may be exploited before a fix is available.
+        </p>
+        <span class="tag">Security</span>
+    </div>
+
+
+    <div class="card" data-category="security">
+        <h3>Vulnerability</h3>
+        <p>
+            A weakness in software, hardware, configuration, or
+            processes that could potentially be exploited.
+        </p>
+        <span class="tag">Security</span>
+    </div>
+
+
+    <div class="card" data-category="security">
+        <h3>Patch</h3>
+        <p>
+            A software update that can fix bugs, improve features,
+            or address security vulnerabilities.
+        </p>
+        <span class="tag">Security</span>
+    </div>
+
+
+    <div class="card" data-category="security">
+        <h3>Penetration Testing</h3>
+        <p>
+            Authorized security testing designed to identify
+            weaknesses in systems and applications.
+        </p>
+        <span class="tag">Security</span>
+    </div>
+
+
+    <div class="card" data-category="security">
+        <h3>Incident Response</h3>
+        <p>
+            The process of detecting, analyzing, containing,
+            and recovering from cybersecurity incidents.
+        </p>
+        <span class="tag">Security</span>
+    </div>
+
+
+    <div class="card" data-category="security">
+        <h3>Least Privilege</h3>
+        <p>
+            A security principle where users and systems receive
+            only the access they need to perform their tasks.
+        </p>
+        <span class="tag">Security</span>
+    </div>
+
+
+    <div class="card" data-category="identity">
+        <h3>Password Manager</h3>
+        <p>
+            A tool that securely stores and helps manage passwords
+            and other authentication information.
+        </p>
+        <span class="tag">Identity</span>
+    </div>
+
+
+</section>
+
+
+<div class="no-results" id="noResults">
+    No glossary terms found. Try another search.
+</div>
+
 
 <footer>
 
-    <p>
-        🛡️ CyberStart
-    </p>
-
-    <p>
-        Learn. Practice. Stay Secure.
-    </p>
-
-    <p>
-        © 2026 CyberStart
-    </p>
+    <p>© 2026 CyberStart | Learn Cybersecurity</p>
 
 </footer>
 
 
-<!-- =========================
-     SEARCH JAVASCRIPT
-========================= -->
-
 <script>
 
-const searchBox =
-    document.getElementById("searchBox");
+    const searchBox = document.getElementById("searchBox");
+    const cards = document.querySelectorAll(".card");
+    const noResults = document.getElementById("noResults");
 
-const termCards =
-    document.querySelectorAll(".term-card");
+    searchBox.addEventListener("input", function () {
 
-const termCount =
-    document.getElementById("termCount");
+        const searchText = this.value.toLowerCase();
 
-const noResults =
-    document.getElementById("noResults");
+        let visibleCards = 0;
 
+        cards.forEach(function(card) {
 
-searchBox.addEventListener("input", function() {
+            const text = card.innerText.toLowerCase();
 
-    const searchText =
-        searchBox.value.toLowerCase().trim();
+            if (text.includes(searchText)) {
 
-    let visibleTerms = 0;
+                card.style.display = "block";
+                visibleCards++;
 
+            } else {
 
-    termCards.forEach(function(card) {
+                card.style.display = "none";
 
-        const text =
-            card.textContent.toLowerCase();
+            }
 
-        if (text.includes(searchText)) {
+        });
 
-            card.style.display = "";
-
-            visibleTerms++;
-
-        } else {
-
-            card.style.display = "none";
-
-        }
+        noResults.style.display =
+            visibleCards === 0 ? "block" : "none";
 
     });
 
 
-    if (visibleTerms === 0) {
+    function filterCategory(category) {
 
-        noResults.style.display = "block";
+        let visibleCards = 0;
 
-    } else {
+        cards.forEach(function(card) {
 
-        noResults.style.display = "none";
+            if (
+                category === "all" ||
+                card.dataset.category === category
+            ) {
+
+                card.style.display = "block";
+                visibleCards++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+        noResults.style.display =
+            visibleCards === 0 ? "block" : "none";
+
+        searchBox.value = "";
 
     }
 
-
-    termCount.textContent =
-        "Showing " +
-        visibleTerms +
-        " cybersecurity terms";
-
-});
-
 </script>
 
-
 </body>
-
 </html>
