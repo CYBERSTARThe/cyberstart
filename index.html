@@ -139,109 +139,87 @@ nav a:hover {
 }
 
 
-/* MOVING BLUE GLOW #1 */
+/* MOVING BLUE GLOW 1 */
 
 .hero::before {
     content: "";
 
     position: absolute;
 
-    width: 700px;
-    height: 700px;
+    width: 450px;
+    height: 450px;
 
-    top: -450px;
-    left: -200px;
+    top: -250px;
+    left: -100px;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(56, 189, 248, 0.20),
-            transparent 65%
-        );
+    background: radial-gradient(
+        circle,
+        rgba(56, 189, 248, 0.45),
+        transparent 65%
+    );
 
-    filter: blur(25px);
+    filter: blur(30px);
 
     animation:
-        cyberGlow 8s ease-in-out infinite alternate;
+        cyberGlow 5s ease-in-out infinite alternate;
 
     pointer-events: none;
 }
 
 
-/* MOVING BLUE GLOW #2 */
+/* MOVING BLUE GLOW 2 */
 
 .hero::after {
     content: "";
 
     position: absolute;
 
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 
-    top: -300px;
-    right: -150px;
+    top: -200px;
+    right: -100px;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(59, 130, 246, 0.15),
-            transparent 65%
-        );
+    background: radial-gradient(
+        circle,
+        rgba(37, 99, 235, 0.40),
+        transparent 65%
+    );
 
     filter: blur(30px);
 
     animation:
-        cyberGlow2 10s ease-in-out infinite alternate;
+        cyberGlow2 6s ease-in-out infinite alternate;
 
     pointer-events: none;
 }
 
 
-/* GLOW ANIMATION #1 */
+/* GLOW ANIMATION 1 */
 
 @keyframes cyberGlow {
 
     0% {
-        transform:
-            translateX(0)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateX(350px)
-            translateY(100px);
+        transform: translateX(0);
     }
 
     100% {
-        transform:
-            translateX(700px)
-            translateY(0);
+        transform: translateX(600px);
     }
 
 }
 
 
-/* GLOW ANIMATION #2 */
+/* GLOW ANIMATION 2 */
 
 @keyframes cyberGlow2 {
 
     0% {
-        transform:
-            translateX(0)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateX(-250px)
-            translateY(120px);
+        transform: translateX(0);
     }
 
     100% {
-        transform:
-            translateX(-500px)
-            translateY(0);
+        transform: translateX(-600px);
     }
 
 }
