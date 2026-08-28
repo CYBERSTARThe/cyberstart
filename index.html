@@ -4,196 +4,450 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="7LVdoDj4R1AxBbP5Nn6Zk0rUqpKI7B43HSMRczBcS1I" />
+
+<meta name="google-site-verification"
+content="7LVdoDj4R1AxBbP5Nn6Zk0rUqpKI7B43HSMRczBcS1I">
+
 <title>CyberStart - Home</title>
 
 <style>
 
+/* =========================
+   GLOBAL
+========================= */
+
 * {
     box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #0b1020;
-    background-image:
-        radial-gradient(circle at 50% 0%, #172554, transparent 60%),
-        linear-gradient(rgba(96, 165, 250, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(96, 165, 250, 0.04) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
-    background-attachment: fixed;
     color: white;
+
+    background-color: #070b16;
+
+    background-image:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(56, 189, 248, 0.18),
+            transparent 45%
+        ),
+        linear-gradient(
+            rgba(56, 189, 248, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(56, 189, 248, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        100% 100%,
+        45px 45px,
+        45px 45px;
+
+    background-attachment: fixed;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
-    background: transparent;
-    padding: 18px;
+    background: rgba(11, 16, 32, 0.94);
+
+    border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+
+    padding: 18px 25px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     position: sticky;
     top: 0;
+
     z-index: 1000;
+
+    backdrop-filter: blur(12px);
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: bold;
     color: #38bdf8;
+    white-space: nowrap;
+}
+
+nav div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 15px;
+
     font-weight: bold;
+    font-size: 16px;
+
+    transition: 0.2s;
 }
 
 nav a:hover {
     color: #38bdf8;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
+    min-height: 620px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #0b1020, #111a33);
+
+    padding: 90px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(30, 64, 175, 0.18),
+            transparent 55%
+        );
 }
 
 .hero h1 {
-    font-size: 58px;
+    font-size: 62px;
+
+    margin: 0 0 20px;
+
     color: #38bdf8;
-    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 25px rgba(56, 189, 248, 0.25);
 }
 
 .hero p {
     max-width: 700px;
-    margin: auto;
-    font-size: 20px;
-    line-height: 1.6;
+
+    margin: 0 auto;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    color: #e5e7eb;
 }
 
 .hero-button {
     display: inline-block;
-    margin-top: 30px;
-    padding: 15px 25px;
+
+    margin-top: 35px;
+
+    padding: 17px 30px;
+
     background: #38bdf8;
-    color: #07111f;
+
+    color: #06111f;
+
     text-decoration: none;
-    border-radius: 10px;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+
     font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(56, 189, 248, 0.18);
+
+    transition: 0.2s;
 }
 
 .hero-button:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(56, 189, 248, 0.28);
 }
 
-/* XP */
+/* =========================
+   XP
+========================= */
 
 .xp-box {
     max-width: 1000px;
+
     margin: 30px auto;
-    padding: 25px;
-    background: #111a33;
-    border-radius: 15px;
+
+    padding: 30px;
+
+    background: rgba(17, 26, 51, 0.9);
+
+    border: 1px solid rgba(96, 165, 250, 0.18);
+
+    border-radius: 18px;
+
     text-align: center;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.2);
 }
 
 .xp-box h2 {
+    margin-top: 0;
+
     color: #38bdf8;
+
+    font-size: 28px;
 }
 
 #totalXP {
-    font-size: 32px;
+    font-size: 42px;
+
     font-weight: bold;
+
     color: #7dd3fc;
+
+    margin: 10px 0;
 }
 
-/* FEATURES */
+.xp-box p {
+    color: #94a3b8;
+}
+
+/* =========================
+   SECTIONS
+========================= */
 
 section {
     max-width: 1100px;
+
     margin: auto;
-    padding: 60px 20px;
+
+    padding: 70px 20px;
 }
 
 section h2 {
     text-align: center;
+
     color: #38bdf8;
-    font-size: 34px;
-    margin-bottom: 35px;
+
+    font-size: 36px;
+
+    margin-bottom: 45px;
 }
+
+/* =========================
+   CARDS
+========================= */
 
 .cards {
     display: grid;
+
     grid-template-columns:
-        repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 22px;
 }
 
 .card {
-    background: #111a33;
-    padding: 25px;
-    border-radius: 15px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 26, 51, 0.96),
+            rgba(10, 17, 35, 0.96)
+        );
+
+    padding: 28px;
+
+    border-radius: 18px;
+
     text-align: center;
-    border: 1px solid #26345c;
-    transition: 0.2s;
+
+    border: 1px solid rgba(96, 165, 250, 0.2);
+
+    min-height: 260px;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+
+    border-color: rgba(56, 189, 248, 0.55);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 .card h3 {
     color: #7dd3fc;
+
+    font-size: 24px;
+
+    margin-top: 5px;
 }
 
 .card p {
     color: #d1d5db;
-    line-height: 1.6;
+
+    line-height: 1.7;
+
+    min-height: 85px;
 }
 
 .card-button {
     display: inline-block;
-    margin-top: 10px;
-    padding: 11px 18px;
+
+    margin-top: 12px;
+
+    padding: 12px 20px;
+
     background: #38bdf8;
-    color: #07111f;
+
+    color: #06111f;
+
     text-decoration: none;
-    border-radius: 8px;
+
+    border-radius: 9px;
+
     font-weight: bold;
+
+    transition: 0.2s;
 }
 
-/* FOOTER */
+.card-button:hover {
+    transform: scale(1.04);
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    background: #111a33;
+    background: rgba(11, 16, 32, 0.95);
+
+    border-top: 1px solid rgba(96, 165, 250, 0.15);
+
     text-align: center;
-    padding: 30px;
+
+    padding: 35px 20px;
+
     margin-top: 40px;
+
     color: #94a3b8;
 }
 
-/* MOBILE */
+footer p:first-child {
+    color: #38bdf8;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
     nav {
         flex-direction: column;
-        gap: 15px;
+
+        gap: 16px;
+
+        padding: 18px 12px;
+    }
+
+    nav div:last-child {
+        gap: 12px 16px;
     }
 
     nav a {
-        margin: 0 5px;
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 550px;
+
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-button {
+        font-size: 17px;
+
+        padding: 15px 24px;
+    }
+
+    .xp-box {
+        margin: 25px 12px;
+
+        padding: 25px 15px;
+    }
+
+    section {
+        padding: 55px 15px;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   EXTRA SMALL PHONES
+========================= */
+
+@media (max-width: 430px) {
+
+    .logo {
+        font-size: 22px;
+    }
+
+    nav div:last-child {
+        gap: 10px 13px;
+    }
+
+    nav a {
         font-size: 13px;
     }
 
     .hero h1 {
-        font-size: 42px;
+        font-size: 39px;
     }
 
     .hero p {
@@ -206,275 +460,282 @@ footer {
 
 </head>
 
-
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
-<div class="logo">
-🛡️ CyberStart
-</div>
+    <div class="logo">
+        🛡️ CyberStart
+    </div>
 
-<div>
+    <div>
 
-<a href="index.html">Home</a>
+        <a href="index.html">Home</a>
 
-<a href="lessons.html">Lessons</a>
+        <a href="lessons.html">Lessons</a>
 
-<a href="labs.html">Labs</a>
+        <a href="labs.html">Labs</a>
 
-<a href="quiz.html">Quiz</a>
+        <a href="quiz.html">Quiz</a>
 
-<a href="games.html">Games</a>
+        <a href="games.html">Games</a>
 
-<a href="glossary.html">Glossary</a>
+        <a href="glossary.html">Glossary</a>
 
-<a href="challenge.html">Challenge</a>
+        <a href="challenge.html">Challenge</a>
 
-</div>
+    </div>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero">
 
-<h1>🛡️ CyberStart</h1>
+    <h1>
+        🛡️ CyberStart
+    </h1>
 
-<p>
+    <p>
+        Learn cybersecurity.<br>
+        Practice your skills.<br>
+        Complete challenges.<br>
+        Build your knowledge.
+    </p>
 
-Learn cybersecurity.
-Practice your skills.
-Complete challenges.
-Build your knowledge.
-
-</p>
-
-<a
-class="hero-button"
-href="challenge.html"
-
-🚀 Start CyberStart Challenge
-
-</a>
+    <a
+        class="hero-button"
+        href="challenge.html"
+    >
+        🚀 Start CyberStart Challenge
+    </a>
 
 </header>
 
 
-<!-- XP -->
+<!-- =========================
+     XP
+========================= -->
 
 <div class="xp-box">
 
-<h2>🏆 Your CyberStart Progress</h2>
+    <h2>
+        🏆 Your CyberStart Progress
+    </h2>
 
-<div id="totalXP">
-0 XP
+    <div id="totalXP">
+        0 XP
+    </div>
+
+    <p>
+        Complete labs, quizzes, and games to earn XP!
+    </p>
+
 </div>
 
-<p>
-Complete labs, quizzes, and games to earn XP!
-</p>
 
-</div>
-
-
-<!-- FEATURES -->
+<!-- =========================
+     FEATURES
+========================= -->
 
 <section>
 
-<h2>🚀 Explore CyberStart</h2>
+    <h2>
+        🚀 Explore CyberStart
+    </h2>
 
-<div class="cards">
+    <div class="cards">
 
 
-<!-- LESSONS -->
+        <!-- LESSONS -->
 
-<div class="card">
+        <div class="card">
 
-<h3>📚 Lessons</h3>
+            <h3>
+                📚 Lessons
+            </h3>
 
-<p>
+            <p>
+                Learn the fundamentals of cybersecurity,
+                including phishing, malware, passwords,
+                MFA, and network security.
+            </p>
 
-Learn the fundamentals of cybersecurity,
-including phishing, malware, passwords,
-MFA, and network security.
+            <a
+                class="card-button"
+                href="lessons.html"
+            >
+                Start Learning
+            </a>
 
-</p>
+        </div>
 
-<a
-class="card-button"
-href="lessons.html">
 
-Start Learning
+        <!-- LABS -->
 
-</a>
+        <div class="card">
 
-</div>
+            <h3>
+                🧪 Cyber Labs
+            </h3>
 
+            <p>
+                Experiment with safe cybersecurity
+                simulations and learn how security
+                concepts work.
+            </p>
 
-<!-- LABS -->
+            <a
+                class="card-button"
+                href="labs.html"
+            >
+                Enter Labs
+            </a>
 
-<div class="card">
+        </div>
 
-<h3>🧪 Cyber Labs</h3>
 
-<p>
+        <!-- QUIZ -->
 
-Experiment with safe cybersecurity
-simulations and learn how security
-concepts work.
+        <div class="card">
 
-</p>
+            <h3>
+                🧠 Cyber Quiz
+            </h3>
 
-<a
-class="card-button"
-href="labs.html">
+            <p>
+                Test your cybersecurity knowledge
+                with interactive questions.
+            </p>
 
-Enter Labs
+            <a
+                class="card-button"
+                href="quiz.html"
+            >
+                Take Quiz
+            </a>
 
-</a>
+        </div>
 
-</div>
 
+        <!-- GAMES -->
 
-<!-- QUIZ -->
+        <div class="card">
 
-<div class="card">
+            <h3>
+                🎮 Cyber Games
+            </h3>
 
-<h3>🧠 Cyber Quiz</h3>
+            <p>
+                Learn cybersecurity while playing
+                interactive security games.
+            </p>
 
-<p>
+            <a
+                class="card-button"
+                href="games.html"
+            >
+                Play Games
+            </a>
 
-Test your cybersecurity knowledge
-with interactive questions.
+        </div>
 
-</p>
 
-<a
-class="card-button"
-href="quiz.html">
+        <!-- GLOSSARY -->
 
-Take Quiz
+        <div class="card">
 
-</a>
+            <h3>
+                📖 Glossary
+            </h3>
 
-</div>
+            <p>
+                Learn important cybersecurity
+                terms and concepts.
+            </p>
 
+            <a
+                class="card-button"
+                href="glossary.html"
+            >
+                Open Glossary
+            </a>
 
-<!-- GAMES -->
+        </div>
 
-<div class="card">
 
-<h3>🎮 Cyber Games</h3>
+        <!-- CHALLENGE -->
 
-<p>
+        <div class="card">
 
-Learn cybersecurity while playing
-interactive security games.
+            <h3>
+                🛡️ CyberStart Challenge
+            </h3>
 
-</p>
+            <p>
+                Think you have what it takes?
+                Test yourself with the CyberStart Challenge.
+            </p>
 
-<a
-class="card-button"
-href="games.html">
+            <a
+                class="card-button"
+                href="challenge.html"
+            >
+                Start Challenge
+            </a>
 
-Play Games
+        </div>
 
-</a>
 
-</div>
-
-
-<!-- GLOSSARY -->
-
-<div class="card">
-
-<h3>📖 Glossary</h3>
-
-<p>
-
-Learn important cybersecurity
-terms and concepts.
-
-</p>
-
-<a
-class="card-button"
-href="glossary.html">
-
-Open Glossary
-
-</a>
-
-</div>
-
-
-<!-- CHALLENGE -->
-
-<div class="card">
-
-<h3>🛡️ CyberStart Challenge</h3>
-
-<p>
-
-Think you have what it takes?
-Test yourself with the CyberStart Challenge.
-
-</p>
-
-<a
-class="card-button"
-href="challenge.html">
-
-Start Challenge
-
-</a>
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<p>
-🛡️ CyberStart
-</p>
+    <p>
+        🛡️ CyberStart
+    </p>
 
-<p>
-Learn. Practice. Stay Secure.
-</p>
+    <p>
+        Learn. Practice. Stay Secure.
+    </p>
 
-<p>
-© 2026 CyberStart
-</p>
+    <p>
+        © 2026 CyberStart
+    </p>
 
 </footer>
 
 
-<script>
+<!-- =========================
+     XP JAVASCRIPT
+========================= -->
 
-/* XP DISPLAY */
+<script>
 
 function updateXP() {
 
-let xp =
-Number(
-localStorage.getItem("cyberstartXP")
-) || 0;
+    let xp =
+        Number(
+            localStorage.getItem("cyberstartXP")
+        ) || 0;
 
-document.getElementById("totalXP").textContent =
-xp + " XP";
-
+    document.getElementById("totalXP").textContent =
+        xp + " XP";
 }
 
 updateXP();
