@@ -188,51 +188,6 @@ nav a:hover {
 }
 
 /* =========================
-   XP
-========================= */
-
-.xp-box {
-    max-width: 1000px;
-
-    margin: 30px auto;
-
-    padding: 30px;
-
-    background: rgba(17, 26, 51, 0.9);
-
-    border: 1px solid rgba(96, 165, 250, 0.18);
-
-    border-radius: 18px;
-
-    text-align: center;
-
-    box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.2);
-}
-
-.xp-box h2 {
-    margin-top: 0;
-
-    color: #38bdf8;
-
-    font-size: 28px;
-}
-
-#totalXP {
-    font-size: 42px;
-
-    font-weight: bold;
-
-    color: #7dd3fc;
-
-    margin: 10px 0;
-}
-
-.xp-box p {
-    color: #94a3b8;
-}
-
-/* =========================
    SECTIONS
 ========================= */
 
@@ -408,12 +363,6 @@ footer p:first-child {
         padding: 15px 24px;
     }
 
-    .xp-box {
-        margin: 25px 12px;
-
-        padding: 25px 15px;
-    }
-
     section {
         padding: 55px 15px;
     }
@@ -519,27 +468,6 @@ footer p:first-child {
     </a>
 
 </header>
-
-
-<!-- =========================
-     XP
-========================= -->
-
-<div class="xp-box">
-
-    <h2>
-        🏆 Your CyberStart Progress
-    </h2>
-
-    <div id="totalXP">
-        0 XP
-    </div>
-
-    <p>
-        Complete labs, quizzes, and games to earn XP!
-    </p>
-
-</div>
 
 
 <!-- =========================
@@ -719,28 +647,6 @@ footer p:first-child {
     </p>
 
 </footer>
-
-
-<!-- =========================
-     XP JAVASCRIPT
-========================= -->
-
-<script>
-
-function updateXP() {
-
-    let xp =
-        Number(
-            localStorage.getItem("cyberstartXP")
-        ) || 0;
-
-    document.getElementById("totalXP").textContent =
-        xp + " XP";
-}
-
-updateXP();
-
-</script>
 
 
 </body>
